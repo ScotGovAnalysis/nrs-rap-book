@@ -1,0 +1,9 @@
+---
+title: "Training"
+---
+
+This is the Training index page.
+
+Ideas for this section:
+* Git
+* Azure DevOps

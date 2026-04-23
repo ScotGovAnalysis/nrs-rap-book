@@ -1,0 +1,11 @@
+---
+title: "RAP in NRS"
+---
+
+This is the RAP in NRS index page.
+
+Ideas for this section:
+* Why RAP?
+* RAP support in NRS
+* Resources
+* Community

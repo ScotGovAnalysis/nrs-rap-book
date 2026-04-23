@@ -1,0 +1,8 @@
+---
+title: "Guidance"
+---
+
+This is the Guidance index page.
+
+Ideas for this section:
+* Coding standards

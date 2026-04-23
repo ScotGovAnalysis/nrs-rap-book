@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "NRS RAP Book"
+  sidebar:
+    style: "docked"
+    collapse-level: 1
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+      - section: RAP in NRS
+        href: rap-in-nrs/index.qmd
+        contents: 
+        - rap-in-nrs/why-rap.qmd
+      - section: Guidance
+        href: guidance/index.qmd
+        contents:
+        - guidance/test.qmd
+      - section: Training
+        href: training/index.qmd
+        contents:
+        - training/test.qmd
+      - section: Blog
+        href: blog/index.qmd
+        contents:
+        - blog/test.qmd
+      
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
