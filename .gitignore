@@ -3,6 +3,10 @@
 .RData
 .Ruserdata
 
+# Quarto files/folders
+/.quarto/
+/_site/
+
 # 'data' folder #
 data/
 
