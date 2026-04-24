@@ -1,0 +1,55 @@
+---
+title: "Process Mapping"
+editor: visual
+---
+This document introduces process mapping and explains why it is a useful tool for documenting and improving analytical processes. Process maps provide a clear, visual overview of how data flows from inputs through processing and analysis to final outputs. They support transparency, shared understanding, and more efficient ways of working.
+
+In line with RAP principles, process mapping helps make analytical processes easier to understand, maintain, and improve over time. It can be used to support knowledge transfer, identify risks and inefficiencies, and inform decisions about redevelopment or automation.
+
+## What is a process map? 
+
+A process map is a method for documenting and visualising the steps required to move from the beginning to the end of a process. In the context of NRS statistics, a process may relate to the production of publications, management information, data tables, or any other analytical work that is carried out on a recurring basis.
+
+Process maps can vary in their level of detail; however, it is generally helpful to include the following key elements:
+
+- **Input data:** These may come from a database, a flat file, or be manually defined within code.
+
+- **Manual steps:** These can include tasks such as copying and pasting data between files, renaming or moving files, or carrying out manual quality assurance checks.
+
+- **Code or programs:** These may consist of SAS programs, R scripts, or other automated processing tools.
+
+- **Outputs:** These can include data files, charts saved as image files, formatted Excel spreadsheets, publication reports, or dashboards.
+
+## Why create a process map?
+
+A process map is an invaluable piece of documentation for any analytical process. It can help you to:
+
+- **Develop a shared understanding** within your team of what the process involves. This is particularly useful for managers or others who are not closely involved in the day-to-day technical delivery.
+
+- **Explain the process to others**, such as a new team member or a colleague from the RAP Development team who may be supporting redevelopment work.
+
+- **Identify inefficiencies, bottlenecks**, or duplicated steps, which can highlight quick wins and opportunities to improve the process.
+
+- **Support non-linear redevelopment decisions**, for example by showing where it may be more effective to prioritise improvements to reporting or visualisation rather than starting with data ingestion and cleaning.
+
+Even if a process has already undergone redevelopment, creating a process map remains valuable, particularly for building shared understanding and supporting knowledge transfer. In addition, further opportunities for improvement may still be uncovered.
+
+## Top tips for creating a process map
+
+- **Start simple.** Begin with a high-level view of the process. If it becomes clear that additional detail is needed, this can always be added later.
+
+- **Don’t worry about using specialist software.** Simple text boxes and arrows in PowerPoint or Word are often sufficient. Tools like Visio can also work well, but they are not essential.
+
+**Use symbols consistently.** Use different symbols to distinguish between data, code, and manual steps. The specific symbols you choose are less important than using them consistently and providing a clear key or legend to explain what each one represents.
+
+**Keep the scope manageable.** Avoid trying to capture multiple processes, or an overly large process, in a single map. A good rule of thumb is to create one map per publication or equivalent analytical product. If a map becomes too large or complex, consider splitting it into separate maps, for example, one for data processing and another for producing outputs.
+
+## Example process map
+
+
+![Process Map for NHSCR - Migration Extract](
+images/migration_extract.png
+){width=90%}
+
+
+This process map uses different symbols to represent input files, data manipulation, intermediate files, and outputs. Using consistent symbols keeps the map clear and easy to follow, and helps readers quickly understand the flow of data through the process.
