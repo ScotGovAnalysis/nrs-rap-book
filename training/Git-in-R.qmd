@@ -92,10 +92,10 @@ the command:
 
 `git add`
 
-***committed -*** commiting takes files recorded in the staging area and stores
+***committed -*** committing takes files recorded in the staging area and stores
 a ***snapshot*** permanently within the git directory. Each commit is assigned a
 ***hash*** code that allows you to access the snapshot. Therefore if you want to
-rollback to a particular snapshot you can access it via its hash code. Staged
+roll-back to a particular snapshot you can access it via its hash code. Staged
 files can be committed as follows:
 
 \`git commit -m "message"
@@ -108,7 +108,7 @@ identified in pull request number 33 your commit message may look like:
 
 `git commit -m "!33: bug fix in Check_file - Solved"`
 
-The above commit message clearly states it is workin on issue/pull request
+The above commit message clearly states it is working on issue/pull request
 number 33 in which a bug was identified in the function check_file and that it
 has been tested and marked as solved ready for merging.
 
@@ -142,7 +142,7 @@ git pull
 git checkout -b name
 
 #Move onto a branch 
-git checkout name
+
 
 #Link a locale branch to the remote branch
 git push --set-upstream origin name
@@ -166,10 +166,29 @@ git status
 ## Git within R studio
 
 In order to use git within R studio you must have the directory set up as an R
-project. Therefore any cloned repository must contain a `Rproj` file
+project. Therefore any cloned repository must contain a `Rproj` file.
 
-You can use all the above command line
+You can use all the above command line within the terminal window of R Studio,
+However R Studio also offers a graphical interface that some may find preferable
+to use. To access open the `Tools` menu and access `Version Control` menu and
+`Commit...` you can also access with the keyboard short cut `Ctrl+Alt+M`
 
-##Further reading
+![Menu access to Version control tools within R
+Studio](figures/git_in_R_figs/Figure1.png){width="546"}
 
-For a more in depth discussion on Git and how it works you can
+Within the commit screen you can easily change branch, overview any documents
+modified (M), added (A) or removed (R) and investigate those changes when
+compared to the remote branch. Changes can be staged by ticking the box within
+the stage column. A commit message can be added and changes committed to the
+local branch. Then changes can be pushed to the remote branch.
+
+![Version control tools within R
+studio](figures/git_in_R_figs/Figure2.png){width="722"}
+
+## Further reading
+
+For a more in depth discussion on Git and how it works : [Pro Git
+book](https://git-scm.com/book/en/v2)
+
+For information in collaborating on projects within Azure Devops: Guide to
+DevOps - Pull requests
