@@ -123,7 +123,7 @@ be done using the command:
 `git push`
 
 If you do not **push** your commits they will not be recorded in your remote
-repository and will not be backed up or be availible to be accessed by
+repository and will not be backed up or be available to be accessed by
 collaborators.
 
 ### Command line quick reference
