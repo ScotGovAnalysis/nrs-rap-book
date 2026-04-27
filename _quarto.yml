@@ -23,6 +23,7 @@ website:
         contents:
         - training/test.qmd
         - training/Git-in-R.qmd
+        - training/Using-Devops.qmd
       - section: Blog
         href: blog/index.qmd
         contents:
