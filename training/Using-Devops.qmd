@@ -107,3 +107,45 @@ code and its outcomes.
 ![Example of a user story tag](figures/Devops/Devops-Figure5.png){width="733"}
 
 ### Repos
+
+::: img-float
+![Repos
+menu](figures/Devops/Devops-Figure6.png){style="float: right; margin: 5px;"}
+:::
+
+Within the Repos tab you can manage your code base, through tracking commits,
+pushes and pull requests. It is the viewing portal for the remote repository of
+the version control infrastructure.These features communicate with you
+Integrated Development Environment (IDE), an example of which is R studio, where
+the development and testing of the code will be done, via Git. Git is an open
+source version control tool that allows you to maintain clear and backed up
+versions of all coding projects. For more information on using Git within the R
+environment, can be found on the page \[Using Git in R\]()
+
+You can open and view all files pushed to your remote repository within the
+files tab.
+
+::: img-float
+![Files tab
+menu](figures/Devops/Devops-Figure7.png){style="float: left; margin: 5px;"
+width="350"}
+:::
+
+You can also find links for cloning and/or forking the repository. For each file
+you can view the contents of the file., in the Contents tab.
+
+The History tab shows the history of changes made to the file, listing the
+associated commit, the type of change and any associated pull requests. You can
+directly access the compare tag for a specific commit from the history table or
+from within the compare tab. You can select which commits you want to compare.
+The changes can either be viewed side by side or in-line.
+
+The final tab is the Blame tab. This highlights which bits of the code have been
+edited,
+
+::: callout-note
+*Blame* is not a negative term within software development instead it records
+and displays the author of specific lines in a file.
+:::
+
+For more information on Pull requests
