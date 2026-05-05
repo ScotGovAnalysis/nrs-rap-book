@@ -13,21 +13,22 @@ jobs:
       - name: Install spelling
         run: if (!require("spelling")) install.packages("spelling")
         shell: Rscript {0}
+        
+      - name: Install testthat
+        run: if (!require("testthat")) install.packages("testthat")
+        shell: Rscript {0}
+
 
       - name: Run spelling check test
         run: spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), lang = "en-GB",  ignore = readr::read_lines("sp_ignore_wordlist.txt"))
         shell: Rscript {0}
         
-#      - name: Install testthat
-#        run: if (!require("testthat")) install.packages("testthat")
-#        shell: Rscript {0}
-
-#      - name: Test spelling error
-#        run: testthat::test_that(
-#          desc = "No Errors", 
-#          code = {
-#              no_errors <- spelling::spell_check_files(path = "sp_ignore_wordlist.txt", ignore = readr::read_lines("sp_ignore_wordlist.txt"))
-#        spellcheck <- spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), lang = "en-GB",  ignore = readr::read_lines("sp_ignore_wordlist.txt"))
-#        testthat::expect_equal(object = spellcheck, expected = no_error)
-#        })
-#        shell: Rscript {0}
+      - name: Test spelling error
+        run: testthat::test_that(
+          desc = "No Errors", 
+          code = {
+              no_errors <- spelling::spell_check_files(path = "sp_ignore_wordlist.txt", ignore = readr::read_lines("sp_ignore_wordlist.txt"))
+              spellcheck <- spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), lang = "en-GB",  ignore = readr::read_lines("sp_ignore_wordlist.txt"))
+              testthat::expect_equal(object = spellcheck, expected = no_error)
+        })
+        shell: Rscript {0}
