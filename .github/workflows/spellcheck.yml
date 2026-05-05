@@ -19,16 +19,13 @@ jobs:
         shell: Rscript {0}
 
       - name: Run spelling check test
-        run: spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), lang = "en-GB",  ignore = readr::read_lines("sp_ignore_wordlist.txt"))
-        shell: Rscript {0}
-        
-      - name: Test spelling error
         run: testthat::test_that(
           desc = "No Errors", 
           code = {
               no_errors <- spelling::spell_check_files(path = "sp_ignore_wordlist.txt", ignore = readr::read_lines("sp_ignore_wordlist.txt"))
               spellcheck <- spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), lang = "en-GB",  ignore = readr::read_lines("sp_ignore_wordlist.txt"))
-              testthat::expect_equal(object = spellcheck, expected = no_error)
+              testthat::expect_equal(object = spellcheck, expected = no_error, info = print(spellcheck))
+              
         })
         shell: Rscript {0}
         
