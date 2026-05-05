@@ -1,6 +1,6 @@
 name: Spellcheck
 on:
-  push:
+  push: [main]
   pull_request:
 jobs:
   Spelling:
@@ -8,20 +8,17 @@ jobs:
     container: {image: "rocker/tidyverse:4.2.1"}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
-      - name: Install spelling
+      - name: Install required package 
         run: if (!require("spelling")) install.packages("spelling")
+            if (!require("testthat")) install.packages("testthat")
         shell: Rscript {0}
         
       - name: Run Spelling Check test
         run: spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), ignore = readr::read_lines("sp_ignore_wordlist.txt"))
         shell: Rscript {0}
         
-      - name: Install testthat
-        run: if (!require("testthat")) install.packages("testthat")
-        shell: Rscript {0}
-
       - name: Halt if spelling errors 
         run: testthat::test_that(
           desc = "No Errors", 
