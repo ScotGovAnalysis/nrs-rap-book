@@ -1,13 +1,19 @@
-name: spellcheck action
-on: push
+name: Spellcheck
+on:
+  push:
+  pull_request:
 jobs:
-  build:
-    name: Spellcheck
+  Spelling:
     runs-on: ubuntu-latest
+    container: {image: "rocker/tidyverse:4.2.1"}
     steps:
-        name: Spellcheck
-      - uses: actions/checkout@v3
-      - uses: rojopolis/spellcheck-github-actions@0.23.0
-        with:
-          config_path: .spellcheck.yml
-          task_name: Markdown
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install spelling
+        run: if (!require("spelling")) install.packages("spelling")
+        shell: Rscript {0}
+
+      - name: Run Spelling Check test
+        run: spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE))
+        shell: Rscript {0}
