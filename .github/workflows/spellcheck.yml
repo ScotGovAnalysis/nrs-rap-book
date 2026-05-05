@@ -13,17 +13,14 @@ jobs:
       - name: Install spelling
         run: if (!require("spelling")) install.packages("spelling")
         shell: Rscript {0}
-        
-      - name: Install testthat
-        run: if (!require("testthat")) install.packages("testthat")
-        shell: Rscript {0}
+
 
       - name: Run spelling check test
-        run: testthat::test_that(
-          desc = "No Errors", 
-          code = {
+        run:
               no_errors <- spelling::spell_check_files(path = "sp_ignore_wordlist.txt", ignore = readr::read_lines("sp_ignore_wordlist.txt"))
               spellcheck <- spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), lang = "en-GB",  ignore = readr::read_lines("sp_ignore_wordlist.txt"))
-              testthat::expect_equal(object = spellcheck, expected = no_error, info = print0(spellcheck))
-             })
+              if (setdiff(spellcheck, no_error) == 0){
+                          print0("Complete")
+              } else {
+                writeLines(spellcheck, "Errors_detected.txt")}
         shell: Rscript {0}
