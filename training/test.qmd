@@ -1,9 +1,3 @@
 ---
 title: "Test page"
 ---
-
-Using this to test spell checker:
-
-This line contains a seplling mistake
-
-This line does not contain a spelling mistake
