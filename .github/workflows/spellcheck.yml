@@ -23,8 +23,10 @@ jobs:
         shell: Rscript {0}
         
       - name: Halt if spelling errors 
-        run: testthat::test_that("No Errors", {
-          testthat::expect_equal(object = spellcheck, expected = "No spelling errors found.")
-          })
+        run: testthat::test_that(desc = "No errors", code = {
+        no_error <- spelling::spell_check_files(path = "inst/WORDLIST_EXAMPLE.txt", ignore = readr::read_lines("inst/WORDLIST_EXAMPLE.txt"))
+        spellcheck <- spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), ignore = readr::read_lines("inst/WORDLIST_EXAMPLE.txt"))
+        testthat::expect_equal(object = spellcheck, expected = no_error)
+        })
         shell: Rscript {0}
         
