@@ -18,7 +18,6 @@ jobs:
         run: if (!require("testthat")) install.packages("testthat")
         shell: Rscript {0}
 
-
       - name: Run spelling check test
         run: spelling::spell_check_files(list.files(pattern = ".*.qmd$", recursive = TRUE), lang = "en-GB",  ignore = readr::read_lines("sp_ignore_wordlist.txt"))
         shell: Rscript {0}
@@ -32,3 +31,4 @@ jobs:
               testthat::expect_equal(object = spellcheck, expected = no_error)
         })
         shell: Rscript {0}
+        
