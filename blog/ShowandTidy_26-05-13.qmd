@@ -5,31 +5,41 @@ format: revealjs
 
 ## What is a process map?
 
-A process map is a method for documenting and visualising the steps required to move from the beginning to the end of a process. 
+A process map is a method for documenting and visualising the steps required to move from the beginning to the end of a process.
 
 They can vary in their level of detail; however, it is helpful to include the following key elements:
 
-- Input Data
-- Manual steps
-- Code or prompts
-- Outputs
+-   Input Data
+-   Manual steps
+-   Code or prompts
+-   Outputs
 
 ## Why create a process map?
 
-- Develop a shared understanding within your team of what the process involves
-- Explain the process to others (new team member, colleagues)
-- Spot opportunities to improve the process
-- Make it easier to develop the process in a non linear way 
+-   Develop a shared understanding within your team of what the process involves
+-   Explain the process to others (new team member, colleagues)
+-   Spot opportunities to improve the process
+-   Make it easier to develop the process in a non linear way
 
 ## Top tips for creating a process map
 
-- Start simple
-- Don’t worry about using specialist software
-- Use symbols consistently
-- Keep the scope manageable
-- Keep your process map with your code
-- You don’t need to understand every line of your code
+-   Start simple
+-   Don’t worry about using specialist software
+-   Use symbols consistently
+-   Keep the scope manageable
+-   Keep your process map with your code
+-   You don’t need to understand every line of your code
 
-## Example process map
+## Building a process map
 
+Using NHSCR - Migration Extract as an example
 
+-   Visio is available as part of the Microsoft 365 suite
+
+![NHSCR - Migration Extract](images/Migration%20Extract.png)
+
+## Building a process map
+
+Completed maps can be used to scope and plan RAP projects.
+
+![](images/Migration%20Extract%20-%20for%20presentation.png)
