@@ -6,7 +6,7 @@ title: "Using Azure Devops"
 
 ## Collections Page
 
-Azure DevOps opens at the Collections Landing page. Each Collection you have
+Azure DevOps opens at the `Collections` landing page. Each collection you have
 access to will appear on the left hand side of the screen.
 
 Inside each collection is a Dashboard which gives access to the Projects within
@@ -25,7 +25,7 @@ bar](figures/Devops/Devops-Figure2.png){style="float: right; margin: 5px;"}
 
 When opening a project you will find a side bar with several options and tools.
 
-For Most projects only the Overview panel, Boards and Repos tools will be
+For most projects only the `Overview` panel, `Boards` and `Repos` tools will be
 relevant, and they are explored in more details below.
 
 The remaining three panels facilitate the continuous integration, continuous
@@ -36,9 +36,9 @@ panel is to facilitate production pipelines for software release, integrating
 with the `Test Plans` panel to facilitate the CI/CD schedule. It allows for team
 testers to collaborate with feature developers in a cohesive manner.
 
-These panels are not to be confuse with Reproducible Analytical Pipelines and
-within code testing of features. Instead they are used for production guidance
-and external stress-testing of the software before deployment.
+These panels are not to be confuse with Reproducible Analytical Pipelines (RAPs)
+and within code testing of features. Instead they are used for production
+guidance and external stress-testing of the software before deployment.
 
 The `Artifacts` is a small internal repository aimed at storing small elements
 of code - such as snippets, for use as an internal package repository for teams
@@ -110,7 +110,8 @@ code and its outcomes.
 
 ::: img-float
 ![Repos
-menu](figures/Devops/Devops-Figure6.png){style="float: right; margin: 5px;"}
+menu](figures/Devops/Devops-Figure6.png){style="float: right; margin: 5px;"
+width="224"}
 :::
 
 Within the Repos tab you can manage your code base, through tracking commits,
@@ -122,8 +123,7 @@ source version control tool that allows you to maintain clear and backed up
 versions of all coding projects. For more information on using Git within the R
 environment, can be found on the page \[Using Git in R\]()
 
-You can open and view all files pushed to your remote repository within the
-files tab.
+#### Files tab
 
 ::: img-float
 ![Files tab
@@ -131,8 +131,9 @@ menu](figures/Devops/Devops-Figure7.png){style="float: left; margin: 5px;"
 width="350"}
 :::
 
-You can also find links for cloning and/or forking the repository. For each file
-you can view the contents of the file., in the Contents tab.
+You can open and view all files pushed to your remote repository within the
+files tab. You can also find links for cloning and/or forking the repository.
+For each file you can view the contents of the file., in the Contents tab.
 
 The History tab shows the history of changes made to the file, listing the
 associated commit, the type of change and any associated pull requests. You can
@@ -141,11 +142,85 @@ from within the compare tab. You can select which commits you want to compare.
 The changes can either be viewed side by side or in-line.
 
 The final tab is the Blame tab. This highlights which bits of the code have been
-edited,
+edited, when they were pushed to the repository and by which team member.
 
 ::: callout-note
 *Blame* is not a negative term within software development instead it records
-and displays the author of specific lines in a file.
+and displays the author of specific lines in a file, allowing for collaboration
+and integration within a team.
 :::
 
-For more information on Pull requests
+#### Commits tab
+
+::: img-float
+![Example of a commit
+graph](figures/Devops/Devops-Figure8.png){style="float: left; margin: 5px;"
+width="200"}
+:::
+
+Commits tab shows both the list of commits made to the repository but also
+displays it in graphical format known as a commit graph. This allows you to
+explore the branches, commits and merges throughout the project, in a visual
+fashion.
+
+The tab also allows you to filter the commits by author, date and status. Once
+you have located a commit of interest you can explore and compare the changes
+made in the commit. Exploring the files, the dates and times of actions made on
+the files within that commit. You can also make comments, branch from or roll
+back to that commit.
+
+#### Pushes tab
+
+Similar to the Commits tab it allows you to explore the pushes made to the
+repository and the commits within those pushes.
+
+More information in the difference between commits and pushes you can be found
+on the page \[Using Git in R\]() in the Understanding the Jargon section.
+
+#### Branches
+
+Branches function as seperate workspaces for each team member, changes can be
+made to the code and ideas can be tested without affecting the main project. It
+allows multiple team members to work on the code base without it effecting the
+existing code base.
+
+From the branches tab you can observe which branches are operational, which may
+have been merged into the code base or those that may have been abandoned (known
+as stale branches). You can also see how ahead the main branch is in number of
+commits to the main branch. And any pull requests associated with the branch.
+New remote branches can also be created from this tab. Once a new remote branch
+has been created you will need to 'checkout\` to the branch within the local
+repository. For information on navigating branches in Git see the page \[Using
+Git in R\]()
+
+It is good coding practice to work within a branch, even if you are a single
+developer. It separates working code from developmental code which in turn
+allows for ease of roll backs. Further information on good coding practices can
+be found in the guidance page - \[Coding Standards page\]()
+
+#### Pull requests
+
+Pull requests are a collaborative tool allowing you to submit proposed changed
+to the overall code base. They are an essential part of good coding practice
+especially when working on ongoing projects or within a team. Before a piece of
+work can be moved from a branch to the main code, it must first go through a
+code review process. This is where peers will review the code, and is an
+opportunity to spot any typo's, regions where code can be made more efficient or
+tidied to match the group coding style. Once you have completed work within a
+branch on the repository you can create a pull request from either inside the
+branch or via the pull request tab.
+
+![Example of pull
+request](figures/Devops/Devops-figure9.png){fig-align="center"}
+
+Within the pull request screen you can assign reviewers, both required and
+Optional. As virtual machine is not connected to the internet it will not
+automatically notify reviewers. Any assigned reviewers will have to be notified
+manually. Comments and discussions of the work can also be made within the
+overview or within individual files. Once all changes have been made and
+approved the branch can then be merged with the main branch from inside the pull
+request.
+
+For more information on Pull requests you can find more information on both
+making and responding to pull requests in both github and Azure devops within
+the \[Working with Pull request\]() page.
