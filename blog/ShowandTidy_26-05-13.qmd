@@ -1,7 +1,12 @@
 ---
-title: "Building Process Maps"
-format: revealjs
+title: ""
+format:
+  revealjs:
+    transition: slide
+    background-transition: fade
 ---
+
+## ![](images/Building-Process-Maps-Title.png){fig-alt="A flow chart reading building process maps" fig-align="center"}
 
 ## What is a process map?
 
@@ -12,7 +17,7 @@ They can vary in their level of detail; however, it is helpful to include the fo
 -   Input Data
 -   Manual steps
 -   Code or prompts
--   Outputs
+-   Outputss
 
 ## Why create a process map?
 
@@ -43,3 +48,19 @@ Using NHSCR - Migration Extract as an example
 Completed maps can be used to scope and plan RAP projects.
 
 ![](images/Migration%20Extract%20-%20for%20presentation.png)
+
+## A further example
+
+![](images/NSHRC_ProcessMap.png)
+
+\##![](images/Any-questions-slide.png){fig-alt="Flow charts asking Any questions" fig-align="center"}
+
+## Building a process map
+
+-   Process maps can use existing code or be used to plan projects from the outset.
+
+First identify fixed constants
+
+![](images/fixed-points-in-journey.png){fig-align="center" width="441"}
+
+Ask what changes are required to convert input into desired output. Add each major change to the map as an element. You can build on the detail, using different shapes, colours or expanding the map.
