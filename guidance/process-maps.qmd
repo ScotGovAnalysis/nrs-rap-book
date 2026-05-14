@@ -39,11 +39,13 @@ Even if a process has already undergone redevelopment, creating a process map re
 
 -   **Don’t worry about using specialist software.** Simple text boxes and arrows in PowerPoint or Word are often sufficient. Tools like Microsoft Visio can also work well, but they are not essential.
 
--   **Use symbols consistently.** Use different symbols to distinguish between data, code, and manual steps. The specific symbols you choose are less important than using them consistently and providing a clear key or legend to explain what each one represents.
+-   **Use symbols consistently.** Use different symbols to distinguish between data, code, and manual steps.
+
+-   **Have a clear key or legend to explain what each symbol represents.** The specific symbols you choose are less important than using them consistently. 
 
 -   **Keep the scope manageable.** Avoid trying to capture multiple processes, or an overly large process, in a single map. A good rule of thumb is to create one map per publication or equivalent analytical product. If a map becomes too large or complex, consider splitting it into separate maps, for example, one for data processing and another for producing outputs.
 
--   **Keep your process map with your code.** It makes it easier to find later. This also follows RAP principles by keeping documentation alongside the code base, rather than in a separate location.
+-   **Keep your process map with your code where possible.** It makes it easier to find later. This also follows RAP principles by keeping documentation alongside the code base, rather than in a separate location. If it is not possible to store the process map with the code, it should be kept alongside the rest of the project documentation.
 
 -   **You don’t need to understand every line of your code** to produce a useful process map. It is about capturing the flow, not the detail.
 
@@ -51,7 +53,7 @@ Even if a process has already undergone redevelopment, creating a process map re
 
 The example process map below is based on NHSCR, which is a SAS process run on monthly and quarterly basis. It reads in multiple datasets, applies a series of transformations, and produces a set of output data files. This example focuses on illustrating a section of that flow.
 
-![Process Map for Migration Extract](images/nhscr-process-map.png){fig-alt="Process map illustrating part of an analytical workflow, with four largely identical process flows and two flows containing an extra data manipulation step, highlighting where the process diverges." width="90%"}
+![](images/nhscr-process-map.png){fig-alt="Process map illustrating part of an analytical workflow, with four largely identical process flows and two flows containing an extra data manipulation step, highlighting where the process diverges." width="90%"}
 
 This process map uses different symbols to represent input files, data manipulation, intermediate files, and outputs. Using consistent symbols keeps the map clear and easy to follow, and helps readers quickly understand the flow of data through the process.
 
@@ -60,3 +62,13 @@ Looking at the map also helps illustrate some of the practical benefits of proce
 -   It allows someone new to the process, or unfamiliar with the code, to quickly see which data files are required and what outputs are produced.
 
 -   It highlights where similar steps are repeated across multiple process flows, which can prompt discussion about whether parts of the process could be simplified or reused to reduce repetition.
+
+## Using Microsoft Visio
+
+Microsoft Visio is a useful tool for creating process maps within NRS, as it is available through Microsoft 365. When you open Visio, you can choose from a range of templates, including a basic diagram or a standard flowchart template with commonly used symbols.
+
+When creating process maps, the priority should be to get started rather than focusing on unnecessary complexity. Using simple, clear shapes and flows with keys will help ensure that your process map is easy to follow.
+
+Visio files can be saved in visio file format (.vsdx), which allows you to revisit and edit them later. You can also export them as images (.png) or PDF files. However, exported versions cannot be edited, so make sure to keep the original Visio file for any future updates.
+
+For more guidance on using Visio, please refer to this blog on building process maps: [link to blog here]
