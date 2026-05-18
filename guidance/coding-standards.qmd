@@ -1,0 +1,61 @@
+---
+title: "Coding Standards"
+editor: visual
+---
+
+Following a clear and consistent coding standard is essential for producing high‑quality, reproducible analytical work. Well‑structured, readable, and well‑documented code is easier to understand, review, and maintain, both by the original author and by others over time. The sections below demonstrate how to apply a coding standard in practice, focusing on:
+
+**File and folder organisation,** to make projects easy to navigate.
+
+**Coding style,** to improve readability and consistency.
+
+**Documentation,** to support understanding, reuse, and knowledge transfer.
+
+Together, these elements help create analytical code that is robust, maintainable, and aligned with RAP principles.
+
+## File organisation
+
+- Use self-contained RStudio Project to organise files
+
+- Use the here package for relative file paths
+
+- Organise files in sub-directories. For example:
+
+``` text
+my-project/
+├── code/ 
+├── functions/ 
+├── lookups/ 
+├── outputs/ 
+└── my-project.Rproj
+```
+
+## Code style
+
+- Use tidyverse packages by default unless constraints require alternative
+
+- Use tidyverse style guide
+
+- Set configurable parameters in a separate script
+
+- Load required packages in a separate script
+
+- Functions unit tested using testthat package
+
+- Functions have appropriate error messaging (TryCatch package)
+
+- Use defined naming standards (e.g., verb-based function names, no special characters or spaces)
+
+## Documentation
+
+- Record package version requirements in a separate file using renv
+
+- Functions documented using roxygen format
+
+- Use code comments to explain why your code does what it does, and not just repeat what is already obvious from the code
+
+- Don’t use comments to ‘disable’ code
+
+- Include a README
+
+- Include desk instructions
