@@ -17,7 +17,7 @@ website:
       - section: Guidance
         href: guidance/index.qmd
         contents:
-        - guidance/test.qmd
+        - guidance/process-maps.qmd
       - section: Training
         href: training/index.qmd
         contents:
