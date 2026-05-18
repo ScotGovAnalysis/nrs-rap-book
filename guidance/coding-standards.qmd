@@ -3,7 +3,7 @@ title: "Coding Standards"
 editor: visual
 ---
 
-Following a clear and consistent coding standard is essential for producing high‑quality, reproducible analytical work. Well‑structured, readable, and well‑documented code is easier to understand, review, and maintain, both by the original author and by others over time. The sections below demonstrate how to apply a coding standard in practice, focusing on:
+Following a clear and consistent coding standard is essential for producing high‑quality, reproducible analytical work. Well‑structured, readable, and well‑documented code is easier to understand, review, and maintain, both by the original author and by others over time. The sections below demonstrate how to apply coding standards in practice, focusing on:
 
 **File and folder organisation,** to make projects easy to navigate.
 
@@ -13,49 +13,61 @@ Following a clear and consistent coding standard is essential for producing high
 
 Together, these elements help create analytical code that is robust, maintainable, and aligned with RAP principles.
 
-## File organisation
+## File and folder organisation
 
-- Use self-contained RStudio Project to organise files
+-   **Use a separate, self‑contained RStudio Project for each project.** This helps keep your files organised, makes the structure easy to follow, and avoids work becoming messy or difficult to manage over time.
 
-- Use the here package for relative file paths
+-   **Use the here package for relative file paths to avoid hard‑coded directories.** It allows file paths to be defined relative to the project root which means the code is portable, reproducible, and is consistent across environments.
 
-- Organise files in sub-directories. For example:
+
+-   **Organise files into project-specific, self-contained sub-directories.** For example:
 
 ``` text
-my-project/
-├── code/ 
-├── functions/ 
-├── lookups/ 
-├── outputs/ 
-└── my-project.Rproj
+My-documents/
+├──my-project_A/
+│ ├── code/ 
+│ ├── functions/ 
+│ ├── lookups/ 
+│ ├── outputs/ 
+│ └── my-project_A.Rproj
+my-project_B/
+  ├── code/ 
+  ├── functions/ 
+  ├── lookups/ 
+  ├── outputs/ 
+  └── my-project_B.Rproj
 ```
 
-## Code style
+## Coding style
 
-- Use tidyverse packages by default unless constraints require alternative
+-   **Use tidyverse packages by default unless constraints require alternative.** It is a collection of [R packages](https://tidyverse.org/packages/) for data manipulation, visualisation, and analysis with consistent syntax and design. It makes code more readable and easier to maintain and supports good coding practices through clear structure and standard naming conventions.
 
-- Use tidyverse style guide
+-   **Set configurable parameters in a separate script.** Configuration refers to values or settings that control how a piece of code runs (e.g., file paths, parameters). This separates configuration from logic and makes it easier to update inputs without modifying the main code. It also improves readability and maintainability.
 
-- Set configurable parameters in a separate script
+-   **Load required packages in a separate script.** This makes updating and managing packages easier without having to modify multiple scripts. It also improves code clarity by showing which libraris are needed for the project.
 
-- Load required packages in a separate script
+-   **Functions unit tested using testthat package.** Testthat packages are widely used for testing in R. Test cases can be written in simple, readable syntax (e.g., `expect_equal()`, `expect_true()`), making it easy to verify that functions work correctly.
 
-- Functions unit tested using testthat package
+-   **Functions need to have appropriate error messaging.** Using TryCatch package allows error and warnings to be handled in a controlled way, with informative messaging instead of unexpected failures. This improves debugging, code usability, and maintainability.
 
-- Functions have appropriate error messaging (TryCatch package)
+-   **Use defined naming standards (e.g., verb-based function names, no special characters or spaces).** This ensures consistency and clarity across the codebase. Having clear and descriptive names makes it easier to understand what each function or variable does without additional explanation and keeps the [code readable](https://best-practice-and-impact.github.io/qa-of-code-guidance/readable_code.html#naming).
 
-- Use defined naming standards (e.g., verb-based function names, no special characters or spaces)
+-   Refer to the [Tidyverse Style Guide](https://style.tidyverse.org/) as a useful reference for coding standards.
 
 ## Documentation
 
-- Record package version requirements in a separate file using renv
+-   **Record package version requirements in a separate file using renv.** Since R packages are regularly updated, changes in package versions can affect results or cause code to break. Using renv ensures that package versions are locked and documented, allowing the analysis to be reproduced reliably in the future, even if package updates change behaviour.  
 
-- Functions documented using roxygen format
+-   **Document functions using roxygen format.** It keeps the format of [function documentation](https://best-practice-and-impact.github.io/qa-of-code-guidance/code_documentation.html) clear, structured and consisitent across the codebase and projects. 
 
-- Use code comments to explain why your code does what it does, and not just repeat what is already obvious from the code
+-   **Use code comments to explain why your code does what it does,** and not just repeat what is already obvious from the code
 
-- Don’t use comments to ‘disable’ code
+-   **Don’t use comments to ‘disable’ code.** This can make the script hard to read and maintain. It can also cause misunderstanding on what code is meant to be run. Unused code should be removed or use version control to keep track of changes made to the code.
 
-- Include a README
+-   **Include a README.** It provides a clear explanation for team members, helping them understand what the project does and how to use it effectively.
 
-- Include desk instructions
+-   **Include desk instructions.** This provides practical guidance on how to run, update, and maintain the project. It can include information on setting up the environment, running script, updating data, and also troubleshooting issues.
+
+For reference [Duck Book](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html) is a great resource to refer to for useful guidelines on code documentation, version control, peer review, and much more.
+
+

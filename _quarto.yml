@@ -17,6 +17,7 @@ website:
       - section: Guidance
         href: guidance/index.qmd
         contents:
+        - guidance/coding-standards.qmd
         - guidance/test.qmd
       - section: Training
         href: training/index.qmd
