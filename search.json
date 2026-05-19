@@ -4,7 +4,7 @@
     "href": "training/index.html",
     "title": "Training",
     "section": "",
-    "text": "This site is new and currently under development. Your feedback will help us improve it.\n\n\n\nThis section is in development.",
+    "text": "This section is in development.",
     "crumbs": [
       "Training"
     ]
@@ -14,7 +14,7 @@
     "href": "rap-in-nrs/rap-support.html",
     "title": "Working with the RAP Development team",
     "section": "",
-    "text": "This site is new and currently under development. Your feedback will help us improve it.\nOur goal in NRS is for RAP to be the default approach to analysis. To achieve this goal, we will:",
+    "text": "Our goal in NRS is for RAP to be the default approach to analysis. To achieve this goal, we will:",
     "crumbs": [
       "RAP in NRS",
       "RAP Support"
@@ -58,7 +58,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "This site is new and currently under development. Your feedback will help us improve it.\n\n\n\n\nBuilding Process Maps slides for RAP Show & Tidy presentation on 13th May 2026.",
+    "text": "Building Process Maps slides for RAP Show & Tidy presentation on 13th May 2026.",
     "crumbs": [
       "Blog"
     ]
@@ -68,7 +68,7 @@
     "href": "guidance/process-mapping.html",
     "title": "Process Mapping",
     "section": "",
-    "text": "This site is new and currently under development. Your feedback will help us improve it.\nThis document introduces process mapping and explains why it is a useful tool for documenting and improving analytical processes. Process maps provide a clear, visual overview of how data flows from inputs through processing and analysis to final outputs. They support transparency, shared understanding, and more efficient ways of working. They can also support work within existing SAS projects, help teams track and document their analytical pipeline, and provide a clear foundation when transitioning to open‑source tools.",
+    "text": "This document introduces process mapping and explains why it is a useful tool for documenting and improving analytical processes. Process maps provide a clear, visual overview of how data flows from inputs through processing and analysis to final outputs. They support transparency, shared understanding, and more efficient ways of working. They can also support work within existing SAS projects, help teams track and document their analytical pipeline, and provide a clear foundation when transitioning to open‑source tools.",
     "crumbs": [
       "Guidance",
       "Process Mapping"
@@ -134,7 +134,7 @@
     "href": "index.html",
     "title": "NRS RAP Book",
     "section": "",
-    "text": "This site is new and currently under development. Your feedback will help us improve it.\n\n\n\nThis book contains information on developing Reproducible Analytical Pipelines (RAPs) in National Records of Scotland (NRS).\nThe content has been developed by the RAP Development team, who joined NRS in 2026. The team’s role is to lead the implementation of RAP across statistics and analysis production in NRS.\nPlease get in touch with the RAP Development team if you have any feedback or questions.",
+    "text": "This book contains information on developing Reproducible Analytical Pipelines (RAPs) in National Records of Scotland (NRS).\nThe content has been developed by the RAP Development team, who joined NRS in 2026. The team’s role is to lead the implementation of RAP across statistics and analysis production in NRS.\nPlease get in touch with the RAP Development team if you have any feedback or questions.",
     "crumbs": [
       "Home"
     ]
@@ -200,7 +200,7 @@
     "href": "rap-in-nrs/why-rap.html",
     "title": "Why RAP?",
     "section": "",
-    "text": "This site is new and currently under development. Your feedback will help us improve it.\n\n\n\nReproducible Analytical Pipelines (RAPs) are analytical processes that have been developed in a way that promotes reproducibility, efficiency and quality.\nSome common examples of a RAP approach in practice are:\n\nUsing open-source software (e.g. R or Python) over proprietary software (e.g. SAS)\nAutomating tasks where possible to minimise manual steps\nUsing version control software (e.g. Git) to create an audit trail of changes\nGood documentation stored in the same place as the code\nRegular peer review of code to improve quality and shared understanding\nBuilt in quality assurance to give early indication of problems\n\nThese are just some examples, however there are many more that could be applied depending on the requirements of the project.\nIt is important to note that RAP is not all or nothing, or once and done. You do not need to apply all possible RAP principles to achieve benefits, and improvements should be an ongoing process. Adopting a RAP approach will involve some quick wins, some up-front investment for bigger long-term gains, and continuous improvement.\nYou can read more about RAP and examples of good practice on the Government Analysis Function website.\nEmbedding a RAP approach in NRS will help us to:\n\nTransition from SAS to Open Source software\nImprove efficiency of processes to free up time for other work\nEnsure processes are well understood, easy to maintain and robust to staff changes\n\nTeams may already be following some RAP principles in existing SAS processes. However, transitioning from SAS to open-source software will offer further opportunities to strengthen this approach and realise more benefits.",
+    "text": "Reproducible Analytical Pipelines (RAPs) are analytical processes that have been developed in a way that promotes reproducibility, efficiency and quality.\nSome common examples of a RAP approach in practice are:\n\nUsing open-source software (e.g. R or Python) over proprietary software (e.g. SAS)\nAutomating tasks where possible to minimise manual steps\nUsing version control software (e.g. Git) to create an audit trail of changes\nGood documentation stored in the same place as the code\nRegular peer review of code to improve quality and shared understanding\nBuilt in quality assurance to give early indication of problems\n\nThese are just some examples, however there are many more that could be applied depending on the requirements of the project.\nIt is important to note that RAP is not all or nothing, or once and done. You do not need to apply all possible RAP principles to achieve benefits, and improvements should be an ongoing process. Adopting a RAP approach will involve some quick wins, some up-front investment for bigger long-term gains, and continuous improvement.\nYou can read more about RAP and examples of good practice on the Government Analysis Function website.\nEmbedding a RAP approach in NRS will help us to:\n\nTransition from SAS to Open Source software\nImprove efficiency of processes to free up time for other work\nEnsure processes are well understood, easy to maintain and robust to staff changes\n\nTeams may already be following some RAP principles in existing SAS processes. However, transitioning from SAS to open-source software will offer further opportunities to strengthen this approach and realise more benefits.",
     "crumbs": [
       "RAP in NRS",
       "Why RAP?"
@@ -211,7 +211,7 @@
     "href": "rap-in-nrs/getting-started.html",
     "title": "Getting started",
     "section": "",
-    "text": "This site is new and currently under development. Your feedback will help us improve it.\n\n\n\nWhile the RAP Development team won’t be able to work closely with all teams right away, there are steps teams should take to get started on RAP development.\n\nDevelop process maps for each analytical output. These will be useful to help understand existing SAS processes, highlight areas for improvement and plan RAP development work. We have written guidance and produced an example map to help you get started.\nConsider R training needs in your team.\n\nContact the NRS Learning & Development team to find out about upcoming training courses on offer in NRS.\nReview the Scottish Government R training on offer and keep an eye on the OCS newsletter for other opportunities.\n\nConsider whether there are any technical barriers to your team using the current R environment on NRScotland (e.g. data access, memory constraints) and raise these with the RAP Development team.\nThink about other planned or potential changes to your analysis and how this might impact RAP development. For example, consider proposed changes of the publication review work.\nFollow coding good practices when writing R code. We will develop more thorough guidance for NRS soon, but this is a good place to start.\nAttend RAP Show and Tidy sessions to learn from others and consider presenting your own development work (no matter how big or small!)\nFamiliarise yourself with existing RAP resources:\n\nGovernment Analysis Function RAP Guidance\nRAP Self Assessment Tool\nQuality Assurance of Code for Analysis and Research (Duck Book)",
+    "text": "While the RAP Development team won’t be able to work closely with all teams right away, there are steps teams should take to get started on RAP development.\n\nDevelop process maps for each analytical output. These will be useful to help understand existing SAS processes, highlight areas for improvement and plan RAP development work. We have written guidance and produced an example map to help you get started.\nConsider R training needs in your team.\n\nContact the NRS Learning & Development team to find out about upcoming training courses on offer in NRS.\nReview the Scottish Government R training on offer and keep an eye on the OCS newsletter for other opportunities.\n\nConsider whether there are any technical barriers to your team using the current R environment on NRScotland (e.g. data access, memory constraints) and raise these with the RAP Development team.\nThink about other planned or potential changes to your analysis and how this might impact RAP development. For example, consider proposed changes of the publication review work.\nFollow coding good practices when writing R code. We will develop more thorough guidance for NRS soon, but this is a good place to start.\nAttend RAP Show and Tidy sessions to learn from others and consider presenting your own development work (no matter how big or small!)\nFamiliarise yourself with existing RAP resources:\n\nGovernment Analysis Function RAP Guidance\nRAP Self Assessment Tool\nQuality Assurance of Code for Analysis and Research (Duck Book)",
     "crumbs": [
       "RAP in NRS",
       "Getting started"
