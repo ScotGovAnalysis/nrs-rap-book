@@ -2,4 +2,10 @@
 title: "NRS RAP Book"
 ---
 
-This is the home page.
+{{< include _under-development.qmd >}}
+
+This book contains information on developing Reproducible Analytical Pipelines (RAPs) in National Records of Scotland (NRS).
+
+The content has been developed by the RAP Development team, who joined NRS in 2026. The team's role is to lead the implementation of RAP across statistics and analysis production in NRS. 
+
+Please [get in touch with the RAP Development team](mailto:rap.development@nrscotland.gov.uk) if you have any feedback or questions.
