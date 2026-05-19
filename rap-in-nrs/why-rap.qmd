@@ -2,8 +2,6 @@
 title: "Why RAP?"
 ---
 
-{{< include ../_under-development.qmd >}}
-
 Reproducible Analytical Pipelines (RAPs) are analytical processes that have been developed in a way that promotes reproducibility, efficiency and quality. 
 
 Some common examples of a RAP approach in practice are:

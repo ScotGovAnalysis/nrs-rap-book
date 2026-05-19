@@ -2,8 +2,6 @@
 title: "Process Mapping"
 ---
 
-{{< include ../_under-development.qmd >}}
-
 This document introduces process mapping and explains why it is a useful tool
 for documenting and improving analytical processes. Process maps provide a
 clear, visual overview of how data flows from inputs through processing and

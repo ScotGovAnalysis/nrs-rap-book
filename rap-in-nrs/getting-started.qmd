@@ -2,8 +2,6 @@
 title: "Getting started"
 ---
 
-{{< include ../_under-development.qmd >}}
-  
 While the RAP Development team won’t be able to work closely with all teams right away, there are steps teams should take to get started on RAP development. 
 
 * [Develop process maps](../guidance/process-mapping.html) for each analytical output. These will be useful to help understand existing SAS processes, highlight areas for improvement and plan RAP development work. We have [written guidance and produced an example map](../guidance/process-mapping.html) to help you get started.

@@ -2,6 +2,4 @@
 title: "Training"
 ---
 
-{{< include ../_under-development.qmd >}}
-
 This section is in development.

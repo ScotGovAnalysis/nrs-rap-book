@@ -2,8 +2,6 @@
 title: "Working with the RAP Development team"
 ---
 
-{{< include ../_under-development.qmd >}}
-
 Our goal in NRS is for RAP to be the default approach to analysis. To achieve this goal, we will:
 
 * Convert existing SAS processes into R following a RAP approach
