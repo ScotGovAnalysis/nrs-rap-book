@@ -1,7 +1,8 @@
 ---
 title: "Process Mapping"
-editor: visual
 ---
+
+{{< include ../_under-development.qmd >}}
 
 This document introduces process mapping and explains why it is a useful tool
 for documenting and improving analytical processes. Process maps provide a
@@ -131,4 +132,5 @@ revisit and edit them later. You can also export them as images (.png) or PDF
 files. However, exported versions cannot be edited, so make sure to keep the
 original Visio file for any future updates.
 
-For more guidance on using Visio, please refer to these [slides on building process maps](../blog/2026-05-13_process-maps/slides.html).
+For more guidance on using Visio, please refer to these [slides on building
+process maps](../blog/2026-05-13_process-maps/slides.html).
