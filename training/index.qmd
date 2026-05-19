@@ -2,9 +2,6 @@
 title: "Training"
 ---
 
-This is the Training index page.
+{{< include ../_under-development.qmd >}}
 
-Ideas for this section:
-
-* Git
-* Azure DevOps
+This section is in development.
