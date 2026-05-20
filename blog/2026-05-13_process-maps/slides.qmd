@@ -6,7 +6,7 @@ format:
     background-transition: fade
 ---
 
-## ![](images/Building-Process-Maps-Title.png){fig-alt="A flow chart reading building process maps" fig-align="center"}
+## ![](title-page.png){fig-alt="A flow chart reading building process maps" fig-align="center"}
 
 ## What is a process map?
 
@@ -41,25 +41,25 @@ Using NHSCR - Migration Extract as an example
 
 -   Visio is available as part of the Microsoft 365 suite
 
-![NHSCR - Migration Extract](images/Migration%20Extract.png){fig-alt="A process map diagram depicting a key in the upper left hand, and the process of creating the NHSCR extract on the right hand side."}
+![](nhscr-basic.png){fig-alt="A process map diagram depicting a key in the upper left hand, and the process of creating the NHSCR extract on the right hand side."}
 
 ## Building a process map
 
 Completed maps can be used to scope and plan RAP projects.
 
-![](images/Migration%20Extract%20-%20for%20presentation.png){fig-alt="Like the above image however several boxes are highlighted to indicate areas of redundancy within the initial process map"}
+![](nhscr-annotated.png){fig-alt="Like the above image however several boxes are highlighted to indicate areas of redundancy within the initial process map"}
 
 ## A further example
 
-![](images/NSHRC_ProcessMap.png){fig-alt="The full scale NHSCR process map to highlight the complexity that some maps can develop into"}
+![](nhscr-full.png){fig-alt="The full scale NHSCR process map to highlight the complexity that some maps can develop into"}
 
-## ![](images/Any-questions-slide.png){fig-alt="Flow charts asking Any questions" fig-align="center"}
+## ![](any-questions.png){fig-alt="Flow charts asking Any questions" fig-align="center"}
 
-##Where to find Visio
+## Where to find Visio
 
 Through the SCOTS Microsoft365 (or M365) account we have access to the online version of Visio, Microsoft's flowchart building software.
 
-It can easily be located via the NRS home page by clicking the 9 dots at the top left hand side of the screen. From there you can use the search bar and type Visio or you can click `More Apps` scrolling to the bottom of the page to find the Visio icon.
+It can easily be located via the NRS Saltire home page by clicking the 9 dots at the top left hand side of the screen. From there you can use the search bar and type Visio or you can click `More Apps` scrolling to the bottom of the page to find the Visio icon.
 
 Starting a new template document will give you a standard palette of shapes to get starting in building your process map.
 
@@ -69,6 +69,6 @@ Starting a new template document will give you a standard palette of shapes to g
 
 First identify fixed constants
 
-![](images/fixed-points-in-journey.png){fig-alt="A simple flowchart with an input and output" fig-align="center" width="441"}
+![](fixed-points-in-journey.png){fig-alt="A simple flowchart with an input and output" fig-align="center" width="441"}
 
 Ask what changes are required to convert input into desired output. Add each major change to the map as an element. You can build on the detail, using different shapes, colours or expanding the map.
