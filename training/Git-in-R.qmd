@@ -9,9 +9,9 @@ DevOps to allowing you to maintain clear versions of all coding projects.
 
 ## Explaining the Jargon
 
-All version control tools come with a set of jargon. in this section we aim to
+All version control tools come with a set of jargon. In this section we aim to
 break down what each of those terms mean and how they apply to using git within
-github or Azure Devops.
+Github or Azure DevOps.
 
 ### Repository or Repo
 
@@ -24,7 +24,7 @@ directory* refers to the project directory stored on the working machine. Such
 as within shared file storage, network drive or laptops C: drive. It is the
 directory in which you will be working and saving your files.
 
-***Remote*** - is hosted on platforms such as Github or Azure Devops. It is
+***Remote*** - The remote repository is hosted on platforms such as Github or Azure DevOps. It is
 primarily used for backup and collaboration. It is usually what is known as a
 *bare directory* containing git files, history and metadata but not working
 files
@@ -40,22 +40,22 @@ If the remote repository has already been initiated you
 For more information on project structure refer to page:
 
 -   Coding standards
--   Guide to Devops
+-   Guide to DevOps
 
 ### Branches
 
 Every new repository will be created with an origin branch know as ***main*** or
-***master***. This is branch should be used to store the final or stable, ready
+***master***. This branch should be used to store the final or stable, ready
 for use, version of the code.
 
-Therefore it is code coding practice to develop code on a working branch. This
+Therefore it is good coding practice to develop code on a working branch. This
 is particularly good practice when working in teams as it allows every team
 member to work within their own branch and reduces risk of overwriting stable
 code and introducing bugs and errors to the main code line while they are
 developing. Once development is concluded the branch can be merged into the main
 stable codebase. Branches can also be used to test fixes for bugs.
 
-To create a new branch locally and move onto that branch you can run the
+To create a new branch locally and move into that branch you can run the
 command:
 
 `git checkout -b <name>`
@@ -82,17 +82,17 @@ sections](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git)](https://g
 
 There are three main states any file can exist within:
 
-***modified -*** files that have been add, removed, edited within the working
+***modified -*** Files that have been add, removed, edited within the working
 directory.
 
-***staged -*** selected changes are temporarily recorded or ***indexed*** before
+***staged -*** Selected changes are temporarily recorded or ***indexed*** before
 they are committed to the git directory which stores the metadata and objects
 associated with the modifications that have been staged. To stage files you use
 the command:
 
 `git add`
 
-***committed -*** committing takes files recorded in the staging area and stores
+***committed -*** Committing takes files recorded in the staging area and stores
 a ***snapshot*** permanently within the git directory. Each commit is assigned a
 ***hash*** code that allows you to access the snapshot. Therefore if you want to
 roll-back to a particular snapshot you can access it via its hash code. Staged
@@ -141,10 +141,10 @@ git pull
 #To create a new local branch 
 git checkout -b name
 
-#Move onto a branch 
+#Move into a branch 
 
 
-#Link a locale branch to the remote branch
+#Link a local branch to the remote branch
 git push --set-upstream origin name
 
 #To stage all modified files
