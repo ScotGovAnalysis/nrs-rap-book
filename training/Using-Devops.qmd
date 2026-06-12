@@ -51,14 +51,14 @@ colleagues to view.
 ### Overview
 
 The `Overview` panel aims to provide quick access to top level information about
-the project. This is where you can add a summary of the project, view team
-members and the general activity within the project will be listed within the
+the project. This is where you can add a summary of the project and view team
+members. The general activity within the project will also be listed within the
 Summary section.
 
 ### Boards
 
 This panel is for project planning, team and task management, management of bug fixes and pull
-requests.
+requests. Each board is catagorised into a number of work items. These seperate tasks by specific elements to aid in organisation within a team.  The work items are as follows:
 
 #### *Work items*
 
