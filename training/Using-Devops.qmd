@@ -36,7 +36,7 @@ panel is to facilitate production pipelines for software release, integrating
 with the `Test Plans` panel to facilitate the CI/CD schedule. It allows for team
 testers to collaborate with feature developers in a cohesive manner.
 
-These panels are not to be confuse with Reproducible Analytical Pipelines (RAPs)
+These panels are not to be confused with Reproducible Analytical Pipelines (RAPs)
 and within code testing of features. Instead they are used for production
 guidance and external stress-testing of the software before deployment.
 
@@ -57,7 +57,7 @@ Summary section.
 
 ### Boards
 
-For project planning, team and task management, management of bug fixes and pull
+This panel is for project planning, team and task management, management of bug fixes and pull
 requests.
 
 #### *Work items*
@@ -71,7 +71,7 @@ The tags can be broken down into different categories:
 ***Bug*** - An error found within the code that causes it not to produce the
 intended consequences. These can be as small as misspellings or not producing
 outcomes to visual intentions to more severe consequences such as security risks
-etc.. This tag can be sued to highlight known issues that are queued to be
+etc. This tag can be sued to highlight known issues that are queued to be
 fixed.
 
 ***Epic*** - Denotes a piece of work that is of *High Importance*. Usually, a
@@ -84,7 +84,7 @@ tag](figures/Devops/Devops-Figure3.png){fig-alt="A table showing Title: [Crown e
 This tag can be used to highlight the overarching steps on a process map or
 goals that a developer team may have.
 
-***Feature*** - describes the development of functional pieces of work. The
+***Feature*** - Describes the development of functional pieces of work. The
 following example shows three Feature work items that may be part of the epic
 tag above.
 
@@ -222,5 +222,5 @@ approved the branch can then be merged with the main branch from inside the pull
 request.
 
 For more information on Pull requests you can find more information on both
-making and responding to pull requests in both github and Azure devops within
+making and responding to pull requests in both Github and Azure DevOps within
 the \[Working with Pull request\]() page.
