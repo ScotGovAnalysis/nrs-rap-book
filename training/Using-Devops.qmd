@@ -10,13 +10,13 @@ Azure DevOps opens at the `Collections` landing page. Each collection you have
 access to will appear on the left hand side of the screen.
 
 Inside each collection is a Dashboard which gives access to the Projects within
-that collection, displayed as project cards, your assigned work items and any
+that collection (displayed as project cards), your assigned work items and any
 pull requests you have made or have been assigned to as a reviewer.
 
 ![Collections landing page in Azure
 DevOps](figures/Devops/Devops-figure1.png){fig-align="center"}
 
-## Project page
+## Project Page
 
 ::: img-float
 ![Project side
@@ -26,10 +26,10 @@ bar](figures/Devops/Devops-Figure2.png){style="float: right; margin: 5px;"}
 When opening a project you will find a side bar with several options and tools.
 
 For most projects only the `Overview` panel, `Boards` and `Repos` tools will be
-relevant, and they are explored in more details below.
+relevant, and they are explored in more detail below.
 
 The remaining three panels facilitate the continuous integration, continuous
-delivery (CI/CD) software development. Therefore , they are of use for projects
+delivery (CI/CD) software development. Therefore, they are of use for projects
 that are releasing a software product that is continuously adding and improving
 features, releasing patches, and new versions of the software. The `Pipelines`
 panel is to facilitate production pipelines for software release, integrating
@@ -44,7 +44,7 @@ The `Artifacts` is a small internal repository aimed at storing small elements
 of code - such as snippets, for use as an internal package repository for teams
 working together. Due to the nature of Azure and how it communicates within the
 Integrated Development Environments (IDEs), such as R studio, that are available
-within the virtual machine architecture, the Artifacts tab cannot be untalised
+within the virtual machine architecture, the Artifacts tab cannot be utilised
 to its full effect. However, it is a good place to make small coding notes for
 colleagues to view.
 
@@ -58,7 +58,7 @@ Summary section.
 ### Boards
 
 This panel is for project planning, team and task management, management of bug fixes and pull
-requests. Each board is catagorised into a number of work items. These seperate tasks by specific elements to aid in organisation within a team.  The work items are as follows:
+requests. Each board is categorised into a number of work items. These separate tasks by specific elements to aid in organisation within a team. The work items are as follows:
 
 #### *Work items*
 
@@ -69,9 +69,7 @@ progress and current thinking to help with cooperation across the project.
 The tags can be broken down into different categories:
 
 ***Bug*** - An error found within the code that causes it not to produce the
-intended consequences. These can be as small as misspellings or not producing
-outcomes to visual intentions to more severe consequences such as security risks
-etc. This tag can be sued to highlight known issues that are queued to be
+intended consequences. These can range from minor issues, such as typos or small visual discrepancies, to more serious problems like incorrect functionality or potential security vulnerabilities. This tag can be sued to highlight known issues that are queued to be
 fixed.
 
 ***Epic*** - Denotes a piece of work that is of *High Importance*. Usually, a
@@ -85,7 +83,7 @@ This tag can be used to highlight the overarching steps on a process map or
 goals that a developer team may have.
 
 ***Feature*** - Describes the development of functional pieces of work. The
-following example shows three Feature work items that may be part of the epic
+following example shows three Feature work items that may be part of the Epic
 tag above.
 
 ![Examples of Features tag](figures/Devops/Devops-Figure4.png)\
@@ -96,11 +94,11 @@ levels to help break down and assign workload between colleagues.\
 
 ***Test Case*** - This is a step-by-step guide breaking down the testing of the
 Project Features. This allows for the testers to continually check the
-functionality of the code and how it preforms alongside the elements set out in
+functionality of the code and how it performs alongside the elements set out in
 the *Epic* and User Story tags.\
 
 ***User Story*** - Describes the build from the perspective of the user and how
-they would use and implement the code.  This helps you think about the end user
+they would use and implement the code. This helps you think about the end user
 when developing the code, asking questions on how they would interact with the
 code and its outcomes.
 
@@ -116,12 +114,12 @@ width="224"}
 
 Within the Repos tab you can manage your code base, through tracking commits,
 pushes and pull requests. It is the viewing portal for the remote repository of
-the version control infrastructure.These features communicate with you
-Integrated Development Environment (IDE), an example of which is R studio, where
+the version control infrastructure. These features communicate with your
+Integrated Development Environment (IDE), an example of which is RStudio, where
 the development and testing of the code will be done, via Git. Git is an open
 source version control tool that allows you to maintain clear and backed up
-versions of all coding projects. For more information on using Git within the R
-environment, can be found on the page \[Using Git in R\]()
+versions of all coding projects. More information on using Git within the R
+environment can be found on the page \[Using Git in R\]()
 
 #### Files tab
 
@@ -132,16 +130,16 @@ width="350"}
 :::
 
 You can open and view all files pushed to your remote repository within the
-files tab. You can also find links for cloning and/or forking the repository.
-For each file you can view the contents of the file., in the Contents tab.
+Files tab. You can also find links for cloning and/or forking the repository.
+For each file, you can view its contents in the Contents pane located at the top.
 
-The History tab shows the history of changes made to the file, listing the
+The History pane shows the history of changes made to the file, listing the
 associated commit, the type of change and any associated pull requests. You can
-directly access the compare tag for a specific commit from the history table or
-from within the compare tab. You can select which commits you want to compare.
+directly access the Compare pane for a specific commit from the history table or
+from within the Compare tab. You can select which commits you want to compare.
 The changes can either be viewed side by side or in-line.
 
-The final tab is the Blame tab. This highlights which bits of the code have been
+The final pane is the Blame pane. This highlights which bits of the code have been
 edited, when they were pushed to the repository and by which team member.
 
 ::: callout-note
@@ -158,36 +156,29 @@ graph](figures/Devops/Devops-Figure8.png){style="float: left; margin: 5px;"
 width="200"}
 :::
 
-Commits tab shows both the list of commits made to the repository but also
-displays it in graphical format known as a commit graph. This allows you to
-explore the branches, commits and merges throughout the project, in a visual
-fashion.
+The Commits tab shows a list of all commits made to the repository and also presents them in a visual format known as a commit graph. This makes it easy to explore the project’s branches, commits, and merges in a clear, graphical way.
 
 The tab also allows you to filter the commits by author, date and status. Once
 you have located a commit of interest you can explore and compare the changes
-made in the commit. Exploring the files, the dates and times of actions made on
-the files within that commit. You can also make comments, branch from or roll
+made in the commit. You can also make comments, branch from or roll
 back to that commit.
 
 #### Pushes tab
 
-Similar to the Commits tab it allows you to explore the pushes made to the
+Similar to the Commits tab, the Pushes tab allows you to explore the pushes made to the
 repository and the commits within those pushes.
 
-More information in the difference between commits and pushes you can be found
+More information in the difference between commits and pushes can be found
 on the page \[Using Git in R\]() in the Understanding the Jargon section.
 
-#### Branches
+#### Branches tab
 
-Branches function as seperate workspaces for each team member, changes can be
-made to the code and ideas can be tested without affecting the main project. It
-allows multiple team members to work on the code base without it effecting the
-existing code base.
+Branches function as separate workspaces for each team member, changes can be
+made to the code and ideas can be tested without affecting the main project. Branches enable multiple team members to work on the codebase simultaneously without affecting the existing code.
 
-From the branches tab you can observe which branches are operational, which may
-have been merged into the code base or those that may have been abandoned (known
-as stale branches). You can also see how ahead the main branch is in number of
-commits to the main branch. And any pull requests associated with the branch.
+From the Branches tab you can observe which branches are operational, which branches may
+have been merged into the codebase, or those that may have been abandoned (known
+as stale branches). You can also see how many commits a branch is ahead or behind the main branch, along with any pull requests associated with the branch.
 New remote branches can also be created from this tab. Once a new remote branch
 has been created you will need to 'checkout\` to the branch within the local
 repository. For information on navigating branches in Git see the page \[Using
@@ -198,14 +189,14 @@ developer. It separates working code from developmental code which in turn
 allows for ease of roll backs. Further information on good coding practices can
 be found in the guidance page - \[Coding Standards page\]()
 
-#### Pull requests
+#### Pull requests tab
 
-Pull requests are a collaborative tool allowing you to submit proposed changed
-to the overall code base. They are an essential part of good coding practice
+Pull requests are a collaborative tool allowing you to submit proposed changes
+to the overall code base. They are an essential part of good coding practice,
 especially when working on ongoing projects or within a team. Before a piece of
 work can be moved from a branch to the main code, it must first go through a
 code review process. This is where peers will review the code, and is an
-opportunity to spot any typo's, regions where code can be made more efficient or
+opportunity to spot any typos, regions where code can be made more efficient, or
 tidied to match the group coding style. Once you have completed work within a
 branch on the repository you can create a pull request from either inside the
 branch or via the pull request tab.
@@ -214,13 +205,13 @@ branch or via the pull request tab.
 request](figures/Devops/Devops-figure9.png){fig-align="center"}
 
 Within the pull request screen you can assign reviewers, both required and
-Optional. As virtual machine is not connected to the internet it will not
+optional. As the virtual machine is not connected to the internet, it will not
 automatically notify reviewers. Any assigned reviewers will have to be notified
 manually. Comments and discussions of the work can also be made within the
 overview or within individual files. Once all changes have been made and
 approved the branch can then be merged with the main branch from inside the pull
 request.
 
-For more information on Pull requests you can find more information on both
-making and responding to pull requests in both Github and Azure DevOps within
+For more information on pull requests you can find more information on both
+making and responding to pull requests in both GitHub and Azure DevOps within
 the \[Working with Pull request\]() page.
