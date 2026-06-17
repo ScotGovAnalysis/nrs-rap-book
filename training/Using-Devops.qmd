@@ -29,24 +29,10 @@ For most projects only the `Overview` panel, `Boards` and `Repos` tools will be
 relevant, and they are explored in more detail below.
 
 The remaining three panels facilitate the continuous integration, continuous
-delivery (CI/CD) software development. Therefore, they are of use for projects
-that are releasing a software product that is continuously adding and improving
-features, releasing patches, and new versions of the software. The `Pipelines`
-panel is to facilitate production pipelines for software release, integrating
-with the `Test Plans` panel to facilitate the CI/CD schedule. It allows for team
-testers to collaborate with feature developers in a cohesive manner.
+delivery (CI/CD) software development. Therefore, the Pipelines, Test Plans and Artifacts tabs are not discussed in this training document.
 
-These panels are not to be confused with Reproducible Analytical Pipelines (RAPs)
-and within code testing of features. Instead they are used for production
-guidance and external stress-testing of the software before deployment.
-
-The `Artifacts` is a small internal repository aimed at storing small elements
-of code - such as snippets, for use as an internal package repository for teams
-working together. Due to the nature of Azure and how it communicates within the
-Integrated Development Environments (IDEs), such as R studio, that are available
-within the virtual machine architecture, the Artifacts tab cannot be utilised
-to its full effect. However, it is a good place to make small coding notes for
-colleagues to view.
+[!IMPORTANT]
+The Pipeline and Testing panels are not to be confused with Reproducible Analytical Pipelines (RAPs). Instead they are used for production guidance and external stress-testing of the software before deployment.
 
 ### Overview
 
