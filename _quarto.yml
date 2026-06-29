@@ -3,6 +3,11 @@ project:
 
 website:
   title: "NRS RAP Book"
+  announcement: 
+    icon: cone-striped
+    dismissable: false
+    content: "This site is new and currently under development. Your [feedback](mailto:rap.development@nrscotland.gov.uk) will help us improve it."
+    type: warning
   sidebar:
     style: "docked"
     collapse-level: 1
@@ -25,11 +30,10 @@ website:
         - training/Using-Devops.qmd
       - blog/index.qmd
 
+      - training/index.qmd
+      - blog/index.qmd
+      
 format:
   html:
     theme: cosmo
-    css: styles.css
     toc: true
-
-
-

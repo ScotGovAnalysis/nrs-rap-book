@@ -2,3 +2,34 @@
 title: "Why RAP?"
 ---
 
+Reproducible Analytical Pipelines (RAPs) are analytical processes that have been developed in a way that promotes reproducibility, efficiency and quality. 
+
+Some common examples of a RAP approach in practice are:
+
+* Using open-source software (e.g. R or Python) over proprietary software (e.g. SAS)
+
+* Automating tasks where possible to minimise manual steps
+
+* Using version control software (e.g. Git) to create an audit trail of changes
+
+* Good documentation stored in the same place as the code 
+
+* Regular peer review of code to improve quality and shared understanding
+
+* Built in quality assurance to give early indication of problems
+
+These are just some examples, however there are many more that could be applied depending on the requirements of the project. 
+
+It is important to note that RAP is not all or nothing, or once and done. You do not need to apply all possible RAP principles to achieve benefits, and improvements should be an ongoing process. Adopting a RAP approach will involve some quick wins, some up-front investment for bigger long-term gains, and continuous improvement.
+
+You can read more about RAP and examples of good practice on the [Government Analysis Function website](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/). 
+
+Embedding a RAP approach in NRS will help us to:
+
+* Transition from SAS to Open Source software
+
+* Improve efficiency of processes to free up time for other work
+
+* Ensure processes are well understood, easy to maintain and robust to staff changes
+
+Teams may already be following some RAP principles in existing SAS processes. However, transitioning from SAS to open-source software will offer further opportunities to strengthen this approach and realise more benefits. 

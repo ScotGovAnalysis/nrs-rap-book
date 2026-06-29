@@ -2,8 +2,8 @@
 
 ## Book development
 
-This book is currently in draft. We plan to build some basic documentation to
-share with statisticians in NRS. The book will then be a live work in progress.
+This book is new a live work in progress. We plan to build some basic documentation to
+share with statisticians in NRS.
 
 ## Repo structure
 
@@ -14,10 +14,7 @@ The book is split into 4 sections:
 -   Training
 -   Blog
 
-Content for each section is organised into its own folder in this repo, and has
-its own home page. For example, see `rap-in-nrs/index.qmd`. Additional pages for
-each section should be stored in these sub-folders. For example, see
-`rap-in-nrs/why-rap.qmd`.
+Content for each section is organised into its own folder in this repo. 
 
 ## Adding content
 
