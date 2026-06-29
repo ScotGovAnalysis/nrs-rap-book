@@ -29,9 +29,6 @@ website:
         contents:
         - training/Using-Devops.qmd
       - blog/index.qmd
-
-      - training/index.qmd
-      - blog/index.qmd
       
 format:
   html:
