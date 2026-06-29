@@ -1,0 +1,48 @@
+---
+title: "Working with the RAP Development team"
+---
+
+Our goal in NRS is for RAP to be the default approach to analysis. To achieve this goal, we will:
+
+* Convert existing SAS processes into R following a RAP approach
+
+* Improve existing R processes by adopting a RAP approach
+
+## Defining our RAP approach
+
+To succeed in our goal, it is important we all have a shared understanding of what RAP is and what we mean by a ‘RAP approach’. We will do this by:
+
+* Running awareness sessions for all statisticians and managers
+
+* Sharing clear guidance, both technical and non-technical
+
+* Developing tools for use across teams to promote consistency
+
+## Project support
+
+Different teams and projects will require different levels of involvement from the RAP Development team. Support might look like this:
+
+* A RAP developer is embedded in a team to lead the planning and development of a RAP for a specific project. They train the statistics team to apply RAP principles and co-develop code to meet agreed standards.
+
+* RAP development is led by the statistics team with guidance from the RAP Development team through regular meetings and code review.
+
+* The statistics team engages with the RAP community, follows NRS guidance and contacts RAP Development team for ad-hoc support and advice when required.
+
+Our level of involvement and timing of when support is offered will vary from team to team depending on the following factors:
+
+| Factor | Light Support | Embedded Support |
+| ---- | ---- | ---- |
+| R & RAP skills | Strong skills | New to R |
+| Time available for development | Adequate time | Limited time |
+| Overall SAS workload | Small | Large |
+| Previous support from RAP Development team | Already supported | No prior support |
+
+We will arrange a session with each statistics team to discuss these factors, their current preparedness for RAP, plans for development, and support needs. By collecting this information from each team, we can begin to make a plan for the order we will work with teams, and what level of involvement will be most suitable. 
+
+## Planned projects
+
+The following projects have been identified as priorities for the RAP Development team:
+
+* **NHSCR Monthly Extract**: As there are currently no statisticians working in the NHSCR team, the RAP Development team have adopted their monthly extract SAS process as our first project. This will give us, as a team, the chance to develop our understanding of NRS systems and software, record our learnings, and once complete, present this as a case study of RAP best practice for other teams to learn from.
+
+* **Vital Events project TBD**: The Vital Events team have a large number of resource-intensive SAS processes. Therefore, we plan to engage with this team early to identify a project that will help develop skills and free up time for further development work.

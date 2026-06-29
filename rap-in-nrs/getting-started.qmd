@@ -1,0 +1,29 @@
+---
+title: "Getting started"
+---
+
+While the RAP Development team won’t be able to work closely with all teams right away, there are steps teams should take to get started on RAP development. 
+
+* [Develop process maps](../guidance/process-mapping.html) for each analytical output. These will be useful to help understand existing SAS processes, highlight areas for improvement and plan RAP development work. We have [written guidance and produced an example map](../guidance/process-mapping.html) to help you get started.
+
+* Consider R training needs in your team.
+
+  * Contact the NRS Learning & Development team to find out about upcoming training courses on offer in NRS.
+  
+  * Review the [Scottish Government R training](https://scotsconnect.sharepoint.com/sites/StatisticsGroup-Org-SG/SitePages/R-Resources.aspx#r-training) on offer and keep an eye on the OCS newsletter for other opportunities.
+  
+* Consider whether there are any technical barriers to your team using the current R environment on NRScotland (e.g. data access, memory constraints) and raise these with the RAP Development team.
+
+* Think about other planned or potential changes to your analysis and how this might impact RAP development. For example, consider proposed changes of the publication review work.
+
+* Follow [coding good practices](https://scotsconnect.sharepoint.com/sites/StatisticsGroup-Org-SG/SitePages/Coding-Good-Practice.aspx) when writing R code. We will develop more thorough guidance for NRS soon, but this is a good place to start.
+
+* Attend RAP Show and Tidy sessions to learn from others and consider presenting your own development work (no matter how big or small!)
+
+* Familiarise yourself with existing RAP resources:
+
+  * [Government Analysis Function RAP Guidance](https://analysisfunction.civilservice.gov.uk/support/reproducible-analytical-pipelines/)
+
+  * [RAP Self Assessment Tool](https://scotland.shinyapps.io/sg-rap-self-assessment/)
+
+  * [Quality Assurance of Code for Analysis and Research (Duck Book)](https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html)
