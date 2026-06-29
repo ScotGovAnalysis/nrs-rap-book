@@ -159,7 +159,7 @@ on the page \[Using Git in R\]() in the Understanding the Jargon section.
 
 #### Branches tab
 
-Branches function as separate workspaces for each team member, changes can be
+Branches provide isolated environments for developing and testing changes independently. Changes can be
 made to the code and ideas can be tested without affecting the main project. Branches enable multiple team members to work on the codebase simultaneously without affecting the existing code.
 
 From the Branches tab you can observe which branches are operational, which branches may
