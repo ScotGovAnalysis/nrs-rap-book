@@ -1,5 +1,27 @@
 [
   {
+    "objectID": "rap-in-nrs/getting-started.html",
+    "href": "rap-in-nrs/getting-started.html",
+    "title": "Getting started",
+    "section": "",
+    "text": "While the RAP Development team won’t be able to work closely with all teams right away, there are steps teams should take to get started on RAP development.\n\nDevelop process maps for each analytical output. These will be useful to help understand existing SAS processes, highlight areas for improvement and plan RAP development work. We have written guidance and produced an example map to help you get started.\nConsider R training needs in your team.\n\nContact the NRS Learning & Development team to find out about upcoming training courses on offer in NRS.\nReview the Scottish Government R training on offer and keep an eye on the OCS newsletter for other opportunities.\n\nConsider whether there are any technical barriers to your team using the current R environment on NRScotland (e.g. data access, memory constraints) and raise these with the RAP Development team.\nThink about other planned or potential changes to your analysis and how this might impact RAP development. For example, consider proposed changes of the publication review work.\nFollow coding good practices when writing R code. We will develop more thorough guidance for NRS soon, but this is a good place to start.\nAttend RAP Show and Tidy sessions to learn from others and consider presenting your own development work (no matter how big or small!)\nFamiliarise yourself with existing RAP resources:\n\nGovernment Analysis Function RAP Guidance\nRAP Self Assessment Tool\nQuality Assurance of Code for Analysis and Research (Duck Book)",
+    "crumbs": [
+      "RAP in NRS",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "rap-in-nrs/why-rap.html",
+    "href": "rap-in-nrs/why-rap.html",
+    "title": "Why RAP?",
+    "section": "",
+    "text": "Reproducible Analytical Pipelines (RAPs) are analytical processes that have been developed in a way that promotes reproducibility, efficiency and quality.\nSome common examples of a RAP approach in practice are:\n\nUsing open-source software (e.g. R or Python) over proprietary software (e.g. SAS)\nAutomating tasks where possible to minimise manual steps\nUsing version control software (e.g. Git) to create an audit trail of changes\nGood documentation stored in the same place as the code\nRegular peer review of code to improve quality and shared understanding\nBuilt in quality assurance to give early indication of problems\n\nThese are just some examples, however there are many more that could be applied depending on the requirements of the project.\nIt is important to note that RAP is not all or nothing, or once and done. You do not need to apply all possible RAP principles to achieve benefits, and improvements should be an ongoing process. Adopting a RAP approach will involve some quick wins, some up-front investment for bigger long-term gains, and continuous improvement.\nYou can read more about RAP and examples of good practice on the Government Analysis Function website.\nEmbedding a RAP approach in NRS will help us to:\n\nTransition from SAS to Open Source software\nImprove efficiency of processes to free up time for other work\nEnsure processes are well understood, easy to maintain and robust to staff changes\n\nTeams may already be following some RAP principles in existing SAS processes. However, transitioning from SAS to open-source software will offer further opportunities to strengthen this approach and realise more benefits.",
+    "crumbs": [
+      "RAP in NRS",
+      "Why RAP?"
+    ]
+  },
+  {
     "objectID": "training/index.html",
     "href": "training/index.html",
     "title": "Training",
@@ -7,50 +29,6 @@
     "text": "This section is in development.",
     "crumbs": [
       "Training"
-    ]
-  },
-  {
-    "objectID": "rap-in-nrs/rap-support.html",
-    "href": "rap-in-nrs/rap-support.html",
-    "title": "Working with the RAP Development team",
-    "section": "",
-    "text": "Our goal in NRS is for RAP to be the default approach to analysis. To achieve this goal, we will:",
-    "crumbs": [
-      "RAP in NRS",
-      "RAP Support"
-    ]
-  },
-  {
-    "objectID": "rap-in-nrs/rap-support.html#defining-our-rap-approach",
-    "href": "rap-in-nrs/rap-support.html#defining-our-rap-approach",
-    "title": "Working with the RAP Development team",
-    "section": "Defining our RAP approach",
-    "text": "Defining our RAP approach\nTo succeed in our goal, it is important we all have a shared understanding of what RAP is and what we mean by a ‘RAP approach’. We will do this by:\n\nRunning awareness sessions for all statisticians and managers\nSharing clear guidance, both technical and non-technical\nDeveloping tools for use across teams to promote consistency",
-    "crumbs": [
-      "RAP in NRS",
-      "RAP Support"
-    ]
-  },
-  {
-    "objectID": "rap-in-nrs/rap-support.html#project-support",
-    "href": "rap-in-nrs/rap-support.html#project-support",
-    "title": "Working with the RAP Development team",
-    "section": "Project support",
-    "text": "Project support\nDifferent teams and projects will require different levels of involvement from the RAP Development team. Support might look like this:\n\nA RAP developer is embedded in a team to lead the planning and development of a RAP for a specific project. They train the statistics team to apply RAP principles and co-develop code to meet agreed standards.\nRAP development is led by the statistics team with guidance from the RAP Development team through regular meetings and code review.\nThe statistics team engages with the RAP community, follows NRS guidance and contacts RAP Development team for ad-hoc support and advice when required.\n\nOur level of involvement and timing of when support is offered will vary from team to team depending on the following factors:\n\n\n\n\n\n\n\n\nFactor\nLight Support\nEmbedded Support\n\n\n\n\nR & RAP skills\nStrong skills\nNew to R\n\n\nTime available for development\nAdequate time\nLimited time\n\n\nOverall SAS workload\nSmall\nLarge\n\n\nPrevious support from RAP Development team\nAlready supported\nNo prior support\n\n\n\nWe will arrange a session with each statistics team to discuss these factors, their current preparedness for RAP, plans for development, and support needs. By collecting this information from each team, we can begin to make a plan for the order we will work with teams, and what level of involvement will be most suitable.",
-    "crumbs": [
-      "RAP in NRS",
-      "RAP Support"
-    ]
-  },
-  {
-    "objectID": "rap-in-nrs/rap-support.html#planned-projects",
-    "href": "rap-in-nrs/rap-support.html#planned-projects",
-    "title": "Working with the RAP Development team",
-    "section": "Planned projects",
-    "text": "Planned projects\nThe following projects have been identified as priorities for the RAP Development team:\n\nNHSCR Monthly Extract: As there are currently no statisticians working in the NHSCR team, the RAP Development team have adopted their monthly extract SAS process as our first project. This will give us, as a team, the chance to develop our understanding of NRS systems and software, record our learnings, and once complete, present this as a case study of RAP best practice for other teams to learn from.\nVital Events project TBD: The Vital Events team have a large number of resource-intensive SAS processes. Therefore, we plan to engage with this team early to identify a project that will help develop skills and free up time for further development work.",
-    "crumbs": [
-      "RAP in NRS",
-      "RAP Support"
     ]
   },
   {
@@ -130,16 +108,6 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "NRS RAP Book",
-    "section": "",
-    "text": "This book contains information on developing Reproducible Analytical Pipelines (RAPs) in National Records of Scotland (NRS).\nThe content has been developed by the RAP Development team, who joined NRS in 2026. The team’s role is to lead the implementation of RAP across statistics and analysis production in NRS.\nPlease get in touch with the RAP Development team if you have any feedback or questions.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
     "objectID": "blog/2026-05-13_process-maps/slides.html#what-is-a-process-map",
     "href": "blog/2026-05-13_process-maps/slides.html#what-is-a-process-map",
     "title": "NRS RAP Book",
@@ -196,25 +164,90 @@
     "text": "Building a process map\n\nProcess maps can use existing code or be used to plan projects from the outset.\n\nFirst identify fixed constants\n\nAsk what changes are required to convert input into desired output. Add each major change to the map as an element. You can build on the detail, using different shapes, colours or expanding the map."
   },
   {
-    "objectID": "rap-in-nrs/why-rap.html",
-    "href": "rap-in-nrs/why-rap.html",
-    "title": "Why RAP?",
+    "objectID": "training/Using-Devops.html",
+    "href": "training/Using-Devops.html",
+    "title": "Using Azure Devops",
     "section": "",
-    "text": "Reproducible Analytical Pipelines (RAPs) are analytical processes that have been developed in a way that promotes reproducibility, efficiency and quality.\nSome common examples of a RAP approach in practice are:\n\nUsing open-source software (e.g. R or Python) over proprietary software (e.g. SAS)\nAutomating tasks where possible to minimise manual steps\nUsing version control software (e.g. Git) to create an audit trail of changes\nGood documentation stored in the same place as the code\nRegular peer review of code to improve quality and shared understanding\nBuilt in quality assurance to give early indication of problems\n\nThese are just some examples, however there are many more that could be applied depending on the requirements of the project.\nIt is important to note that RAP is not all or nothing, or once and done. You do not need to apply all possible RAP principles to achieve benefits, and improvements should be an ongoing process. Adopting a RAP approach will involve some quick wins, some up-front investment for bigger long-term gains, and continuous improvement.\nYou can read more about RAP and examples of good practice on the Government Analysis Function website.\nEmbedding a RAP approach in NRS will help us to:\n\nTransition from SAS to Open Source software\nImprove efficiency of processes to free up time for other work\nEnsure processes are well understood, easy to maintain and robust to staff changes\n\nTeams may already be following some RAP principles in existing SAS processes. However, transitioning from SAS to open-source software will offer further opportunities to strengthen this approach and realise more benefits.",
+    "text": "Azure DevOps opens at the Collections landing page. Each collection you have access to will appear on the left hand side of the screen.\nInside each collection is a Dashboard which gives access to the Projects within that collection (displayed as project cards), your assigned work items and any pull requests you have made or have been assigned to as a reviewer.\n\n\n\nCollections landing page in Azure DevOps\n\n\n\n\n\n\n\n\n\nProject side bar\n\n\n\nWhen opening a project you will find a side bar with several options and tools.\nFor most projects only the Overview panel, Boards and Repos tools will be relevant, and they are explored in more detail below.\nThe remaining three panels facilitate the continuous integration, continuous delivery (CI/CD) software development. Therefore, the Pipelines, Test Plans and Artifacts tabs are not discussed in this training document.\n[!IMPORTANT] The Pipeline and Testing panels are not to be confused with Reproducible Analytical Pipelines (RAPs). Instead they are used for production guidance and external stress-testing of the software before deployment.\n\n\nThe Overview panel aims to provide quick access to top level information about the project. This is where you can add a summary of the project and view team members. The general activity within the project will also be listed within the Summary section.\n\n\n\nThis panel is for project planning, team and task management, management of bug fixes and pull requests. Each board is categorised into a number of work items. These separate tasks by specific elements to aid in organisation within a team. The work items are as follows:\n\n\nWork items or tickets are used to break down required tasks within a project. You can use these tags to highlight, assign and keep track of tasks, project progress and current thinking to help with cooperation across the project.\nThe tags can be broken down into different categories:\nBug - An error found within the code that causes it not to produce the intended consequences. These can range from minor issues, such as typos or small visual discrepancies, to more serious problems like incorrect functionality or potential security vulnerabilities. This tag can be sued to highlight known issues that are queued to be fixed.\nEpic - Denotes a piece of work that is of High Importance. Usually, a large-scale element of the project that gives a broad overview. An Epic work item can be broken down into Features and User stories.\n\n\n\nExample of Epic tag\n\n\nThis tag can be used to highlight the overarching steps on a process map or goals that a developer team may have.\nFeature - Describes the development of functional pieces of work. The following example shows three Feature work items that may be part of the Epic tag above.\n\n\nTask - This tag can be used to break down any of the other tags into actionable items. A to-do list of tasks can be created at the feature and Epic levels to help break down and assign workload between colleagues.\n\nTest Case - This is a step-by-step guide breaking down the testing of the Project Features. This allows for the testers to continually check the functionality of the code and how it performs alongside the elements set out in the Epic and User Story tags.\n\nUser Story - Describes the build from the perspective of the user and how they would use and implement the code. This helps you think about the end user when developing the code, asking questions on how they would interact with the code and its outcomes.\n\n\n\nExample of a user story tag\n\n\n\n\n\n\n\n\n\n\nRepos menu\n\n\n\nWithin the Repos tab you can manage your code base, through tracking commits, pushes and pull requests. It is the viewing portal for the remote repository of the version control infrastructure. These features communicate with your Integrated Development Environment (IDE), an example of which is RStudio, where the development and testing of the code will be done, via Git. Git is an open source version control tool that allows you to maintain clear and backed up versions of all coding projects. More information on using Git within the R environment can be found on the page [Using Git in R]()\n\n\n\n\n\n\nFiles tab menu\n\n\n\nYou can open and view all files pushed to your remote repository within the Files tab. You can also find links for cloning and/or forking the repository. For each file, you can view its contents in the Contents pane located at the top.\nThe History pane shows the history of changes made to the file, listing the associated commit, the type of change and any associated pull requests. You can directly access the Compare pane for a specific commit from the history table or from within the Compare tab. You can select which commits you want to compare. The changes can either be viewed side by side or in-line.\nThe final pane is the Blame pane. This highlights which bits of the code have been edited, when they were pushed to the repository and by which team member.\n\n\n\n\n\n\nNote\n\n\n\nBlame is not a negative term within software development instead it records and displays the author of specific lines in a file, allowing for collaboration and integration within a team.\n\n\n\n\n\n\n\n\n\nExample of a commit graph\n\n\n\nThe Commits tab shows a list of all commits made to the repository and also presents them in a visual format known as a commit graph. This makes it easy to explore the project’s branches, commits, and merges in a clear, graphical way.\nThe tab also allows you to filter the commits by author, date and status. Once you have located a commit of interest you can explore and compare the changes made in the commit. You can also make comments, branch from or roll back to that commit.\n\n\n\nSimilar to the Commits tab, the Pushes tab allows you to explore the pushes made to the repository and the commits within those pushes.\nMore information in the difference between commits and pushes can be found on the page [Using Git in R]() in the Understanding the Jargon section.\n\n\n\nBranches provide isolated environments for developing and testing changes independently. Changes can be made to the code and ideas can be tested without affecting the main project. Branches enable multiple team members to work on the codebase simultaneously without affecting the existing code.\nFrom the Branches tab you can observe which branches are operational, which branches may have been merged into the codebase, or those that may have been abandoned (known as stale branches). You can also see how many commits a branch is ahead or behind the main branch, along with any pull requests associated with the branch. New remote branches can also be created from this tab. Once a new remote branch has been created you will need to ’checkout` to the branch within the local repository. For information on navigating branches in Git see the page [Using Git in R]()\nIt is good coding practice to work within a branch, even if you are a single developer. It separates working code from developmental code which in turn allows for ease of roll backs. Further information on good coding practices can be found in the guidance page - [Coding Standards page]()\n\n\n\nPull requests are a collaborative tool allowing you to submit proposed changes to the overall code base. They are an essential part of good coding practice, especially when working on ongoing projects or within a team. Before a piece of work can be moved from a branch to the main code, it must first go through a code review process. This is where peers will review the code, and is an opportunity to spot any typos, regions where code can be made more efficient, or tidied to match the group coding style. Once you have completed work within a branch on the repository you can create a pull request from either inside the branch or via the pull request tab.\n\n\n\nExample of pull request\n\n\nWithin the pull request screen you can assign reviewers, both required and optional. As the virtual machine is not connected to the internet, it will not automatically notify reviewers. Any assigned reviewers will have to be notified manually. Comments and discussions of the work can also be made within the overview or within individual files. Once all changes have been made and approved the branch can then be merged with the main branch from inside the pull request.\nFor more information on pull requests you can find more information on both making and responding to pull requests in both GitHub and Azure DevOps within the [Working with Pull request]() page.",
     "crumbs": [
-      "RAP in NRS",
-      "Why RAP?"
+      "Training",
+      "Using Azure Devops"
     ]
   },
   {
-    "objectID": "rap-in-nrs/getting-started.html",
-    "href": "rap-in-nrs/getting-started.html",
-    "title": "Getting started",
+    "objectID": "training/Using-Devops.html#collections-page",
+    "href": "training/Using-Devops.html#collections-page",
+    "title": "Using Azure Devops",
     "section": "",
-    "text": "While the RAP Development team won’t be able to work closely with all teams right away, there are steps teams should take to get started on RAP development.\n\nDevelop process maps for each analytical output. These will be useful to help understand existing SAS processes, highlight areas for improvement and plan RAP development work. We have written guidance and produced an example map to help you get started.\nConsider R training needs in your team.\n\nContact the NRS Learning & Development team to find out about upcoming training courses on offer in NRS.\nReview the Scottish Government R training on offer and keep an eye on the OCS newsletter for other opportunities.\n\nConsider whether there are any technical barriers to your team using the current R environment on NRScotland (e.g. data access, memory constraints) and raise these with the RAP Development team.\nThink about other planned or potential changes to your analysis and how this might impact RAP development. For example, consider proposed changes of the publication review work.\nFollow coding good practices when writing R code. We will develop more thorough guidance for NRS soon, but this is a good place to start.\nAttend RAP Show and Tidy sessions to learn from others and consider presenting your own development work (no matter how big or small!)\nFamiliarise yourself with existing RAP resources:\n\nGovernment Analysis Function RAP Guidance\nRAP Self Assessment Tool\nQuality Assurance of Code for Analysis and Research (Duck Book)",
+    "text": "Azure DevOps opens at the Collections landing page. Each collection you have access to will appear on the left hand side of the screen.\nInside each collection is a Dashboard which gives access to the Projects within that collection (displayed as project cards), your assigned work items and any pull requests you have made or have been assigned to as a reviewer.\n\n\n\nCollections landing page in Azure DevOps",
+    "crumbs": [
+      "Training",
+      "Using Azure Devops"
+    ]
+  },
+  {
+    "objectID": "training/Using-Devops.html#project-page",
+    "href": "training/Using-Devops.html#project-page",
+    "title": "Using Azure Devops",
+    "section": "",
+    "text": "Project side bar\n\n\n\nWhen opening a project you will find a side bar with several options and tools.\nFor most projects only the Overview panel, Boards and Repos tools will be relevant, and they are explored in more detail below.\nThe remaining three panels facilitate the continuous integration, continuous delivery (CI/CD) software development. Therefore, the Pipelines, Test Plans and Artifacts tabs are not discussed in this training document.\n[!IMPORTANT] The Pipeline and Testing panels are not to be confused with Reproducible Analytical Pipelines (RAPs). Instead they are used for production guidance and external stress-testing of the software before deployment.\n\n\nThe Overview panel aims to provide quick access to top level information about the project. This is where you can add a summary of the project and view team members. The general activity within the project will also be listed within the Summary section.\n\n\n\nThis panel is for project planning, team and task management, management of bug fixes and pull requests. Each board is categorised into a number of work items. These separate tasks by specific elements to aid in organisation within a team. The work items are as follows:\n\n\nWork items or tickets are used to break down required tasks within a project. You can use these tags to highlight, assign and keep track of tasks, project progress and current thinking to help with cooperation across the project.\nThe tags can be broken down into different categories:\nBug - An error found within the code that causes it not to produce the intended consequences. These can range from minor issues, such as typos or small visual discrepancies, to more serious problems like incorrect functionality or potential security vulnerabilities. This tag can be sued to highlight known issues that are queued to be fixed.\nEpic - Denotes a piece of work that is of High Importance. Usually, a large-scale element of the project that gives a broad overview. An Epic work item can be broken down into Features and User stories.\n\n\n\nExample of Epic tag\n\n\nThis tag can be used to highlight the overarching steps on a process map or goals that a developer team may have.\nFeature - Describes the development of functional pieces of work. The following example shows three Feature work items that may be part of the Epic tag above.\n\n\nTask - This tag can be used to break down any of the other tags into actionable items. A to-do list of tasks can be created at the feature and Epic levels to help break down and assign workload between colleagues.\n\nTest Case - This is a step-by-step guide breaking down the testing of the Project Features. This allows for the testers to continually check the functionality of the code and how it performs alongside the elements set out in the Epic and User Story tags.\n\nUser Story - Describes the build from the perspective of the user and how they would use and implement the code. This helps you think about the end user when developing the code, asking questions on how they would interact with the code and its outcomes.\n\n\n\nExample of a user story tag\n\n\n\n\n\n\n\n\n\n\nRepos menu\n\n\n\nWithin the Repos tab you can manage your code base, through tracking commits, pushes and pull requests. It is the viewing portal for the remote repository of the version control infrastructure. These features communicate with your Integrated Development Environment (IDE), an example of which is RStudio, where the development and testing of the code will be done, via Git. Git is an open source version control tool that allows you to maintain clear and backed up versions of all coding projects. More information on using Git within the R environment can be found on the page [Using Git in R]()\n\n\n\n\n\n\nFiles tab menu\n\n\n\nYou can open and view all files pushed to your remote repository within the Files tab. You can also find links for cloning and/or forking the repository. For each file, you can view its contents in the Contents pane located at the top.\nThe History pane shows the history of changes made to the file, listing the associated commit, the type of change and any associated pull requests. You can directly access the Compare pane for a specific commit from the history table or from within the Compare tab. You can select which commits you want to compare. The changes can either be viewed side by side or in-line.\nThe final pane is the Blame pane. This highlights which bits of the code have been edited, when they were pushed to the repository and by which team member.\n\n\n\n\n\n\nNote\n\n\n\nBlame is not a negative term within software development instead it records and displays the author of specific lines in a file, allowing for collaboration and integration within a team.\n\n\n\n\n\n\n\n\n\nExample of a commit graph\n\n\n\nThe Commits tab shows a list of all commits made to the repository and also presents them in a visual format known as a commit graph. This makes it easy to explore the project’s branches, commits, and merges in a clear, graphical way.\nThe tab also allows you to filter the commits by author, date and status. Once you have located a commit of interest you can explore and compare the changes made in the commit. You can also make comments, branch from or roll back to that commit.\n\n\n\nSimilar to the Commits tab, the Pushes tab allows you to explore the pushes made to the repository and the commits within those pushes.\nMore information in the difference between commits and pushes can be found on the page [Using Git in R]() in the Understanding the Jargon section.\n\n\n\nBranches provide isolated environments for developing and testing changes independently. Changes can be made to the code and ideas can be tested without affecting the main project. Branches enable multiple team members to work on the codebase simultaneously without affecting the existing code.\nFrom the Branches tab you can observe which branches are operational, which branches may have been merged into the codebase, or those that may have been abandoned (known as stale branches). You can also see how many commits a branch is ahead or behind the main branch, along with any pull requests associated with the branch. New remote branches can also be created from this tab. Once a new remote branch has been created you will need to ’checkout` to the branch within the local repository. For information on navigating branches in Git see the page [Using Git in R]()\nIt is good coding practice to work within a branch, even if you are a single developer. It separates working code from developmental code which in turn allows for ease of roll backs. Further information on good coding practices can be found in the guidance page - [Coding Standards page]()\n\n\n\nPull requests are a collaborative tool allowing you to submit proposed changes to the overall code base. They are an essential part of good coding practice, especially when working on ongoing projects or within a team. Before a piece of work can be moved from a branch to the main code, it must first go through a code review process. This is where peers will review the code, and is an opportunity to spot any typos, regions where code can be made more efficient, or tidied to match the group coding style. Once you have completed work within a branch on the repository you can create a pull request from either inside the branch or via the pull request tab.\n\n\n\nExample of pull request\n\n\nWithin the pull request screen you can assign reviewers, both required and optional. As the virtual machine is not connected to the internet, it will not automatically notify reviewers. Any assigned reviewers will have to be notified manually. Comments and discussions of the work can also be made within the overview or within individual files. Once all changes have been made and approved the branch can then be merged with the main branch from inside the pull request.\nFor more information on pull requests you can find more information on both making and responding to pull requests in both GitHub and Azure DevOps within the [Working with Pull request]() page.",
+    "crumbs": [
+      "Training",
+      "Using Azure Devops"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NRS RAP Book",
+    "section": "",
+    "text": "This book contains information on developing Reproducible Analytical Pipelines (RAPs) in National Records of Scotland (NRS).\nThe content has been developed by the RAP Development team, who joined NRS in 2026. The team’s role is to lead the implementation of RAP across statistics and analysis production in NRS.\nPlease get in touch with the RAP Development team if you have any feedback or questions.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "rap-in-nrs/rap-support.html",
+    "href": "rap-in-nrs/rap-support.html",
+    "title": "Working with the RAP Development team",
+    "section": "",
+    "text": "Our goal in NRS is for RAP to be the default approach to analysis. To achieve this goal, we will:",
     "crumbs": [
       "RAP in NRS",
-      "Getting started"
+      "RAP Support"
+    ]
+  },
+  {
+    "objectID": "rap-in-nrs/rap-support.html#defining-our-rap-approach",
+    "href": "rap-in-nrs/rap-support.html#defining-our-rap-approach",
+    "title": "Working with the RAP Development team",
+    "section": "Defining our RAP approach",
+    "text": "Defining our RAP approach\nTo succeed in our goal, it is important we all have a shared understanding of what RAP is and what we mean by a ‘RAP approach’. We will do this by:\n\nRunning awareness sessions for all statisticians and managers\nSharing clear guidance, both technical and non-technical\nDeveloping tools for use across teams to promote consistency",
+    "crumbs": [
+      "RAP in NRS",
+      "RAP Support"
+    ]
+  },
+  {
+    "objectID": "rap-in-nrs/rap-support.html#project-support",
+    "href": "rap-in-nrs/rap-support.html#project-support",
+    "title": "Working with the RAP Development team",
+    "section": "Project support",
+    "text": "Project support\nDifferent teams and projects will require different levels of involvement from the RAP Development team. Support might look like this:\n\nA RAP developer is embedded in a team to lead the planning and development of a RAP for a specific project. They train the statistics team to apply RAP principles and co-develop code to meet agreed standards.\nRAP development is led by the statistics team with guidance from the RAP Development team through regular meetings and code review.\nThe statistics team engages with the RAP community, follows NRS guidance and contacts RAP Development team for ad-hoc support and advice when required.\n\nOur level of involvement and timing of when support is offered will vary from team to team depending on the following factors:\n\n\n\n\n\n\n\n\nFactor\nLight Support\nEmbedded Support\n\n\n\n\nR & RAP skills\nStrong skills\nNew to R\n\n\nTime available for development\nAdequate time\nLimited time\n\n\nOverall SAS workload\nSmall\nLarge\n\n\nPrevious support from RAP Development team\nAlready supported\nNo prior support\n\n\n\nWe will arrange a session with each statistics team to discuss these factors, their current preparedness for RAP, plans for development, and support needs. By collecting this information from each team, we can begin to make a plan for the order we will work with teams, and what level of involvement will be most suitable.",
+    "crumbs": [
+      "RAP in NRS",
+      "RAP Support"
+    ]
+  },
+  {
+    "objectID": "rap-in-nrs/rap-support.html#planned-projects",
+    "href": "rap-in-nrs/rap-support.html#planned-projects",
+    "title": "Working with the RAP Development team",
+    "section": "Planned projects",
+    "text": "Planned projects\nThe following projects have been identified as priorities for the RAP Development team:\n\nNHSCR Monthly Extract: As there are currently no statisticians working in the NHSCR team, the RAP Development team have adopted their monthly extract SAS process as our first project. This will give us, as a team, the chance to develop our understanding of NRS systems and software, record our learnings, and once complete, present this as a case study of RAP best practice for other teams to learn from.\nVital Events project TBD: The Vital Events team have a large number of resource-intensive SAS processes. Therefore, we plan to engage with this team early to identify a project that will help develop skills and free up time for further development work.",
+    "crumbs": [
+      "RAP in NRS",
+      "RAP Support"
     ]
   }
 ]
