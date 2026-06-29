@@ -8,6 +8,7 @@ editor: visual
 ## What is Git
 
 Git is an open source version control tool. It integrates with GitHub or Azure DevOps to allowing you to maintain clear versions of all coding projects.
+GitHub and Azure Devops are examples of storage based services that store git reporitories. They act as as secondary location back up for code and logs managed by the git language. 
 
 ## Explaining the Jargon
 
