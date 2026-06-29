@@ -27,13 +27,10 @@ website:
       - section: Training
         href: training/index.qmd
         contents:
-        - training/test.qmd
-        - training/Git-in-R.qmd
-      - section: Blog
-        href: blog/index.qmd
-        contents:
-        - blog/test.qmd
         - training/Using-Devops.qmd
+      - blog/index.qmd
+
+      - training/index.qmd
       - blog/index.qmd
       
 format:
