@@ -11,24 +11,20 @@ website:
       - href: index.qmd
         text: Home
       - section: RAP in NRS
-        href: rap-in-nrs/index.qmd
         contents: 
         - rap-in-nrs/why-rap.qmd
+        - text: RAP Support
+          href: rap-in-nrs/rap-support.qmd
+        - rap-in-nrs/getting-started.qmd
       - section: Guidance
-        href: guidance/index.qmd
         contents:
-        - guidance/test.qmd
+        - guidance/process-mapping.qmd
       - section: Training
         href: training/index.qmd
         contents:
-        - training/test.qmd
-        - training/Git-in-R.qmd
         - training/Using-Devops.qmd
-      - section: Blog
-        href: blog/index.qmd
-        contents:
-        - blog/test.qmd
-      
+      - blog/index.qmd
+
 format:
   html:
     theme: cosmo
