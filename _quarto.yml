@@ -24,6 +24,12 @@ website:
       - section: Guidance
         contents:
         - guidance/process-mapping.qmd
+      - section: Training
+        href: training/index.qmd
+        contents:
+        - training/Using-Devops.qmd
+      - blog/index.qmd
+
       - training/index.qmd
       - blog/index.qmd
       
