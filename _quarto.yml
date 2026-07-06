@@ -24,6 +24,7 @@ website:
       - section: Guidance
         contents:
         - guidance/process-mapping.qmd
+        - guidance/differences-between-sas-and-r.qmd
       - section: Training
         href: training/index.qmd
         contents:

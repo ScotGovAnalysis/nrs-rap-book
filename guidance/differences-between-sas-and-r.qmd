@@ -1,0 +1,292 @@
+---
+title: "Differences Between SAS and R"
+editor: visual
+---
+
+Translating SAS code to R (and other coding languages, such as Python) can introduce subtle - and sometimes serious - risks. These arise because the languages differ in defaults, data structures, numerical handling, and modelling assumptions. This guidance aims to provide an overview of some of the risk areas to watch out for, and how to mitigate them.
+
+**A key lesson from recent SAS-to-R conversion work is that the greatest risk is often not the syntax itself, but implicit SAS behaviour.**
+
+SAS performs many actions automatically that are not obvious from the source code. These behaviours can be easy to miss when translating to R and may only become apparent when outputs are compared.
+
+For this reason, translated code should always be validated against known SAS outputs wherever possible.
+
+## Implicit SAS engine behaviour
+
+One of the most important translation risks is behaviour that is provided by the SAS engine rather than explicitly written in the code.
+
+Examples include:
+
+-   Missing values being silently dropped from arithmetic calculations.
+-   Automatic warnings when values exceed a declared LENGTH.
+-   Sort-dependent BY-group behaviour.
+-   MERGE behaviour when datasets differ in length.
+-   Type conversion warnings.
+
+Because these behaviours are not always visible in the source code, they are particularly easy for translators and AI-assisted conversion tools to miss. A script can run successfully in R while still producing different results from the original SAS program. Validation against known outputs, combined with awareness of implicit SAS behaviour, is essential.
+
+## Character case sensitivity
+
+R is fully case-sensitive whereas SAS language keywords and many programming constructs are not. For example, in R
+
+``` r
+Age
+```
+
+and
+
+``` r
+age
+```
+
+are different variables. This may cause translation errors.
+
+## Rounding
+
+SAS uses the rounding rule "round half away from zero".
+
+``` sas
+round(2.5)   /* 3 */
+```
+
+Base R uses "round half to even", also known as bankers rounding.
+
+``` r
+round(2.5)   # 2
+```
+
+The function [round_half_up()](https://www.rdocumentation.org/packages/janitor/versions/2.2.1/topics/round_half_up) from the janitor package can be used in R to apply the rounding rule "round half away from zero" when consistency with SAS or Excel is required.
+
+``` r
+library(janitor)
+round_half_up(2.5)   # 3
+```
+
+## Missing values
+
+In SAS, many summary functions automatically ignore missing values.
+
+``` sas
+mean(10, ., 20)     /* 15 */
+
+sum(10, ., 20)      /* 30 */
+```
+
+In R, missing values propagate by default. Entire outputs may become NA if missing values are not handled explicitly.
+
+``` r
+mean(c(10, NA, 20)) # NA  
+
+sum(c(10, NA, 20)) # NA
+```
+
+To reproduce SAS behaviour:
+
+``` r
+mean(c(10, NA, 20), na.rm = TRUE) # 15
+sum(c(10, NA, 20), na.rm = TRUE) # 30
+```
+
+## String truncation
+
+SAS character variables have a fixed length. When a value is longer than the defined length, SAS automatically truncates it to fit. The excess characters are discarded.
+
+``` sas
+length code $3; 
+code = "ABCDE"; 
+/* code = "ABC" */
+```
+
+R character vectors have no fixed length. Values that SAS would truncate may continue unchanged in R, affecting joins, matching and output formatting.
+
+``` r
+code <- "ABCDE"
+```
+
+To replicate SAS behaviour:
+
+``` r
+substr(code, 1, 3) # "ABC"
+```
+
+## Substring extraction
+
+In SAS, substr(x, y, z) means for string x, start at position y and return z characters.
+
+``` sas
+substr("1234567", 3, 4)    /* "3456" */
+```
+
+In R, substr(x, y, z) means for string x, start at position y and stop at position z.
+
+``` r
+substr("1234567", 3, 4) # "34"
+```
+
+To replicate SAS behaviour:
+
+``` r
+substr("1234567", 3, 6) # "3456"
+```
+
+## Dates
+
+SAS stores dates as the number of days since 1 January 1960, whereas R stores dates as the number of days since 1 January 1970. Direct comparison of raw date values without conversion will produce incorrect results.
+
+## BY-group processing and sorting
+
+Many SAS programs depend on BY-group processing, which requires data to be sorted into a specific order.
+
+``` sas
+proc sort data=visits;
+
+  by patient visitdate;
+
+run;
+
+data first_visit;
+
+  set visits;
+
+  by patient;
+
+  if first.patient;
+
+run;
+```
+
+SAS automatically creates temporary variables such as `FIRST.patient` and `LAST.patient` that identify the start and end of each group.
+
+R does not create these indicators automatically. Equivalent logic must be programmed explicitly.
+
+``` r
+library(dplyr)
+
+first_visit <- visits %>%
+
+  arrange(patient, visitdate) %>%
+
+  group_by(patient) %>%
+
+  slice(1)
+```
+
+A common translation error is to recreate the filtering logic without first reproducing the required sort order.
+
+## Merging datasets
+
+SAS `MERGE` is not equivalent to any R join and can produce unexpected results if datasets contain different numbers of observations within a BY group.
+
+``` sas
+data merged;
+
+  merge a b;
+
+  by id;
+
+run;
+```
+
+When translating SAS code, it is important to understand the intended relationship between the datasets:
+
+-   One-to-one
+
+-   One-to-many
+
+-   Many-to-one
+
+-   Many-to-many
+
+In R, joins are usually implemented using functions such as:
+
+``` r
+left_join(a, b, by = "id")
+
+inner_join(a, b, by = "id")
+
+full_join(a, b, by = "id")
+```
+
+Before translating a merge, verify the uniqueness of key variables and compare record counts before and after the join.
+
+## Type conversion
+
+SAS frequently performs automatic type conversion between character and numeric variables and generates warnings when conversions occur.
+
+``` sas
+x = "123";
+
+y = x + 1;   /* 124 */
+```
+
+In R, character and numeric data types are generally more strictly separated.
+
+``` r
+x <- "123"
+
+y <- x + 1   # Error in x + 1 : non-numeric argument to binary operator
+```
+
+When translating code, always check whether the original SAS program relies on implicit conversions. Failure to replicate these conversions may cause errors or unexpected missing values.
+
+``` r
+x <- "123" 
+
+y <- as.numeric(x) + 1   # 124
+```
+
+## Numeric precision
+
+Although SAS and R both use double-precision arithmetic, calculations may not always produce exactly identical results.
+
+Differences can arise from:
+
+-   Statistical algorithm implementations
+
+-   Optimisation routines
+
+-   Numerical tolerances
+
+-   Output formatting and rounding
+
+For example, model parameter estimates may differ slightly while remaining statistically equivalent.
+
+Validation should therefore focus on acceptable tolerances rather than requiring exact numerical equality for every value.
+
+## Logical values
+
+SAS represents Boolean values numerically.
+
+``` sas
+age > 18 /* 1 or 0 */
+```
+
+R uses a dedicated logical type.
+
+``` r
+age = 5
+age > 18  # FALSE
+age > 3   # TRUE
+```
+
+## Validation and comparison
+
+Code conversion should always be treated as a software validation exercise rather than a simple translation task.
+
+Recommended checks include:
+
+-   Record counts before and after major processing steps.
+
+-   Frequency tables for key categorical variables.
+
+-   Summary statistics for continuous variables.
+
+-   Comparison of intermediate datasets, not only final outputs.
+
+-   Independent review of translated code.
+
+-   Tolerance-based comparison for numerical results.
+
+Where possible, compare outputs against known SAS results rather than assuming that successfully executed R code is correct.
+
+**When translating SAS code, assume that every result depends on three things: the written code, the structure of the data, and SAS behaviours that may not be explicitly visible. Successful translation requires validation of all three.**
