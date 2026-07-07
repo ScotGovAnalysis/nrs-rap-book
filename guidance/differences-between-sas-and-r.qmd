@@ -23,7 +23,7 @@ Examples include:
 -   MERGE behaviour when datasets differ in length.
 -   Type conversion warnings.
 
-Because these behaviours are not always visible in the source code, they are particularly easy for translators and AI-assisted conversion tools to miss. A script can run successfully in R while still producing different results from the original SAS program. Validation against known outputs, combined with awareness of implicit SAS behaviour, is essential.
+Because these behaviours are not always visible in the source code, they are particularly easy for translators and AI-assisted conversion tools to miss. A script can run successfully in R while still producing different results from the original SAS program. **Validation against known outputs, combined with awareness of implicit SAS behaviour, is essential.**
 
 ## Character case sensitivity
 
