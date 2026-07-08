@@ -28,9 +28,7 @@ website:
         href: training/index.qmd
         contents:
         - training/Using-Devops.qmd
-      - blog/index.qmd
-
-      - training/index.qmd
+        - training/Git-in-R.qmd
       - blog/index.qmd
       
 format:
