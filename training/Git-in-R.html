@@ -207,7 +207,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#repository-or-repo" id="toc-repository-or-repo" class="nav-link" data-scroll-target="#repository-or-repo">Repository or Repo</a></li>
   <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
-  <li><a href="#branches-1" id="toc-branches-1" class="nav-link" data-scroll-target="#branches-1">Branches</a></li>
   <li><a href="#three-data-states" id="toc-three-data-states" class="nav-link" data-scroll-target="#three-data-states">Three Data states</a></li>
   <li><a href="#command-line-quick-reference" id="toc-command-line-quick-reference" class="nav-link" data-scroll-target="#command-line-quick-reference">Command line quick reference</a></li>
   </ul></li>
@@ -244,13 +243,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="explaining-the-jargon" class="level2">
 <h2 class="anchored" data-anchor-id="explaining-the-jargon">Explaining the Jargon</h2>
-<p>All version control tools come with a set of jargon. in this section we aim to break down what each of those terms mean and how they apply to using git within github or Azure Devops.</p>
 <p>All version control tools come with a set of jargon. In this section we aim to break down what each of those terms mean and how they apply to using git within Github or Azure DevOps.</p>
 <section id="repository-or-repo" class="level3">
 <h3 class="anchored" data-anchor-id="repository-or-repo">Repository or Repo</h3>
 <p>This is the storage location of the project files along with the log of the complete history of changes made to the project files. For all projects you will encounter two main repositories.</p>
 <p><strong><em>Local</em></strong> - The local repository, sometimes referenced to as the <em>Working directory</em> refers to the project directory stored on the working machine. Such as within shared file storage, network drive or laptops C: drive. It is the directory in which you will be working and saving your files.</p>
-<p><strong><em>Remote</em></strong> - is hosted on platforms such as Github or Azure Devops. It is primarily used for backup and collaboration. It is usually what is known as a <em>bare directory</em> containing git files, history and metadata but not working files</p>
 <p><strong><em>Remote</em></strong> - The remote repository is hosted on platforms such as Github or Azure DevOps. It is primarily used for backup and collaboration. It is usually what is known as a <em>bare directory</em> containing git files, history and metadata but not working files</p>
 <p>Git is used to facilitate communication between these two levels of repository. If the local repository already exists you can initialize the remote repository using the command line prompt:</p>
 <p><code>git init</code></p>
@@ -258,22 +255,12 @@ ul.task-list li input[type="checkbox"] {
 <p><code>git clone</code></p>
 <p>For more information on project structure refer to page:</p>
 <ul>
-<li><a href="">Coding standards</a></li>
-<li><a href="">Guide to Devops</a></li>
+<li><a href="https://scotgovanalysis.github.io/nrs-rap-book/guid/Using-Devops.html">Coding standards</a> )</li>
+<li><a href="https://scotgovanalysis.github.io/nrs-rap-book/training/Using-Devops.html">Guide to Devops</a> )</li>
 </ul>
 </section>
 <section id="branches" class="level3">
 <h3 class="anchored" data-anchor-id="branches">Branches</h3>
-<p>Every new repository will be created with an origin branch know as <strong><em>main</em></strong> or <strong><em>master</em></strong>. This is branch should be used to store the final or stable, ready for use, version of the code.</p>
-<p>Therefore it is code coding practice to develop code on a working branch. This is particularly good practice when working in teams as it allows every team member to work within their own branch and reduces risk of overwriting stable code and introducing bugs and errors to the main code line while they are developing. Once development is concluded the branch can be merged into the main stable codebase. Branches can also be used to test fixes for bugs.</p>
-<p>To create a new branch locally and move onto that branch you can run the command:</p>
-<ul>
-<li><a href="">Coding standards</a></li>
-<li><a href="https://scotgovanalysis.github.io/nrs-rap-book/training/Using-Devops.html">Guide to Devops</a></li>
-</ul>
-</section>
-<section id="branches-1" class="level3">
-<h3 class="anchored" data-anchor-id="branches-1">Branches</h3>
 <p>Every new repository will be created with an origin branch know as <strong><em>main</em></strong> or <strong><em>master</em></strong>. This branch should be used to store the final or stable, ready for use, version of the code.</p>
 <p>Therefore it is good coding practice to develop code on a working branch. This is particularly good practice when working in teams as it allows every team member to work within their own branch and reduces risk of overwriting stable code and introducing bugs and errors to the main code line while they are developing. Once development is concluded the branch can be merged into the main stable codebase. Branches can also be used to test fixes for bugs.</p>
 <p>To create a new branch locally and move into that branch you can run the command:</p>
