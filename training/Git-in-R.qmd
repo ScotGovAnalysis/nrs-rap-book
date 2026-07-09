@@ -43,9 +43,9 @@ by using the command prompt:
 For more information on project structure refer to page:
 
 -   [Coding standards](https://scotgovanalysis.github.io/nrs-rap-book/guid/Using-Devops.html)
-)
+
 -   [Guide to Devops](https://scotgovanalysis.github.io/nrs-rap-book/training/Using-Devops.html)
-)
+
 
 ### Branches
 
@@ -87,22 +87,6 @@ within Devops:
 sections](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git)](https://git-scm.com/book/en/v2/images/areas.png)
 
 There are three main states any file can exist within:
-
-***modified -*** files that have been add, removed, edited within the working
-directory.
-
-***staged -*** selected changes are temporarily recorded or ***indexed*** before
-they are committed to the git directory which stores the metadata and objects
-associated with the modifications that have been staged. To stage files you use
-the command:
-
-`git add`
-
-***committed -*** committing takes files recorded in the staging area and stores
-a ***snapshot*** permanently within the git directory. Each commit is assigned a
-***hash*** code that allows you to access the snapshot. Therefore if you want to
-roll-back to a particular snapshot you can access it via its hash code. Staged
-files can be committed as follows:
 
 ***modified -*** Files that have been add, removed, edited within the working
 directory.
