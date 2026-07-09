@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Using Git – NRS RAP Book</title>
+<title>Differences Between SAS and R – NRS RAP Book</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -86,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../training/index.html">Training</a></li><li class="breadcrumb-item"><a href="../training/Git-in-R.html">Using Git</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guidance/process-mapping.html">Guidance</a></li><li class="breadcrumb-item"><a href="../guidance/differences-between-sas-and-r.html">Differences Between SAS and R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,13 +183,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Guidance</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guidance/process-mapping.html" class="sidebar-item-text sidebar-link">
@@ -163,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../guidance/differences-between-sas-and-r.html" class="sidebar-item-text sidebar-link">
+  <a href="../guidance/differences-between-sas-and-r.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Differences Between SAS and R</span></a>
   </div>
 </li>
@@ -173,11 +208,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../training/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Training</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../training/Using-Devops.html" class="sidebar-item-text sidebar-link">
@@ -186,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../training/Git-in-R.html" class="sidebar-item-text sidebar-link active">
+  <a href="../training/Git-in-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using Git</span></a>
   </div>
 </li>
@@ -208,25 +243,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-git" id="toc-what-is-git" class="nav-link active" data-scroll-target="#what-is-git">What is Git</a></li>
-  <li><a href="#explaining-the-jargon" id="toc-explaining-the-jargon" class="nav-link" data-scroll-target="#explaining-the-jargon">Explaining the Jargon</a>
-  <ul class="collapse">
-  <li><a href="#repository-or-repo" id="toc-repository-or-repo" class="nav-link" data-scroll-target="#repository-or-repo">Repository or Repo</a></li>
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a></li>
-  <li><a href="#three-data-states" id="toc-three-data-states" class="nav-link" data-scroll-target="#three-data-states">Three Data states</a></li>
-  <li><a href="#command-line-quick-reference" id="toc-command-line-quick-reference" class="nav-link" data-scroll-target="#command-line-quick-reference">Command line quick reference</a></li>
-  </ul></li>
-  <li><a href="#git-within-r-studio" id="toc-git-within-r-studio" class="nav-link" data-scroll-target="#git-within-r-studio">Git within R studio</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#implicit-sas-engine-behaviour" id="toc-implicit-sas-engine-behaviour" class="nav-link active" data-scroll-target="#implicit-sas-engine-behaviour">Implicit SAS engine behaviour</a></li>
+  <li><a href="#character-case-sensitivity" id="toc-character-case-sensitivity" class="nav-link" data-scroll-target="#character-case-sensitivity">Character case sensitivity</a></li>
+  <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding">Rounding</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values">Missing values</a></li>
+  <li><a href="#string-truncation" id="toc-string-truncation" class="nav-link" data-scroll-target="#string-truncation">String truncation</a></li>
+  <li><a href="#substring-extraction" id="toc-substring-extraction" class="nav-link" data-scroll-target="#substring-extraction">Substring extraction</a></li>
+  <li><a href="#dates" id="toc-dates" class="nav-link" data-scroll-target="#dates">Dates</a></li>
+  <li><a href="#by-group-processing-and-sorting" id="toc-by-group-processing-and-sorting" class="nav-link" data-scroll-target="#by-group-processing-and-sorting">BY-group processing and sorting</a></li>
+  <li><a href="#merging-datasets" id="toc-merging-datasets" class="nav-link" data-scroll-target="#merging-datasets">Merging datasets</a></li>
+  <li><a href="#type-conversion" id="toc-type-conversion" class="nav-link" data-scroll-target="#type-conversion">Type conversion</a></li>
+  <li><a href="#numeric-precision" id="toc-numeric-precision" class="nav-link" data-scroll-target="#numeric-precision">Numeric precision</a></li>
+  <li><a href="#logical-values" id="toc-logical-values" class="nav-link" data-scroll-target="#logical-values">Logical values</a></li>
+  <li><a href="#validation-and-comparison" id="toc-validation-and-comparison" class="nav-link" data-scroll-target="#validation-and-comparison">Validation and comparison</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../training/index.html">Training</a></li><li class="breadcrumb-item"><a href="../training/Git-in-R.html">Using Git</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guidance/process-mapping.html">Guidance</a></li><li class="breadcrumb-item"><a href="../guidance/differences-between-sas-and-r.html">Differences Between SAS and R</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Using Git</h1>
+<h1 class="title">Differences Between SAS and R</h1>
 </div>
 
 
@@ -243,143 +281,186 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-is-git" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-git">What is Git</h2>
-<p>Git is an open source version control tool. It integrates with Github or Azure DevOps to allowing you to maintain clear versions of all coding projects.</p>
-</section>
-<section id="explaining-the-jargon" class="level2">
-<h2 class="anchored" data-anchor-id="explaining-the-jargon">Explaining the Jargon</h2>
-<p>All version control tools come with a set of jargon. In this section we aim to break down what each of those terms mean and how they apply to using git within Github or Azure DevOps.</p>
-<section id="repository-or-repo" class="level3">
-<h3 class="anchored" data-anchor-id="repository-or-repo">Repository or Repo</h3>
-<p>This is the storage location of the project files along with the log of the complete history of changes made to the project files. For all projects you will encounter two main repositories.</p>
-<p><strong><em>Local</em></strong> - The local repository, sometimes referenced to as the <em>Working directory</em> refers to the project directory stored on the working machine. Such as within shared file storage, network drive or laptops C: drive. It is the directory in which you will be working and saving your files.</p>
-<p><strong><em>Remote</em></strong> - The remote repository is hosted on platforms such as Github or Azure DevOps. It is primarily used for backup and collaboration. It is usually what is known as a <em>bare directory</em> containing git files, history and metadata but not working files</p>
-<p>Git is used to facilitate communication between these two levels of repository. If the local repository already exists you can initialize the remote repository using the command line prompt:</p>
-<p><code>git init</code></p>
-<p>If the remote repository has already been initiated you can create a local copy by using the command prompt:</p>
-<p><code>git clone</code></p>
-<p>For more information on project structure refer to page:</p>
+<p>Translating SAS code to R (and other coding languages, such as Python) can introduce subtle - and sometimes serious - risks. These arise because the languages differ in defaults, data structures, numerical handling, and modelling assumptions. This guidance aims to provide an overview of some of the risk areas to watch out for, and how to mitigate them.</p>
+<p><strong>A key lesson from recent SAS-to-R conversion work is that the greatest risk is often not the syntax itself, but implicit SAS behaviour.</strong></p>
+<p>SAS performs many actions automatically that are not obvious from the source code. These behaviours can be easy to miss when translating to R and may only become apparent when outputs are compared.</p>
+<p>For this reason, translated code should always be validated against known SAS outputs wherever possible.</p>
+<section id="implicit-sas-engine-behaviour" class="level2">
+<h2 class="anchored" data-anchor-id="implicit-sas-engine-behaviour">Implicit SAS engine behaviour</h2>
+<p>One of the most important translation risks is behaviour that is provided by the SAS engine rather than explicitly written in the code.</p>
+<p>Examples include:</p>
 <ul>
-<li><a href="https://scotgovanalysis.github.io/nrs-rap-book/guid/Using-Devops.html">Coding standards</a> )</li>
-<li><a href="https://scotgovanalysis.github.io/nrs-rap-book/training/Using-Devops.html">Guide to Devops</a> )</li>
+<li>Missing values being silently dropped from arithmetic calculations.</li>
+<li>Automatic warnings when values exceed a declared LENGTH.</li>
+<li>Sort-dependent BY-group behaviour.</li>
+<li>MERGE behaviour when datasets differ in length.</li>
+<li>Type conversion warnings.</li>
 </ul>
+<p>Because these behaviours are not always visible in the source code, they are particularly easy for translators and AI-assisted conversion tools to miss. A script can run successfully in R while still producing different results from the original SAS program. <strong>Validation against known outputs, combined with awareness of implicit SAS behaviour, is essential.</strong></p>
 </section>
-<section id="branches" class="level3">
-<h3 class="anchored" data-anchor-id="branches">Branches</h3>
-<p>Every new repository will be created with an origin branch know as <strong><em>main</em></strong> or <strong><em>master</em></strong>. This branch should be used to store the final or stable, ready for use, version of the code.</p>
-<p>Therefore it is good coding practice to develop code on a working branch. This is particularly good practice when working in teams as it allows every team member to work within their own branch and reduces risk of overwriting stable code and introducing bugs and errors to the main code line while they are developing. Once development is concluded the branch can be merged into the main stable codebase. Branches can also be used to test fixes for bugs.</p>
-<p>To create a new branch locally and move into that branch you can run the command:</p>
-<p><code>git checkout -b &lt;name&gt;</code></p>
-<p>You will then need to link your local branch to the remote branch using the command:</p>
-<p><code>git push --set-upstream origin &lt;name&gt;</code></p>
-<p>A new branch can also be created within your version control tool (Github, DevOps) and then</p>
-<p><code>git checkout &lt;name&gt;</code></p>
-<p>For more information on dealing with bug fixes and pull request, code merging within Devops:</p>
+<section id="character-case-sensitivity" class="level2">
+<h2 class="anchored" data-anchor-id="character-case-sensitivity">Character case sensitivity</h2>
+<p>R is fully case-sensitive whereas SAS language keywords and many programming constructs are not. For example, in R</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Age</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>age</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>are different variables. This may cause translation errors.</p>
+</section>
+<section id="rounding" class="level2">
+<h2 class="anchored" data-anchor-id="rounding">Rounding</h2>
+<p>SAS uses the rounding rule “round half away from zero”.</p>
+<pre class="sas"><code>round(2.5)   /* 3 */</code></pre>
+<p>Base R uses “round half to even”, also known as bankers rounding.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">2.5</span>)   <span class="co"># 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The function <a href="https://www.rdocumentation.org/packages/janitor/versions/2.2.1/topics/round_half_up">round_half_up()</a> from the janitor package can be used in R to apply the rounding rule “round half away from zero” when consistency with SAS or Excel is required.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round_half_up</span>(<span class="fl">2.5</span>)   <span class="co"># 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="missing-values" class="level2">
+<h2 class="anchored" data-anchor-id="missing-values">Missing values</h2>
+<p>In SAS, many summary functions automatically ignore missing values.</p>
+<pre class="sas"><code>mean(10, ., 20)     /* 15 */
+
+sum(10, ., 20)      /* 30 */</code></pre>
+<p>In R, missing values propagate by default. Entire outputs may become NA if missing values are not handled explicitly.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">20</span>)) <span class="co"># NA  </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">20</span>)) <span class="co"># NA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To reproduce SAS behaviour:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">20</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># 15</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="dv">20</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># 30</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="string-truncation" class="level2">
+<h2 class="anchored" data-anchor-id="string-truncation">String truncation</h2>
+<p>SAS character variables have a fixed length. When a value is longer than the defined length, SAS automatically truncates it to fit. The excess characters are discarded.</p>
+<pre class="sas"><code>length code $3; 
+code = "ABCDE"; 
+/* code = "ABC" */</code></pre>
+<p>R character vectors have no fixed length. Values that SAS would truncate may continue unchanged in R, affecting joins, matching and output formatting.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>code <span class="ot">&lt;-</span> <span class="st">"ABCDE"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To replicate SAS behaviour:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">substr</span>(code, <span class="dv">1</span>, <span class="dv">3</span>) <span class="co"># "ABC"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="substring-extraction" class="level2">
+<h2 class="anchored" data-anchor-id="substring-extraction">Substring extraction</h2>
+<p>In SAS, substr(x, y, z) means for string x, start at position y and return z characters.</p>
+<pre class="sas"><code>substr("1234567", 3, 4)    /* "3456" */</code></pre>
+<p>In R, substr(x, y, z) means for string x, start at position y and stop at position z.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">substr</span>(<span class="st">"1234567"</span>, <span class="dv">3</span>, <span class="dv">4</span>) <span class="co"># "34"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To replicate SAS behaviour:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">substr</span>(<span class="st">"1234567"</span>, <span class="dv">3</span>, <span class="dv">6</span>) <span class="co"># "3456"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="dates" class="level2">
+<h2 class="anchored" data-anchor-id="dates">Dates</h2>
+<p>SAS stores dates as the number of days since 1 January 1960, whereas R stores dates as the number of days since 1 January 1970. Direct comparison of raw date values without conversion will produce incorrect results.</p>
+</section>
+<section id="by-group-processing-and-sorting" class="level2">
+<h2 class="anchored" data-anchor-id="by-group-processing-and-sorting">BY-group processing and sorting</h2>
+<p>Many SAS programs depend on BY-group processing, which requires data to be sorted into a specific order.</p>
+<pre class="sas"><code>proc sort data=visits;
+
+  by patient visitdate;
+
+run;
+
+data first_visit;
+
+  set visits;
+
+  by patient;
+
+  if first.patient;
+
+run;</code></pre>
+<p>SAS automatically creates temporary variables such as <code>FIRST.patient</code> and <code>LAST.patient</code> that identify the start and end of each group.</p>
+<p>R does not create these indicators automatically. Equivalent logic must be programmed explicitly.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>first_visit <span class="ot">&lt;-</span> visits <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(patient, visitdate) <span class="sc">%&gt;%</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(patient) <span class="sc">%&gt;%</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A common translation error is to recreate the filtering logic without first reproducing the required sort order.</p>
+</section>
+<section id="merging-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="merging-datasets">Merging datasets</h2>
+<p>SAS <code>MERGE</code> is not equivalent to any R join and can produce unexpected results if datasets contain different numbers of observations within a BY group.</p>
+<pre class="sas"><code>data merged;
+
+  merge a b;
+
+  by id;
+
+run;</code></pre>
+<p>When translating SAS code, it is important to understand the intended relationship between the datasets:</p>
 <ul>
-<li>Guide to DevOps - <a href="https://scotgovanalysis.github.io/nrs-rap-book/training/Using-Devops.html">Pull requests</a></li>
+<li><p>One-to-one</p></li>
+<li><p>One-to-many</p></li>
+<li><p>Many-to-one</p></li>
+<li><p>Many-to-many</p></li>
 </ul>
+<p>In R, <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">joins</a> are usually implemented using functions such as:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(a, b, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(a, b, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(a, b, <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Before translating a merge, verify the uniqueness of key variables and compare record counts before and after the join.</p>
 </section>
-<section id="three-data-states" class="level3">
-<h3 class="anchored" data-anchor-id="three-data-states">Three Data states</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://git-scm.com/book/en/v2/images/areas.png" class="img-fluid figure-img"></p>
-<figcaption><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git">Figure of Git’s three main sections</a></figcaption>
-</figure>
-</div>
-<p>There are three main states any file can exist within:</p>
-<p><strong><em>modified -</em></strong> files that have been add, removed, edited within the working directory.</p>
-<p><strong><em>staged -</em></strong> selected changes are temporarily recorded or <strong><em>indexed</em></strong> before they are committed to the git directory which stores the metadata and objects associated with the modifications that have been staged. To stage files you use the command:</p>
-<p><code>git add</code></p>
-<p><strong><em>committed -</em></strong> committing takes files recorded in the staging area and stores a <strong><em>snapshot</em></strong> permanently within the git directory. Each commit is assigned a <strong><em>hash</em></strong> code that allows you to access the snapshot. Therefore if you want to roll-back to a particular snapshot you can access it via its hash code. Staged files can be committed as follows:</p>
-<p><strong><em>modified -</em></strong> Files that have been add, removed, edited within the working directory.</p>
-<p><strong><em>staged -</em></strong> Selected changes are temporarily recorded or <strong><em>indexed</em></strong> before they are committed to the git directory which stores the metadata and objects associated with the modifications that have been staged. To stage files you use the command:</p>
-<p><code>git add</code></p>
-<p><strong><em>committed -</em></strong> Committing takes files recorded in the staging area and stores a <strong><em>snapshot</em></strong> permanently within the git directory. Each commit is assigned a <strong><em>hash</em></strong> code that allows you to access the snapshot. Therefore if you want to roll-back to a particular snapshot you can access it via its hash code. Staged files can be committed as follows:</p>
-<p>`git commit -m “message”</p>
-<p>A <strong><em>commit message</em></strong> is also added to all commit commands. This is to add context to the update within the git directory. A good commit message should be short and succinct but also give clear messaging about what you have changed. For example if you were fixing a bug, in a function called <code>Check_file</code> that was identified in pull request number 33 your commit message may look like:</p>
-<p><code>git commit -m "!33: bug fix in Check_file - Solved"</code></p>
-<p>The above commit message clearly states it is working on issue/pull request number 33 in which a bug was identified in the function check_file and that it has been tested and marked as solved ready for merging.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Remember to push</p>
-</div>
-</div>
-<p>All of these are within the local repository. In order to back up the committed changes you have to <strong><em>push</em></strong> your changes to the remote repository. This can be done using the command:</p>
-<p><code>git push</code></p>
-<p>If you do not <strong>push</strong> your commits they will not be recorded in your remote repository and will not be backed up or be available to be accessed by collaborators.</p>
+<section id="type-conversion" class="level2">
+<h2 class="anchored" data-anchor-id="type-conversion">Type conversion</h2>
+<p>SAS frequently performs automatic type conversion between character and numeric variables and generates warnings when conversions occur.</p>
+<pre class="sas"><code>x = "123";
+
+y = x + 1;   /* 124 */</code></pre>
+<p>In R, character and numeric data types are generally more strictly separated.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"123"</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span>   <span class="co"># Error in x + 1 : non-numeric argument to binary operator</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>When translating code, always check whether the original SAS program relies on implicit conversions. Failure to replicate these conversions may cause errors or unexpected missing values.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"123"</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(x) <span class="sc">+</span> <span class="dv">1</span>   <span class="co"># 124</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="command-line-quick-reference" class="level3">
-<h3 class="anchored" data-anchor-id="command-line-quick-reference">Command line quick reference</h3>
-<pre><code>#Initialize a remote repository from local folder
-git init
-
-#Clone a repository from remote
-git clone
-
-#To update local files to match remote repository
-git pull
-
-#To create a new local branch 
-git checkout -b &lt;name&gt;
-
-#Move onto a branch 
-git checkout &lt;name&gt;
-
-#Link a locale branch to the remote branch
-git push --set-upstream origin &lt;name&gt;
-
-#Link a local branch to the remote branch
-git push --set-upstream origin name
-
-#To stage all modified files
-git add .
-
-# To stage a single file
-git add &lt;file&gt;
-
-#To commit files to local repository
-git commit -m "message"
-
-#To push changes to remote repository
-git push
-
-#Check status of files
-git status</code></pre>
+<section id="numeric-precision" class="level2">
+<h2 class="anchored" data-anchor-id="numeric-precision">Numeric precision</h2>
+<p>Although SAS and R both use double-precision arithmetic, calculations may not always produce exactly identical results.</p>
+<p>Differences can arise from:</p>
+<ul>
+<li><p>Statistical algorithm implementations</p></li>
+<li><p>Optimisation routines</p></li>
+<li><p>Numerical tolerances</p></li>
+<li><p>Output formatting and rounding</p></li>
+</ul>
+<p>For example, model parameter estimates may differ slightly while remaining statistically equivalent.</p>
+<p>Validation should therefore focus on acceptable tolerances rather than requiring exact numerical equality for every value.</p>
 </section>
+<section id="logical-values" class="level2">
+<h2 class="anchored" data-anchor-id="logical-values">Logical values</h2>
+<p>SAS represents Boolean values numerically.</p>
+<pre class="sas"><code>age &gt; 18 /* 1 or 0 */</code></pre>
+<p>R uses a dedicated logical type.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">=</span> <span class="dv">5</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>age <span class="sc">&gt;</span> <span class="dv">18</span>  <span class="co"># FALSE</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>age <span class="sc">&gt;</span> <span class="dv">3</span>   <span class="co"># TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="git-within-r-studio" class="level2">
-<h2 class="anchored" data-anchor-id="git-within-r-studio">Git within R studio</h2>
-<p>In order to use git within R studio you must have the directory set up as an R project. Therefore any cloned repository must contain a <code>Rproj</code> file.</p>
-<p>You can use all the above command line within the terminal window of R Studio, However R Studio also offers a graphical interface that some may find preferable to use. To access open the <code>Tools</code> menu and access <code>Version Control</code> menu and <code>Commit...</code> you can also access with the keyboard short cut <code>Ctrl+Alt+M</code></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/git_in_R_figs/Figure1.png" class="img-fluid figure-img" width="546"></p>
-<figcaption>Menu access to Version control tools within R Studio</figcaption>
-</figure>
-</div>
-<p>Within the commit screen you can easily change branch, overview any documents modified (M), added (A) or removed (R) and investigate those changes when compared to the remote branch. Changes can be staged by ticking the box within the stage column. A commit message can be added and changes committed to the local branch. Then changes can be pushed to the remote branch.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/git_in_R_figs/Figure2.png" class="img-fluid figure-img" width="722"></p>
-<figcaption>Version control tools within R studio</figcaption>
-</figure>
-</div>
-</section>
-<section id="further-reading" class="level2">
-<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
-<p>For a more in depth discussion on Git and how it works : <a href="https://git-scm.com/book/en/v2">Pro Git book</a></p>
-<p>For information in collaborating on projects within Azure Devops:-<br>
-Guide to DevOps - <a href="https://scotgovanalysis.github.io/nrs-rap-book/training/Using-Devops.html">Pull requests</a></p>
+<section id="validation-and-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="validation-and-comparison">Validation and comparison</h2>
+<p>Code conversion should always be treated as a software validation exercise rather than a simple translation task.</p>
+<p>Recommended checks include:</p>
+<ul>
+<li><p>Record counts before and after major processing steps.</p></li>
+<li><p>Frequency tables for key categorical variables.</p></li>
+<li><p>Summary statistics for continuous variables.</p></li>
+<li><p>Comparison of intermediate datasets, not only final outputs.</p></li>
+<li><p>Independent review of translated code.</p></li>
+<li><p>Tolerance-based comparison for numerical results.</p></li>
+</ul>
+<p>Where possible, compare outputs against known SAS results rather than assuming that successfully executed R code is correct.</p>
+<p><strong>When translating SAS code, assume that every result depends on three things: the written code, the structure of the data, and SAS behaviours that may not be explicitly visible. Successful translation requires validation of all three.</strong></p>
 
 
 </section>
