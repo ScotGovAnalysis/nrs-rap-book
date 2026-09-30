@@ -309,7 +309,7 @@ it. Publishing your code can:
 
 -   Help others benefit from your work.
 
-LINK TO NHSCR CODE ON GITHUB
+[NHSCR CODE](https://github.com/ScotGovAnalysis/NRS_NHSCR)
 
 ## Does code contain functions where appropriate?
 
