@@ -25,6 +25,7 @@ website:
         contents:
         - guidance/process-mapping.qmd
         - guidance/differences-between-sas-and-r.qmd
+        - guidance/nhscr-rap-assessment.qmd
       - section: Training
         href: training/index.qmd
         contents:
