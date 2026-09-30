@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Assessing the NHSCR pipeline against the RAP Assessment Tool – NRS RAP Book</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-24c09a13944ec7e1f31d2917b1251fc2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="207723dc951e19d1e853403ab7368544" class="alert alert-warning hidden"><i class="bi bi-cone-striped quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>This site is new and currently under development. Your <a href="mailto:rap.development@nrscotland.gov.uk">feedback</a> will help us improve it.</p>
+</div></div>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      NRS RAP Book
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">NRS RAP Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">RAP in NRS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../rap-in-nrs/why-rap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why RAP?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../rap-in-nrs/rap-support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RAP Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../rap-in-nrs/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Guidance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guidance/process-mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Process Mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guidance/differences-between-sas-and-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differences Between SAS and R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../training/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../training/Using-Devops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using Azure Devops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../training/Git-in-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Using Git</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blog</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#does-a-process-map-exist" id="toc-does-a-process-map-exist" class="nav-link active" data-scroll-target="#does-a-process-map-exist">Does a process map exist?</a></li>
+  <li><a href="#is-all-code-well-commented" id="toc-is-all-code-well-commented" class="nav-link" data-scroll-target="#is-all-code-well-commented">Is all code well-commented?</a></li>
+  <li><a href="#is-your-code-in-a-self-contained-and-well-structured-repository" id="toc-is-your-code-in-a-self-contained-and-well-structured-repository" class="nav-link" data-scroll-target="#is-your-code-in-a-self-contained-and-well-structured-repository">Is your code in a self-contained and well-structured repository?</a></li>
+  <li><a href="#does-your-code-repository-contain-a-readme-file" id="toc-does-your-code-repository-contain-a-readme-file" class="nav-link" data-scroll-target="#does-your-code-repository-contain-a-readme-file">Does your code repository contain a README file?</a></li>
+  <li><a href="#are-dependencies-documented" id="toc-are-dependencies-documented" class="nav-link" data-scroll-target="#are-dependencies-documented">Are dependencies documented?</a></li>
+  <li><a href="#does-your-code-follow-a-style-guide" id="toc-does-your-code-follow-a-style-guide" class="nav-link" data-scroll-target="#does-your-code-follow-a-style-guide">Does your code follow a style guide?</a></li>
+  <li><a href="#does-your-code-use-configurable-parameters" id="toc-does-your-code-use-configurable-parameters" class="nav-link" data-scroll-target="#does-your-code-use-configurable-parameters">Does your code use configurable parameters?</a></li>
+  <li><a href="#is-code-used-for-all-data-processing-steps" id="toc-is-code-used-for-all-data-processing-steps" class="nav-link" data-scroll-target="#is-code-used-for-all-data-processing-steps">Is code used for all data processing steps?</a></li>
+  <li><a href="#are-all-data-inputs-clearly-documented-and-version-controlled-where-possible" id="toc-are-all-data-inputs-clearly-documented-and-version-controlled-where-possible" class="nav-link" data-scroll-target="#are-all-data-inputs-clearly-documented-and-version-controlled-where-possible">Are all data inputs clearly documented and version controlled where possible?</a></li>
+  <li><a href="#are-analytical-outputs-generated-automatically-from-the-source-data-and-code" id="toc-are-analytical-outputs-generated-automatically-from-the-source-data-and-code" class="nav-link" data-scroll-target="#are-analytical-outputs-generated-automatically-from-the-source-data-and-code">Are analytical outputs generated automatically from the source data and code?</a></li>
+  <li><a href="#is-git-used-for-version-control" id="toc-is-git-used-for-version-control" class="nav-link" data-scroll-target="#is-git-used-for-version-control">Is Git used for version control?</a></li>
+  <li><a href="#is-code-stored-in-a-shared-organisational-repository" id="toc-is-code-stored-in-a-shared-organisational-repository" class="nav-link" data-scroll-target="#is-code-stored-in-a-shared-organisational-repository">Is code stored in a shared organisational repository?</a></li>
+  <li><a href="#does-code-contain-functions-where-appropriate" id="toc-does-code-contain-functions-where-appropriate" class="nav-link" data-scroll-target="#does-code-contain-functions-where-appropriate">Does code contain functions where appropriate?</a></li>
+  <li><a href="#is-data-quality-assurance-built-into-the-code" id="toc-is-data-quality-assurance-built-into-the-code" class="nav-link" data-scroll-target="#is-data-quality-assurance-built-into-the-code">Is data quality assurance built into the code?</a></li>
+  <li><a href="#is-automated-testing-built-into-the-code" id="toc-is-automated-testing-built-into-the-code" class="nav-link" data-scroll-target="#is-automated-testing-built-into-the-code">Is automated testing built into the code?</a></li>
+  <li><a href="#can-the-process-be-executed-end-to-end-with-minimal-manual-intervention" id="toc-can-the-process-be-executed-end-to-end-with-minimal-manual-intervention" class="nav-link" data-scroll-target="#can-the-process-be-executed-end-to-end-with-minimal-manual-intervention">Can the process be executed end-to-end with minimal manual intervention?</a></li>
+  <li><a href="#has-code-been-reviewed-by-somebody-inside-the-immediate-team" id="toc-has-code-been-reviewed-by-somebody-inside-the-immediate-team" class="nav-link" data-scroll-target="#has-code-been-reviewed-by-somebody-inside-the-immediate-team">Has code been reviewed by somebody <u>inside</u> the immediate team?</a></li>
+  <li><a href="#has-your-code-been-reviewed-by-somebody-outside-the-immediate-team" id="toc-has-your-code-been-reviewed-by-somebody-outside-the-immediate-team" class="nav-link" data-scroll-target="#has-your-code-been-reviewed-by-somebody-outside-the-immediate-team">Has your code been reviewed by somebody <u>outside</u> the immediate team?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Assessing the NHSCR pipeline against the RAP Assessment Tool</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>An organisational KPI is to</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Increase the proportion of statistical processes that are automated, transparent and reproducible using open-source coding and RAP principles.”</p>
+</div>
+</div>
+<p>To measure this, the RAP Development Team have come up with the RAP Assessment Tool, where all the statistical processes that NRS teams produce can be measured as to whether they meet RAP good practice or not.</p>
+<p>This guidance aims to provide further guidance to the guidance provided in the RAP Assessment Tool, by using the NHSCR RAP pipeline as an example of all of the criteria.</p>
+<p>The NHSCR code can be found <a href="https://github.com/ScotGovAnalysis/NRS_NHSCR">here</a>.</p>
+<section id="does-a-process-map-exist" class="level2">
+<h2 class="anchored" data-anchor-id="does-a-process-map-exist">Does a process map exist?</h2>
+<p>Process maps provide a clear, visual overview of how data flows from inputs through processing and analysis to final outputs.</p>
+<p>The NRS RAP Book contains detailed <a href="https://scotgovanalysis.github.io/nrs-rap-book/guidance/process-mapping.html">instructions on how to make process maps</a>.</p>
+<p>The NHSCR process map is as follows:</p>
+<p><img src="images/nhscr-process-map-rap.png" class="img-fluid" style="width:90.0%" alt="Process map illustrating the NHSCR RAP pipeline."></p>
+</section>
+<section id="is-all-code-well-commented" class="level2">
+<h2 class="anchored" data-anchor-id="is-all-code-well-commented">Is all code well-commented?</h2>
+<p>Code comments should be used to provide context to your code. Commenting your code will help others understand the code you’ve written and why it’s been written in a particular way.</p>
+<p>A commented line of R code starts with a single # followed by a space.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test that only nametypes of zero are recorded</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">assert_that</span>(<span class="fu">unique</span>(surhisttab<span class="sc">$</span>nametype) <span class="sc">==</span> <span class="st">"0"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This example comment from the NHSCR RAP pipeline explains to the reader who may not be familiar with that code syntax, what the purpose of the code does in plain English.</p>
+</section>
+<section id="is-your-code-in-a-self-contained-and-well-structured-repository" class="level2">
+<h2 class="anchored" data-anchor-id="is-your-code-in-a-self-contained-and-well-structured-repository">Is your code in a self-contained and well-structured repository?</h2>
+<p>A repository is another word for the folder where all the files for your project are stored. A self-contained repository means all files required for the project are stored in the same place.</p>
+<p>Your repository should have a sensible, organised, clear structure. Sub-folders may be created for code, data, lookups, data, outputs, functions (pick and choose which are relevant to your project).</p>
+<p>Code scripts should be numbered if they should be run in a certain order. Data and output files should be date-stamped.</p>
+<p>It should be clear to somebody new to the project where to look for certain files.</p>
+<p>The NHSCR repository structure is as follows:</p>
+<pre class="text"><code>|-- README.md
+|-- R_NHSCR.Rproj
+|-- NHSCR_run_pipeline.R
+|-- .gitignore
+|-- code/
+|   -- Historical_extract.R
+|   -- NHSCR_Annual.R
+|   -- NHSCR_Monthly.R
+|   -- NHSCR_Quarterly.R
+|-- functions/
+|   -- Compare_outputs_functions.R
+|   -- Dateformatting_functions.R
+|   -- Make_comparisons.R
+|   -- Read_in_data.R
+|   -- Test_functions.R
+|   -- Validation_test_helpers.R
+|-- lookup/
+|   -- Basic_spine_colnames.R
+|   -- input_colnames.R
+|   -- migration_colnames.R
+|   -- SLS_colnames.R
+|   -- Yearly_colnames.R
+|-- output_metadata/
+|   -- metadata.Rmd
+|-- validation/
+|   -- Compare_outputs.R
+|   -- Validation_tests.R</code></pre>
+</section>
+<section id="does-your-code-repository-contain-a-readme-file" class="level2">
+<h2 class="anchored" data-anchor-id="does-your-code-repository-contain-a-readme-file">Does your code repository contain a README file?</h2>
+<p>A README file should be stored within your repository and contain a brief overview of the project including instructions for running the code and contact details for the team who owns the project.</p>
+<p>The README can be in any text file format, however it is recommended to use a markdown file format (.md) as this will be automatically displayed in your repository.</p>
+<p>An Example <a href="https://github.com/ScotGovAnalysis/NRS_NHSCR/blob/main/README.md">README FILE</a></p>
+</section>
+<section id="are-dependencies-documented" class="level2">
+<h2 class="anchored" data-anchor-id="are-dependencies-documented">Are dependencies documented?</h2>
+<p>To ensure reproducibility of your code it is important that package dependencies are documented in your RAP project code repository. Record names and the version of each external R or Python package used.</p>
+<p>In the NHSCR code packages and their versions used are documented in the README file.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Other Attached Packages</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">|</span> Package    <span class="sc">|</span> Version <span class="sc">|</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="er">|</span><span class="sc">------------</span><span class="er">|</span><span class="sc">---------</span><span class="er">|</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> renv       <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">2.3</span>   <span class="sc">|</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> rmarkdown  <span class="sc">|</span> <span class="fl">2.25</span>    <span class="sc">|</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> data.table <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">18.4</span>  <span class="sc">|</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> here       <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">0.2</span>   <span class="sc">|</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> glue       <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">6.2</span>   <span class="sc">|</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> assertthat <span class="sc">|</span> <span class="dv">0</span>.<span class="fl">2.1</span>   <span class="sc">|</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> lubridate  <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">9.3</span>   <span class="sc">|</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> forcats    <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">0.0</span>   <span class="sc">|</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> stringr    <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">6.0</span>   <span class="sc">|</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> dplyr      <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">2.1</span>   <span class="sc">|</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> purrr      <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">2.2</span>   <span class="sc">|</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> readr      <span class="sc">|</span> <span class="dv">2</span>.<span class="fl">1.4</span>   <span class="sc">|</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> tidyr      <span class="sc">|</span> <span class="dv">1</span>.<span class="fl">3.1</span>   <span class="sc">|</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> tibble     <span class="sc">|</span> <span class="dv">3</span>.<span class="fl">2.1</span>   <span class="sc">|</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> ggplot2    <span class="sc">|</span> <span class="dv">3</span>.<span class="fl">5.0</span>   <span class="sc">|</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> tidyverse  <span class="sc">|</span> <span class="dv">2</span>.<span class="fl">0.0</span>   <span class="sc">|</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> knitr      <span class="sc">|</span> <span class="fl">1.45</span>    <span class="sc">|</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> callr      <span class="sc">|</span> <span class="dv">3</span>.<span class="fl">7.6</span>   <span class="sc">|</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> janitor    <span class="sc">|</span> <span class="dv">2</span>.<span class="fl">2.1</span>   <span class="sc">|</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="does-your-code-follow-a-style-guide" class="level2">
+<h2 class="anchored" data-anchor-id="does-your-code-follow-a-style-guide">Does your code follow a style guide?</h2>
+<p>A style guide describes best practices for writing clean, consistent and maintainable code. For example:</p>
+<ul>
+<li><p>Naming conventions for variables, functions, files.</p></li>
+<li><p>Formatting rules to make your code easier to read.</p></li>
+<li><p>Standard ways document and comment code.</p></li>
+<li><p>Best practices for writing efficient code, reducing errors.</p></li>
+</ul>
+<p>For R, we recommend following the <a href="https://style.tidyverse.org/">tidyverse style guide</a>.</p>
+</section>
+<section id="does-your-code-use-configurable-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="does-your-code-use-configurable-parameters">Does your code use configurable parameters?</h2>
+<p>A data analysis process is more secure and reusable if certain values are stored separately from the analysis code. For example:</p>
+<ul>
+<li><p>Directory paths for reading or writing files such as csv files or spreadsheets</p></li>
+<li><p>Database connection details</p></li>
+<li><p>A URL and API key required to access an external API to read data</p></li>
+<li><p>Parameter values to be set before running the code, for example a reference year</p></li>
+</ul>
+<p>Writing such values directly into code is known as hard-coding and it is best avoided where possible. It is better practice to manage these type of variables as configurable parameters.</p>
+<p>For sensitive variables such as API keys consider using the keyring package for R or Python to store these securely. An alternative is to create an environment variable.</p>
+<p>For less sensitive parameters a config file or script can be used to set values such as file paths or analytical variables used throughout a process.</p>
+<p>More information is available in the <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/configuration.html">Configuration chapter of the Duck Book</a>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Input the full path to input files location. Must be in ""</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>in_dirpath <span class="ot">&lt;-</span> <span class="st">"/mnt/dl_acp79_read/Archive/Downloads/Downloads \2026/Download - Mar 26"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Input the desired path to the out folder location.</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># It is good practice that this is a separate folder to the input files to</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># avoid accidental overwriting. Must be in ""</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>out_dir <span class="ot">&lt;-</span> <span class="st">"/mnt/dl_acp79_modify/SAS to R - Testing/Testing_R_code/"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Input the migration month. This is for naming output files. It should follow</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the convention MonthYear i.e "Jan26"</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>mig_month <span class="ot">&lt;-</span> <span class="st">"Mar26"</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Input determines wither to run Monthly or Quarterly extracts</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Set as "Monthly" or "M" to run just the monthly extract</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Set as "Quarterly" or "Q" to create both monthly and quarterly extracts</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Set as "Annual" or "A" to create the complete extract</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>mode <span class="ot">&lt;-</span> <span class="st">"M"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This example from the NHSCR RAP pipeline sets the configurable parameters all in one place in the NHSCR_run_pipeline.R code, and explains clearly to the reader how to set the parameters.</p>
+</section>
+<section id="is-code-used-for-all-data-processing-steps" class="level2">
+<h2 class="anchored" data-anchor-id="is-code-used-for-all-data-processing-steps">Is code used for all data processing steps?</h2>
+<p>Data processing includes steps to extract data from its storage location, cleaning, restructuring and linking with other data sources.</p>
+<p>Using code for these steps can help to document all changes that are made to a dataset and minimise the risk of human error when carrying out these steps manually.</p>
+<p>The R for Data Science book has guidance on using code for <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/configuration.html">importing data, data transformation and tidying, including recommendations of which R packages to use</a>.</p>
+<p>The NHSCR RAP pipeline uses code for all data processing steps and the script NHSCR_run_pipeline.R to run whichever of the four extracts are required.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#run the selected mode</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (mode <span class="sc">==</span> <span class="st">"monthly"</span> <span class="sc">||</span> mode <span class="sc">==</span> <span class="st">"m"</span>) {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Running Monthly pipeline"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"code/NHSCR_Monthly.R"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Monthly extracts completed"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (mode <span class="sc">==</span> <span class="st">"quarterly"</span> <span class="sc">||</span> mode <span class="sc">==</span> <span class="st">"q"</span>) {</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Running Monthly pipeline"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"code/NHSCR_Monthly.R"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Monthly extracts completed"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Running quarterly pipeline"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"code/NHSCR_Quarterly.R"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"code/Historical_extract.R"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Quarterly extracts completed"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (mode <span class="sc">==</span> <span class="st">"annual"</span> <span class="sc">||</span> mode <span class="sc">==</span> <span class="st">"a"</span>){</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Running Monthly pipeline"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"code/NHSCR_Monthly.R"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Monthly extracts completed"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Running quarterly pipeline"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"code/NHSCR_Quarterly.R"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"code/Historical_extract.R"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Quarterly extracts completed"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"code/SCR_Annual.R"</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Annual extracts completed"</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"No mode has been selected"</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="are-all-data-inputs-clearly-documented-and-version-controlled-where-possible" class="level2">
+<h2 class="anchored" data-anchor-id="are-all-data-inputs-clearly-documented-and-version-controlled-where-possible">Are all data inputs clearly documented and version controlled where possible?</h2>
+<p>All datasets, lookups and reference files used within the process should be clearly documented, including their source and purpose. Where possible, changes to these inputs should be tracked through version control to improve transparency, reproducibility and auditability.</p>
+<p>In the NHSCR RAP pipeline, this information is all contained in the README.md and version control is used to track changes.</p>
+</section>
+<section id="are-analytical-outputs-generated-automatically-from-the-source-data-and-code" class="level2">
+<h2 class="anchored" data-anchor-id="are-analytical-outputs-generated-automatically-from-the-source-data-and-code">Are analytical outputs generated automatically from the source data and code?</h2>
+<p>Open source programming languages such as R allow all components of a published output to be created with code. This includes all charts, tables and commentary. R Markdown or Quarto might be used for html reports or Shiny for dashboards. Some benefits of this approach:</p>
+<ul>
+<li><p>It reduces error in copying and pasting items into a document.</p></li>
+<li><p>It saves time regenerating the report for updated source data as the process has been automated.</p></li>
+<li><p>It can ensure accessible, well formatted and professional looking outputs.</p></li>
+</ul>
+<p>For the NHSCR RAP pipeline, code has been used to produce all output tables and markdown has been used to produce the README.</p>
+</section>
+<section id="is-git-used-for-version-control" class="level2">
+<h2 class="anchored" data-anchor-id="is-git-used-for-version-control">Is Git used for version control?</h2>
+<p>Git is a version control software for tracking changes to files. Using Git means you don’t need to save multiple copies of the same file to retain older versions. Git keeps a record of what change was made, when the change was made, why the change was made, and who made the change.</p>
+<p>The NRS RAP Book contains further guidance on <a href="https://scotgovanalysis.github.io/nrs-rap-book/training/Git-in-R.html">using Git in R</a>.</p>
+</section>
+<section id="is-code-stored-in-a-shared-organisational-repository" class="level2">
+<h2 class="anchored" data-anchor-id="is-code-stored-in-a-shared-organisational-repository">Is code stored in a shared organisational repository?</h2>
+<p>Making your code open means it is available to anybody who would like to view it. Publishing your code can:</p>
+<ul>
+<li><p>Increase trust in your analysis</p></li>
+<li><p>Encourage collaboration</p></li>
+<li><p>Improve quality</p></li>
+<li><p>Help others benefit from your work.</p></li>
+</ul>
+<p><a href="https://github.com/ScotGovAnalysis/NRS_NHSCR">NHSCR CODE</a></p>
+</section>
+<section id="does-code-contain-functions-where-appropriate" class="level2">
+<h2 class="anchored" data-anchor-id="does-code-contain-functions-where-appropriate">Does code contain functions where appropriate?</h2>
+<p>Replacing repetitive blocks of code with functions can make your code easier to read and make it easier for you or others to maintain and update the code in future. This process is often known as code refactoring.</p>
+<p>For example, in the NHSCR code, we created a custom function for date columns which converts NA (i.e.&nbsp;missing) to blank:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># general date formatting for columns which converts NA - blank</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fmt_date <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(<span class="fu">is.na</span>(x), <span class="st">""</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">format</span>(x, <span class="st">"%Y%m%d"</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="is-data-quality-assurance-built-into-the-code" class="level2">
+<h2 class="anchored" data-anchor-id="is-data-quality-assurance-built-into-the-code">Is data quality assurance built into the code?</h2>
+<p>Code can be used to automate data quality assurance. Checking assumptions about data early in your analysis pipeline ensures that any issues can be spotted and dealt with quickly.</p>
+<p>The NHSCR pipeline contains</p>
+</section>
+<section id="is-automated-testing-built-into-the-code" class="level2">
+<h2 class="anchored" data-anchor-id="is-automated-testing-built-into-the-code">Is automated testing built into the code?</h2>
+<p>Automated checks can be used throughout the analytical pipeline to verify data quality, calculations and outputs. Building validation and testing into the code helps identify issues earlier, reduces manual quality assurance effort, and improves reproducibility.</p>
+<p>The NHSCR testing scripts are contained in the “validation” folder.</p>
+</section>
+<section id="can-the-process-be-executed-end-to-end-with-minimal-manual-intervention" class="level2">
+<h2 class="anchored" data-anchor-id="can-the-process-be-executed-end-to-end-with-minimal-manual-intervention">Can the process be executed end-to-end with minimal manual intervention?</h2>
+<p>The ultimate aim is for all steps in an analytical pipeline to be executed from a single script. This negates the need to open individual code scripts and run them one-by-one in a certain order.</p>
+<p>The NHSCR pipeline can be run dynamically from changing the configurable parameters in the script NHSCR_run_pipeline.R.</p>
+</section>
+<section id="has-code-been-reviewed-by-somebody-inside-the-immediate-team" class="level2">
+<h2 class="anchored" data-anchor-id="has-code-been-reviewed-by-somebody-inside-the-immediate-team">Has code been reviewed by somebody <u>inside</u> the immediate team?</h2>
+<p>Having your code reviewed by somebody else in your team can assure you that:</p>
+<ul>
+<li><p>your code works as expected</p></li>
+<li><p>your analysis is reproducible</p></li>
+<li><p>your documentation provides sufficient information for somebody else to know how to run your code</p></li>
+</ul>
+<p>Code review can be a one-off exercise but ideally somebody else should review your code any time a change is made. If you are already using GitHub or Azure DevOps, this can be facilitated by using Pull Requests.</p>
+</section>
+<section id="has-your-code-been-reviewed-by-somebody-outside-the-immediate-team" class="level2">
+<h2 class="anchored" data-anchor-id="has-your-code-been-reviewed-by-somebody-outside-the-immediate-team">Has your code been reviewed by somebody <u>outside</u> the immediate team?</h2>
+<p>It is beneficial for someone external to the team to review the RAP code:</p>
+<ul>
+<li><p>It ensures reproducibility of the RAP as a standalone process, not relying on undocumented internal knowledge.</p></li>
+<li><p>People more distant from the process can provide useful feedback and perspective.</p></li>
+</ul>
+<p>Contact the RAP team for code reviews - rap.development@nrscotland.gov.uk</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ScotGovAnalysis\.github\.io\/nrs-rap-book\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

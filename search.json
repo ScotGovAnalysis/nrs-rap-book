@@ -1,214 +1,5 @@
 [
   {
-    "objectID": "rap-in-nrs/getting-started.html",
-    "href": "rap-in-nrs/getting-started.html",
-    "title": "Getting started",
-    "section": "",
-    "text": "While the RAP Development team won’t be able to work closely with all teams right away, there are steps teams should take to get started on RAP development.\n\nDevelop process maps for each analytical output. These will be useful to help understand existing SAS processes, highlight areas for improvement and plan RAP development work. We have written guidance and produced an example map to help you get started.\nConsider R training needs in your team.\n\nContact the NRS Learning & Development team to find out about upcoming training courses on offer in NRS.\nReview the Scottish Government R training on offer and keep an eye on the OCS newsletter for other opportunities.\n\nConsider whether there are any technical barriers to your team using the current R environment on NRScotland (e.g. data access, memory constraints) and raise these with the RAP Development team.\nThink about other planned or potential changes to your analysis and how this might impact RAP development. For example, consider proposed changes of the publication review work.\nFollow coding good practices when writing R code. We will develop more thorough guidance for NRS soon, but this is a good place to start.\nAttend RAP Show and Tidy sessions to learn from others and consider presenting your own development work (no matter how big or small!)\nFamiliarise yourself with existing RAP resources:\n\nGovernment Analysis Function RAP Guidance\nRAP Self Assessment Tool\nQuality Assurance of Code for Analysis and Research (Duck Book)",
-    "crumbs": [
-      "RAP in NRS",
-      "Getting started"
-    ]
-  },
-  {
-    "objectID": "rap-in-nrs/why-rap.html",
-    "href": "rap-in-nrs/why-rap.html",
-    "title": "Why RAP?",
-    "section": "",
-    "text": "Reproducible Analytical Pipelines (RAPs) are analytical processes that have been developed in a way that promotes reproducibility, efficiency and quality.\nSome common examples of a RAP approach in practice are:\n\nUsing open-source software (e.g. R or Python) over proprietary software (e.g. SAS)\nAutomating tasks where possible to minimise manual steps\nUsing version control software (e.g. Git) to create an audit trail of changes\nGood documentation stored in the same place as the code\nRegular peer review of code to improve quality and shared understanding\nBuilt in quality assurance to give early indication of problems\n\nThese are just some examples, however there are many more that could be applied depending on the requirements of the project.\nIt is important to note that RAP is not all or nothing, or once and done. You do not need to apply all possible RAP principles to achieve benefits, and improvements should be an ongoing process. Adopting a RAP approach will involve some quick wins, some up-front investment for bigger long-term gains, and continuous improvement.\nYou can read more about RAP and examples of good practice on the Government Analysis Function website.\nEmbedding a RAP approach in NRS will help us to:\n\nTransition from SAS to Open Source software\nImprove efficiency of processes to free up time for other work\nEnsure processes are well understood, easy to maintain and robust to staff changes\n\nTeams may already be following some RAP principles in existing SAS processes. However, transitioning from SAS to open-source software will offer further opportunities to strengthen this approach and realise more benefits.",
-    "crumbs": [
-      "RAP in NRS",
-      "Why RAP?"
-    ]
-  },
-  {
-    "objectID": "training/index.html",
-    "href": "training/index.html",
-    "title": "Training",
-    "section": "",
-    "text": "This section is in development.",
-    "crumbs": [
-      "Training"
-    ]
-  },
-  {
-    "objectID": "training/Git-in-R.html",
-    "href": "training/Git-in-R.html",
-    "title": "Using Git",
-    "section": "",
-    "text": "Git is an open source version control tool. It integrates with GitHub or Azure DevOps to allowing you to maintain clear versions of all coding projects.",
-    "crumbs": [
-      "Training",
-      "Using Git"
-    ]
-  },
-  {
-    "objectID": "training/Git-in-R.html#what-is-git",
-    "href": "training/Git-in-R.html#what-is-git",
-    "title": "Using Git",
-    "section": "",
-    "text": "Git is an open source version control tool. It integrates with GitHub or Azure DevOps to allowing you to maintain clear versions of all coding projects.",
-    "crumbs": [
-      "Training",
-      "Using Git"
-    ]
-  },
-  {
-    "objectID": "training/Git-in-R.html#explaining-the-jargon",
-    "href": "training/Git-in-R.html#explaining-the-jargon",
-    "title": "Using Git",
-    "section": "Explaining the Jargon",
-    "text": "Explaining the Jargon\nAll version control tools come with a set of jargon. In this section we aim to break down what each of those terms mean and how they apply to using git within GitHub or Azure DevOps.\n\nRepository or Repo\nThis is the storage location of the project files along with the log of the complete history of changes made to the project files. For all projects you will encounter two main repositories.\nLocal - The local repository, sometimes referenced to as the Working directory refers to the project directory stored on the working machine. Such as within shared file storage, network drive or laptops C: drive. It is the directory in which you will be working and saving your files.\nRemote - The remote repository is hosted on platforms such as GitHub or Azure DevOps. It is primarily used for backup and collaboration. It is usually what is known as a bare directory containing git files, history and metadata but not working files.\nGit is used to facilitate communication between these two levels of repository. If the local repository already exists you can initialize the remote repository using the command line prompt:\ngit init\nIf the remote repository has already been initiated you can create a local copy by using the command prompt:\ngit clone\nFor more information on project structure refer to page:\n\n\nGuide to Devops\n\n\n\nBranches\nEvery new repository will be created with an origin branch know as main or master. This branch should be used to store the final or stable, ready for use, version of the code.\nTherefore it is good coding practice to develop code on a working branch. This is particularly good practice when working in teams as it allows every team member to work within their own branch and reduces risk of overwriting stable code and introducing bugs and errors to the main code line while they are developing. Once development is concluded the branch can be merged into the main stable codebase. Branches can also be used to test fixes for bugs.\nTo create a new branch locally and move into that branch you can run the command:\ngit checkout -b &lt;name&gt;\nYou will then need to link your local branch to the remote branch using the command:\ngit push --set-upstream origin &lt;name&gt;\nA new branch can also be created within your version control tool (GitHub, DevOps) and then\ngit checkout &lt;name&gt;\nFor more information on dealing with bug fixes, pull requests and code merging within DevOps:\n\nGuide to DevOps - Pull requests\n\n\n\nThree Data States\n\n\n\nFigure of Git’s three main sections\n\n\nThere are three main states any file can exist within:\nmodified - files that have been add, removed or edited within the working directory.\nstaged - selected changes are temporarily recorded or indexed before they are committed to the git directory which stores the metadata and objects associated with the modifications that have been staged. To stage files you use the command:\ngit add\ncommitted - committing takes files recorded in the staging area and stores a snapshot permanently within the git directory. Each commit is assigned a hash code that allows you to access the snapshot. Therefore if you want to roll-back to a particular snapshot you can access it via its hash code. Staged files can be committed as follows:\n`git commit -m “message”\nA commit message is also added to all commit commands. This is to add context to the update within the git directory. A good commit message should be short and succinct but also give clear messaging about what you have changed. For example if you were fixing a bug, in a function called Check_file that was identified in pull request number 33 your commit message may look like:\ngit commit -m \"!33: bug fix in Check_file - Solved\"\nThe above commit message clearly states it is working on issue/pull request number 33 in which a bug was identified in the function Check_file and that it has been tested and marked as solved ready for merging.\n\n\n\n\n\n\nImportant\n\n\n\nRemember to push\n\n\nAll of these are within the local repository. In order to back up the committed changes you have to push your changes to the remote repository. This can be done using the command:\ngit push\nIf you do not push your commits they will not be recorded in your remote repository and will not be backed up or be available to be accessed by collaborators.\n\n\nCommand line quick reference\n# Initialize a remote repository from local folder\ngit init\n\n# Clone a repository from remote\ngit clone\n\n# To update local files to match remote repository\ngit pull\n\n# To create a new local branch \ngit checkout -b &lt;name&gt;\n\n# Move onto a branch \ngit checkout &lt;name&gt;\n\n# Link a locale branch to the remote branch\ngit push --set-upstream origin &lt;name&gt;\n\n# Link a local branch to the remote branch\ngit push --set-upstream origin name\n\n# To stage all modified files\ngit add .\n\n# To stage a single file\ngit add &lt;file&gt;\n\n# To commit files to local repository\ngit commit -m \"message\"\n\n# To push changes to remote repository\ngit push\n\n# Check status of files\ngit status",
-    "crumbs": [
-      "Training",
-      "Using Git"
-    ]
-  },
-  {
-    "objectID": "training/Git-in-R.html#git-within-r-studio",
-    "href": "training/Git-in-R.html#git-within-r-studio",
-    "title": "Using Git",
-    "section": "Git within R studio",
-    "text": "Git within R studio\nIn order to use git within RStudio you must have the directory set up as an R project. Therefore any cloned repository must contain a Rproj file.\nYou can use all of the above command lined within the terminal window of RStudio, however RStudio also offers a graphical interface that some may find preferable to use. To access open the Tools menu and access Version Control menu and Commit.... You can also access this with the keyboard short cut Ctrl+Alt+M.\n\n\n\nMenu access to version control tools within R Studio\n\n\nWithin the commit screen you can easily change branch, overview any documents modified (M), added (A) or removed (R) and investigate those changes when compared to the remote branch. Changes can be staged by ticking the box within the stage column. A commit message can be added and changes committed to the local branch. Then changes can be pushed to the remote branch.\n\n\n\nVersion control tools within R studio",
-    "crumbs": [
-      "Training",
-      "Using Git"
-    ]
-  },
-  {
-    "objectID": "training/Git-in-R.html#further-reading",
-    "href": "training/Git-in-R.html#further-reading",
-    "title": "Using Git",
-    "section": "Further reading",
-    "text": "Further reading\nFor a more in depth discussion on Git and how it works: Pro Git book\nFor information in collaborating on projects within Azure Devops:-\nGuide to DevOps - Pull requests",
-    "crumbs": [
-      "Training",
-      "Using Git"
-    ]
-  },
-  {
-    "objectID": "blog/2026-05-13_process-maps/slides.html#what-is-a-process-map",
-    "href": "blog/2026-05-13_process-maps/slides.html#what-is-a-process-map",
-    "title": "NRS RAP Book",
-    "section": "What is a process map?",
-    "text": "What is a process map?\nA process map is a method for documenting and visualising the steps required to move from the beginning to the end of a process.\nThey can vary in their level of detail; however, it is helpful to include the following key elements:\n\nInput Data\nManual steps\nCode or prompts\nOutputs"
-  },
-  {
-    "objectID": "blog/2026-05-13_process-maps/slides.html#why-create-a-process-map",
-    "href": "blog/2026-05-13_process-maps/slides.html#why-create-a-process-map",
-    "title": "NRS RAP Book",
-    "section": "Why create a process map?",
-    "text": "Why create a process map?\n\nDevelop a shared understanding within your team of what the process involves\nExplain the process to others (new team member, colleagues)\nSpot opportunities to improve the process\nMake it easier to develop the process in a non linear way"
-  },
-  {
-    "objectID": "blog/2026-05-13_process-maps/slides.html#top-tips-for-creating-a-process-map",
-    "href": "blog/2026-05-13_process-maps/slides.html#top-tips-for-creating-a-process-map",
-    "title": "NRS RAP Book",
-    "section": "Top tips for creating a process map",
-    "text": "Top tips for creating a process map\n\nStart simple\nUse symbols consistently\nKeep the scope manageable\nKeep your process map with your code\nYou don’t need to understand every line of your code\nDon’t worry about using specialist software"
-  },
-  {
-    "objectID": "blog/2026-05-13_process-maps/slides.html#building-a-process-map",
-    "href": "blog/2026-05-13_process-maps/slides.html#building-a-process-map",
-    "title": "NRS RAP Book",
-    "section": "Building a process map",
-    "text": "Building a process map\nUsing NHSCR - Migration Extract as an example\n\nVisio is available as part of the Microsoft 365 suite"
-  },
-  {
-    "objectID": "blog/2026-05-13_process-maps/slides.html#building-a-process-map-1",
-    "href": "blog/2026-05-13_process-maps/slides.html#building-a-process-map-1",
-    "title": "NRS RAP Book",
-    "section": "Building a process map",
-    "text": "Building a process map\nCompleted maps can be used to scope and plan RAP projects."
-  },
-  {
-    "objectID": "blog/2026-05-13_process-maps/slides.html#a-further-example",
-    "href": "blog/2026-05-13_process-maps/slides.html#a-further-example",
-    "title": "NRS RAP Book",
-    "section": "A further example",
-    "text": "A further example"
-  },
-  {
-    "objectID": "blog/2026-05-13_process-maps/slides.html#where-to-find-visio",
-    "href": "blog/2026-05-13_process-maps/slides.html#where-to-find-visio",
-    "title": "NRS RAP Book",
-    "section": "Where to find Visio",
-    "text": "Where to find Visio\nThrough the SCOTS Microsoft365 (or M365) account we have access to the online version of Visio, Microsoft’s flowchart building software.\nIt can easily be located via the NRS Saltire home page by clicking the 9 dots at the top left hand side of the screen. From there you can use the search bar and type Visio or you can click More Apps scrolling to the bottom of the page to find the Visio icon.\nStarting a new template document will give you a standard palette of shapes to get starting in building your process map."
-  },
-  {
-    "objectID": "blog/2026-05-13_process-maps/slides.html#building-a-process-map-2",
-    "href": "blog/2026-05-13_process-maps/slides.html#building-a-process-map-2",
-    "title": "NRS RAP Book",
-    "section": "Building a process map",
-    "text": "Building a process map\n\nProcess maps can use existing code or be used to plan projects from the outset.\n\nFirst identify fixed constants\n\nAsk what changes are required to convert input into desired output. Add each major change to the map as an element. You can build on the detail, using different shapes, colours or expanding the map."
-  },
-  {
-    "objectID": "guidance/process-mapping.html",
-    "href": "guidance/process-mapping.html",
-    "title": "Process Mapping",
-    "section": "",
-    "text": "This document introduces process mapping and explains why it is a useful tool for documenting and improving analytical processes. Process maps provide a clear, visual overview of how data flows from inputs through processing and analysis to final outputs. They support transparency, shared understanding, and more efficient ways of working. They can also support work within existing SAS projects, help teams track and document their analytical pipeline, and provide a clear foundation when transitioning to open‑source tools.",
-    "crumbs": [
-      "Guidance",
-      "Process Mapping"
-    ]
-  },
-  {
-    "objectID": "guidance/process-mapping.html#what-is-a-process-map",
-    "href": "guidance/process-mapping.html#what-is-a-process-map",
-    "title": "Process Mapping",
-    "section": "What is a process map?",
-    "text": "What is a process map?\nA process map is a method for documenting and visualising the steps required to move from the beginning to the end of a process. In the context of NRS statistics, a process may relate to the production of publications, management information, data tables, or any other analytical work that is carried out on a recurring basis.\nProcess maps can vary in their level of detail; however, it is generally helpful to include the following key elements:\n\nInput data: These may come from a database, a flat file, or be manually defined within code.\nManual steps: These can include tasks such as copying and pasting data between files, renaming or moving files, or carrying out manual quality assurance checks.\nCode or programs: These may consist of SAS programs, R scripts, or other automated processing tools. In some cases, it may also be useful to include details of the main tasks the code carries out.\nOutputs: These can include data files, charts saved as image files, formatted Excel spreadsheets, publication reports, or dashboards.",
-    "crumbs": [
-      "Guidance",
-      "Process Mapping"
-    ]
-  },
-  {
-    "objectID": "guidance/process-mapping.html#why-create-a-process-map",
-    "href": "guidance/process-mapping.html#why-create-a-process-map",
-    "title": "Process Mapping",
-    "section": "Why create a process map?",
-    "text": "Why create a process map?\nA process map is an invaluable piece of documentation for any analytical process. It can help you to:\n\nDevelop a shared understanding within your team of what the process involves. This is particularly useful for managers or others who are not closely involved in the day-to-day technical delivery.\nExplain the process to others, such as a new team member or a colleague from the RAP Development team who may be supporting redevelopment work.\nSpot opportunities to improve the process, such as areas where steps could be simplified, reordered, or combined.\nMake it easier to develop the process in a non‑linear way, for example by showing where improving outputs or visualisations first could be more useful than starting at the beginning.\n\nEven if a process has already undergone redevelopment, creating a process map remains valuable, particularly for building shared understanding and supporting knowledge transfer. In addition, further opportunities for improvement may still be uncovered.",
-    "crumbs": [
-      "Guidance",
-      "Process Mapping"
-    ]
-  },
-  {
-    "objectID": "guidance/process-mapping.html#top-tips-for-creating-a-process-map",
-    "href": "guidance/process-mapping.html#top-tips-for-creating-a-process-map",
-    "title": "Process Mapping",
-    "section": "Top tips for creating a process map",
-    "text": "Top tips for creating a process map\n\nStart simple. Begin with a high-level view of the process. If it becomes clear that additional detail is needed, this can always be added later.\nDon’t worry about using specialist software. Simple text boxes and arrows in PowerPoint or Word are often sufficient. Tools like Microsoft Visio can also work well, but they are not essential.\nUse symbols consistently. Use different symbols to distinguish between data, code, and manual steps.\nHave a clear key or legend to explain what each symbol represents. The specific symbols you choose are less important than using them consistently.\nKeep the scope manageable. Avoid trying to capture multiple processes, or an overly large process, in a single map. A good rule of thumb is to create one map per publication or equivalent analytical product. If a map becomes too large or complex, consider splitting it into separate maps, for example, one for data processing and another for producing outputs.\nKeep your process map with your code where possible. It makes it easier to find later. This also follows RAP principles by keeping documentation alongside the code base, rather than in a separate location. If it is not possible to store the process map with the code, it should be kept alongside the rest of the project documentation.\nYou don’t need to understand every line of your code to produce a useful process map. It is about capturing the flow, not the detail.",
-    "crumbs": [
-      "Guidance",
-      "Process Mapping"
-    ]
-  },
-  {
-    "objectID": "guidance/process-mapping.html#example-process-map",
-    "href": "guidance/process-mapping.html#example-process-map",
-    "title": "Process Mapping",
-    "section": "Example process map",
-    "text": "Example process map\nThe example process map below is based on NHSCR, which is a SAS process run on monthly and quarterly basis. It reads in multiple datasets, applies a series of transformations, and produces a set of output data files. This example focuses on illustrating a section of that flow.\n\nThis process map uses different symbols to represent input files, data manipulation, intermediate files, and outputs. Using consistent symbols keeps the map clear and easy to follow, and helps readers quickly understand the flow of data through the process.\nLooking at the map also helps illustrate some of the practical benefits of process mapping in action. For example:\n\nIt allows someone new to the process, or unfamiliar with the code, to quickly see which data files are required and what outputs are produced.\nIt highlights where similar steps are repeated across multiple process flows, which can prompt discussion about whether parts of the process could be simplified or reused to reduce repetition.",
-    "crumbs": [
-      "Guidance",
-      "Process Mapping"
-    ]
-  },
-  {
-    "objectID": "guidance/process-mapping.html#using-microsoft-visio",
-    "href": "guidance/process-mapping.html#using-microsoft-visio",
-    "title": "Process Mapping",
-    "section": "Using Microsoft Visio",
-    "text": "Using Microsoft Visio\nMicrosoft Visio is a useful tool for creating process maps within NRS, as it is available through Microsoft 365. When you open Visio, you can choose from a range of templates, including a basic diagram or a standard flowchart template with commonly used symbols.\nWhen creating process maps, the priority should be to get started rather than focusing on unnecessary complexity. Using simple, clear shapes and flows with keys will help ensure that your process map is easy to follow.\nVisio files can be saved in visio file format (.vsdx), which allows you to revisit and edit them later. You can also export them as images (.png) or PDF files. However, exported versions cannot be edited, so make sure to keep the original Visio file for any future updates.\nFor more guidance on using Visio, please refer to these slides on building process maps.",
-    "crumbs": [
-      "Guidance",
-      "Process Mapping"
-    ]
-  },
-  {
     "objectID": "guidance/differences-between-sas-and-r.html",
     "href": "guidance/differences-between-sas-and-r.html",
     "title": "Differences Between SAS and R",
@@ -363,13 +154,69 @@
     ]
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
+    "objectID": "guidance/process-mapping.html",
+    "href": "guidance/process-mapping.html",
+    "title": "Process Mapping",
     "section": "",
-    "text": "Building Process Maps slides for RAP Show & Tidy presentation on 13th May 2026.",
+    "text": "This document introduces process mapping and explains why it is a useful tool for documenting and improving analytical processes. Process maps provide a clear, visual overview of how data flows from inputs through processing and analysis to final outputs. They support transparency, shared understanding, and more efficient ways of working. They can also support work within existing SAS projects, help teams track and document their analytical pipeline, and provide a clear foundation when transitioning to open‑source tools.",
     "crumbs": [
-      "Blog"
+      "Guidance",
+      "Process Mapping"
+    ]
+  },
+  {
+    "objectID": "guidance/process-mapping.html#what-is-a-process-map",
+    "href": "guidance/process-mapping.html#what-is-a-process-map",
+    "title": "Process Mapping",
+    "section": "What is a process map?",
+    "text": "What is a process map?\nA process map is a method for documenting and visualising the steps required to move from the beginning to the end of a process. In the context of NRS statistics, a process may relate to the production of publications, management information, data tables, or any other analytical work that is carried out on a recurring basis.\nProcess maps can vary in their level of detail; however, it is generally helpful to include the following key elements:\n\nInput data: These may come from a database, a flat file, or be manually defined within code.\nManual steps: These can include tasks such as copying and pasting data between files, renaming or moving files, or carrying out manual quality assurance checks.\nCode or programs: These may consist of SAS programs, R scripts, or other automated processing tools. In some cases, it may also be useful to include details of the main tasks the code carries out.\nOutputs: These can include data files, charts saved as image files, formatted Excel spreadsheets, publication reports, or dashboards.",
+    "crumbs": [
+      "Guidance",
+      "Process Mapping"
+    ]
+  },
+  {
+    "objectID": "guidance/process-mapping.html#why-create-a-process-map",
+    "href": "guidance/process-mapping.html#why-create-a-process-map",
+    "title": "Process Mapping",
+    "section": "Why create a process map?",
+    "text": "Why create a process map?\nA process map is an invaluable piece of documentation for any analytical process. It can help you to:\n\nDevelop a shared understanding within your team of what the process involves. This is particularly useful for managers or others who are not closely involved in the day-to-day technical delivery.\nExplain the process to others, such as a new team member or a colleague from the RAP Development team who may be supporting redevelopment work.\nSpot opportunities to improve the process, such as areas where steps could be simplified, reordered, or combined.\nMake it easier to develop the process in a non‑linear way, for example by showing where improving outputs or visualisations first could be more useful than starting at the beginning.\n\nEven if a process has already undergone redevelopment, creating a process map remains valuable, particularly for building shared understanding and supporting knowledge transfer. In addition, further opportunities for improvement may still be uncovered.",
+    "crumbs": [
+      "Guidance",
+      "Process Mapping"
+    ]
+  },
+  {
+    "objectID": "guidance/process-mapping.html#top-tips-for-creating-a-process-map",
+    "href": "guidance/process-mapping.html#top-tips-for-creating-a-process-map",
+    "title": "Process Mapping",
+    "section": "Top tips for creating a process map",
+    "text": "Top tips for creating a process map\n\nStart simple. Begin with a high-level view of the process. If it becomes clear that additional detail is needed, this can always be added later.\nDon’t worry about using specialist software. Simple text boxes and arrows in PowerPoint or Word are often sufficient. Tools like Microsoft Visio can also work well, but they are not essential.\nUse symbols consistently. Use different symbols to distinguish between data, code, and manual steps.\nHave a clear key or legend to explain what each symbol represents. The specific symbols you choose are less important than using them consistently.\nKeep the scope manageable. Avoid trying to capture multiple processes, or an overly large process, in a single map. A good rule of thumb is to create one map per publication or equivalent analytical product. If a map becomes too large or complex, consider splitting it into separate maps, for example, one for data processing and another for producing outputs.\nKeep your process map with your code where possible. It makes it easier to find later. This also follows RAP principles by keeping documentation alongside the code base, rather than in a separate location. If it is not possible to store the process map with the code, it should be kept alongside the rest of the project documentation.\nYou don’t need to understand every line of your code to produce a useful process map. It is about capturing the flow, not the detail.",
+    "crumbs": [
+      "Guidance",
+      "Process Mapping"
+    ]
+  },
+  {
+    "objectID": "guidance/process-mapping.html#example-process-map",
+    "href": "guidance/process-mapping.html#example-process-map",
+    "title": "Process Mapping",
+    "section": "Example process map",
+    "text": "Example process map\nThe example process map below is based on NHSCR, which is a SAS process run on monthly and quarterly basis. It reads in multiple datasets, applies a series of transformations, and produces a set of output data files. This example focuses on illustrating a section of that flow.\n\nThis process map uses different symbols to represent input files, data manipulation, intermediate files, and outputs. Using consistent symbols keeps the map clear and easy to follow, and helps readers quickly understand the flow of data through the process.\nLooking at the map also helps illustrate some of the practical benefits of process mapping in action. For example:\n\nIt allows someone new to the process, or unfamiliar with the code, to quickly see which data files are required and what outputs are produced.\nIt highlights where similar steps are repeated across multiple process flows, which can prompt discussion about whether parts of the process could be simplified or reused to reduce repetition.",
+    "crumbs": [
+      "Guidance",
+      "Process Mapping"
+    ]
+  },
+  {
+    "objectID": "guidance/process-mapping.html#using-microsoft-visio",
+    "href": "guidance/process-mapping.html#using-microsoft-visio",
+    "title": "Process Mapping",
+    "section": "Using Microsoft Visio",
+    "text": "Using Microsoft Visio\nMicrosoft Visio is a useful tool for creating process maps within NRS, as it is available through Microsoft 365. When you open Visio, you can choose from a range of templates, including a basic diagram or a standard flowchart template with commonly used symbols.\nWhen creating process maps, the priority should be to get started rather than focusing on unnecessary complexity. Using simple, clear shapes and flows with keys will help ensure that your process map is easy to follow.\nVisio files can be saved in visio file format (.vsdx), which allows you to revisit and edit them later. You can also export them as images (.png) or PDF files. However, exported versions cannot be edited, so make sure to keep the original Visio file for any future updates.\nFor more guidance on using Visio, please refer to these slides on building process maps.",
+    "crumbs": [
+      "Guidance",
+      "Process Mapping"
     ]
   },
   {
@@ -406,13 +253,14 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "NRS RAP Book",
+    "objectID": "rap-in-nrs/why-rap.html",
+    "href": "rap-in-nrs/why-rap.html",
+    "title": "Why RAP?",
     "section": "",
-    "text": "This book contains information on developing Reproducible Analytical Pipelines (RAPs) in National Records of Scotland (NRS).\nThe content has been developed by the RAP Development team, who joined NRS in 2026. The team’s role is to lead the implementation of RAP across statistics and analysis production in NRS.\nPlease get in touch with the RAP Development team if you have any feedback or questions.",
+    "text": "Reproducible Analytical Pipelines (RAPs) are analytical processes that have been developed in a way that promotes reproducibility, efficiency and quality.\nSome common examples of a RAP approach in practice are:\n\nUsing open-source software (e.g. R or Python) over proprietary software (e.g. SAS)\nAutomating tasks where possible to minimise manual steps\nUsing version control software (e.g. Git) to create an audit trail of changes\nGood documentation stored in the same place as the code\nRegular peer review of code to improve quality and shared understanding\nBuilt in quality assurance to give early indication of problems\n\nThese are just some examples, however there are many more that could be applied depending on the requirements of the project.\nIt is important to note that RAP is not all or nothing, or once and done. You do not need to apply all possible RAP principles to achieve benefits, and improvements should be an ongoing process. Adopting a RAP approach will involve some quick wins, some up-front investment for bigger long-term gains, and continuous improvement.\nYou can read more about RAP and examples of good practice on the Government Analysis Function website.\nEmbedding a RAP approach in NRS will help us to:\n\nTransition from SAS to Open Source software\nImprove efficiency of processes to free up time for other work\nEnsure processes are well understood, easy to maintain and robust to staff changes\n\nTeams may already be following some RAP principles in existing SAS processes. However, transitioning from SAS to open-source software will offer further opportunities to strengthen this approach and realise more benefits.",
     "crumbs": [
-      "Home"
+      "RAP in NRS",
+      "Why RAP?"
     ]
   },
   {
@@ -458,5 +306,290 @@
       "RAP in NRS",
       "RAP Support"
     ]
+  },
+  {
+    "objectID": "blog/2026-05-13_process-maps/slides.html#what-is-a-process-map",
+    "href": "blog/2026-05-13_process-maps/slides.html#what-is-a-process-map",
+    "title": "NRS RAP Book",
+    "section": "What is a process map?",
+    "text": "What is a process map?\nA process map is a method for documenting and visualising the steps required to move from the beginning to the end of a process.\nThey can vary in their level of detail; however, it is helpful to include the following key elements:\n\nInput Data\nManual steps\nCode or prompts\nOutputs"
+  },
+  {
+    "objectID": "blog/2026-05-13_process-maps/slides.html#why-create-a-process-map",
+    "href": "blog/2026-05-13_process-maps/slides.html#why-create-a-process-map",
+    "title": "NRS RAP Book",
+    "section": "Why create a process map?",
+    "text": "Why create a process map?\n\nDevelop a shared understanding within your team of what the process involves\nExplain the process to others (new team member, colleagues)\nSpot opportunities to improve the process\nMake it easier to develop the process in a non linear way"
+  },
+  {
+    "objectID": "blog/2026-05-13_process-maps/slides.html#top-tips-for-creating-a-process-map",
+    "href": "blog/2026-05-13_process-maps/slides.html#top-tips-for-creating-a-process-map",
+    "title": "NRS RAP Book",
+    "section": "Top tips for creating a process map",
+    "text": "Top tips for creating a process map\n\nStart simple\nUse symbols consistently\nKeep the scope manageable\nKeep your process map with your code\nYou don’t need to understand every line of your code\nDon’t worry about using specialist software"
+  },
+  {
+    "objectID": "blog/2026-05-13_process-maps/slides.html#building-a-process-map",
+    "href": "blog/2026-05-13_process-maps/slides.html#building-a-process-map",
+    "title": "NRS RAP Book",
+    "section": "Building a process map",
+    "text": "Building a process map\nUsing NHSCR - Migration Extract as an example\n\nVisio is available as part of the Microsoft 365 suite"
+  },
+  {
+    "objectID": "blog/2026-05-13_process-maps/slides.html#building-a-process-map-1",
+    "href": "blog/2026-05-13_process-maps/slides.html#building-a-process-map-1",
+    "title": "NRS RAP Book",
+    "section": "Building a process map",
+    "text": "Building a process map\nCompleted maps can be used to scope and plan RAP projects."
+  },
+  {
+    "objectID": "blog/2026-05-13_process-maps/slides.html#a-further-example",
+    "href": "blog/2026-05-13_process-maps/slides.html#a-further-example",
+    "title": "NRS RAP Book",
+    "section": "A further example",
+    "text": "A further example"
+  },
+  {
+    "objectID": "blog/2026-05-13_process-maps/slides.html#where-to-find-visio",
+    "href": "blog/2026-05-13_process-maps/slides.html#where-to-find-visio",
+    "title": "NRS RAP Book",
+    "section": "Where to find Visio",
+    "text": "Where to find Visio\nThrough the SCOTS Microsoft365 (or M365) account we have access to the online version of Visio, Microsoft’s flowchart building software.\nIt can easily be located via the NRS Saltire home page by clicking the 9 dots at the top left hand side of the screen. From there you can use the search bar and type Visio or you can click More Apps scrolling to the bottom of the page to find the Visio icon.\nStarting a new template document will give you a standard palette of shapes to get starting in building your process map."
+  },
+  {
+    "objectID": "blog/2026-05-13_process-maps/slides.html#building-a-process-map-2",
+    "href": "blog/2026-05-13_process-maps/slides.html#building-a-process-map-2",
+    "title": "NRS RAP Book",
+    "section": "Building a process map",
+    "text": "Building a process map\n\nProcess maps can use existing code or be used to plan projects from the outset.\n\nFirst identify fixed constants\n\nAsk what changes are required to convert input into desired output. Add each major change to the map as an element. You can build on the detail, using different shapes, colours or expanding the map."
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Building Process Maps slides for RAP Show & Tidy presentation on 13th May 2026.",
+    "crumbs": [
+      "Blog"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NRS RAP Book",
+    "section": "",
+    "text": "This book contains information on developing Reproducible Analytical Pipelines (RAPs) in National Records of Scotland (NRS).\nThe content has been developed by the RAP Development team, who joined NRS in 2026. The team’s role is to lead the implementation of RAP across statistics and analysis production in NRS.\nPlease get in touch with the RAP Development team if you have any feedback or questions.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "rap-in-nrs/getting-started.html",
+    "href": "rap-in-nrs/getting-started.html",
+    "title": "Getting started",
+    "section": "",
+    "text": "While the RAP Development team won’t be able to work closely with all teams right away, there are steps teams should take to get started on RAP development.\n\nDevelop process maps for each analytical output. These will be useful to help understand existing SAS processes, highlight areas for improvement and plan RAP development work. We have written guidance and produced an example map to help you get started.\nConsider R training needs in your team.\n\nContact the NRS Learning & Development team to find out about upcoming training courses on offer in NRS.\nReview the Scottish Government R training on offer and keep an eye on the OCS newsletter for other opportunities.\n\nConsider whether there are any technical barriers to your team using the current R environment on NRScotland (e.g. data access, memory constraints) and raise these with the RAP Development team.\nThink about other planned or potential changes to your analysis and how this might impact RAP development. For example, consider proposed changes of the publication review work.\nFollow coding good practices when writing R code. We will develop more thorough guidance for NRS soon, but this is a good place to start.\nAttend RAP Show and Tidy sessions to learn from others and consider presenting your own development work (no matter how big or small!)\nFamiliarise yourself with existing RAP resources:\n\nGovernment Analysis Function RAP Guidance\nRAP Self Assessment Tool\nQuality Assurance of Code for Analysis and Research (Duck Book)",
+    "crumbs": [
+      "RAP in NRS",
+      "Getting started"
+    ]
+  },
+  {
+    "objectID": "training/index.html",
+    "href": "training/index.html",
+    "title": "Training",
+    "section": "",
+    "text": "This section is in development.",
+    "crumbs": [
+      "Training"
+    ]
+  },
+  {
+    "objectID": "training/Git-in-R.html",
+    "href": "training/Git-in-R.html",
+    "title": "Using Git",
+    "section": "",
+    "text": "Git is an open source version control tool. It integrates with GitHub or Azure DevOps to allowing you to maintain clear versions of all coding projects.",
+    "crumbs": [
+      "Training",
+      "Using Git"
+    ]
+  },
+  {
+    "objectID": "training/Git-in-R.html#what-is-git",
+    "href": "training/Git-in-R.html#what-is-git",
+    "title": "Using Git",
+    "section": "",
+    "text": "Git is an open source version control tool. It integrates with GitHub or Azure DevOps to allowing you to maintain clear versions of all coding projects.",
+    "crumbs": [
+      "Training",
+      "Using Git"
+    ]
+  },
+  {
+    "objectID": "training/Git-in-R.html#explaining-the-jargon",
+    "href": "training/Git-in-R.html#explaining-the-jargon",
+    "title": "Using Git",
+    "section": "Explaining the Jargon",
+    "text": "Explaining the Jargon\nAll version control tools come with a set of jargon. In this section we aim to break down what each of those terms mean and how they apply to using git within GitHub or Azure DevOps.\n\nRepository or Repo\nThis is the storage location of the project files along with the log of the complete history of changes made to the project files. For all projects you will encounter two main repositories.\nLocal - The local repository, sometimes referenced to as the Working directory refers to the project directory stored on the working machine. Such as within shared file storage, network drive or laptops C: drive. It is the directory in which you will be working and saving your files.\nRemote - The remote repository is hosted on platforms such as GitHub or Azure DevOps. It is primarily used for backup and collaboration. It is usually what is known as a bare directory containing git files, history and metadata but not working files.\nGit is used to facilitate communication between these two levels of repository. If the local repository already exists you can initialize the remote repository using the command line prompt:\ngit init\nIf the remote repository has already been initiated you can create a local copy by using the command prompt:\ngit clone\nFor more information on project structure refer to page:\n\n\nGuide to Devops\n\n\n\nBranches\nEvery new repository will be created with an origin branch know as main or master. This branch should be used to store the final or stable, ready for use, version of the code.\nTherefore it is good coding practice to develop code on a working branch. This is particularly good practice when working in teams as it allows every team member to work within their own branch and reduces risk of overwriting stable code and introducing bugs and errors to the main code line while they are developing. Once development is concluded the branch can be merged into the main stable codebase. Branches can also be used to test fixes for bugs.\nTo create a new branch locally and move into that branch you can run the command:\ngit checkout -b &lt;name&gt;\nYou will then need to link your local branch to the remote branch using the command:\ngit push --set-upstream origin &lt;name&gt;\nA new branch can also be created within your version control tool (GitHub, DevOps) and then\ngit checkout &lt;name&gt;\nFor more information on dealing with bug fixes, pull requests and code merging within DevOps:\n\nGuide to DevOps - Pull requests\n\n\n\nThree Data States\n\n\n\nFigure of Git’s three main sections\n\n\nThere are three main states any file can exist within:\nmodified - files that have been add, removed or edited within the working directory.\nstaged - selected changes are temporarily recorded or indexed before they are committed to the git directory which stores the metadata and objects associated with the modifications that have been staged. To stage files you use the command:\ngit add\ncommitted - committing takes files recorded in the staging area and stores a snapshot permanently within the git directory. Each commit is assigned a hash code that allows you to access the snapshot. Therefore if you want to roll-back to a particular snapshot you can access it via its hash code. Staged files can be committed as follows:\n`git commit -m “message”\nA commit message is also added to all commit commands. This is to add context to the update within the git directory. A good commit message should be short and succinct but also give clear messaging about what you have changed. For example if you were fixing a bug, in a function called Check_file that was identified in pull request number 33 your commit message may look like:\ngit commit -m \"!33: bug fix in Check_file - Solved\"\nThe above commit message clearly states it is working on issue/pull request number 33 in which a bug was identified in the function Check_file and that it has been tested and marked as solved ready for merging.\n\n\n\n\n\n\nImportant\n\n\n\nRemember to push\n\n\nAll of these are within the local repository. In order to back up the committed changes you have to push your changes to the remote repository. This can be done using the command:\ngit push\nIf you do not push your commits they will not be recorded in your remote repository and will not be backed up or be available to be accessed by collaborators.\n\n\nCommand line quick reference\n# Initialize a remote repository from local folder\ngit init\n\n# Clone a repository from remote\ngit clone\n\n# To update local files to match remote repository\ngit pull\n\n# To create a new local branch \ngit checkout -b &lt;name&gt;\n\n# Move onto a branch \ngit checkout &lt;name&gt;\n\n# Link a locale branch to the remote branch\ngit push --set-upstream origin &lt;name&gt;\n\n# Link a local branch to the remote branch\ngit push --set-upstream origin name\n\n# To stage all modified files\ngit add .\n\n# To stage a single file\ngit add &lt;file&gt;\n\n# To commit files to local repository\ngit commit -m \"message\"\n\n# To push changes to remote repository\ngit push\n\n# Check status of files\ngit status",
+    "crumbs": [
+      "Training",
+      "Using Git"
+    ]
+  },
+  {
+    "objectID": "training/Git-in-R.html#git-within-r-studio",
+    "href": "training/Git-in-R.html#git-within-r-studio",
+    "title": "Using Git",
+    "section": "Git within R studio",
+    "text": "Git within R studio\nIn order to use git within RStudio you must have the directory set up as an R project. Therefore any cloned repository must contain a Rproj file.\nYou can use all of the above command lined within the terminal window of RStudio, however RStudio also offers a graphical interface that some may find preferable to use. To access open the Tools menu and access Version Control menu and Commit.... You can also access this with the keyboard short cut Ctrl+Alt+M.\n\n\n\nMenu access to version control tools within R Studio\n\n\nWithin the commit screen you can easily change branch, overview any documents modified (M), added (A) or removed (R) and investigate those changes when compared to the remote branch. Changes can be staged by ticking the box within the stage column. A commit message can be added and changes committed to the local branch. Then changes can be pushed to the remote branch.\n\n\n\nVersion control tools within R studio",
+    "crumbs": [
+      "Training",
+      "Using Git"
+    ]
+  },
+  {
+    "objectID": "training/Git-in-R.html#further-reading",
+    "href": "training/Git-in-R.html#further-reading",
+    "title": "Using Git",
+    "section": "Further reading",
+    "text": "Further reading\nFor a more in depth discussion on Git and how it works: Pro Git book\nFor information in collaborating on projects within Azure Devops:-\nGuide to DevOps - Pull requests",
+    "crumbs": [
+      "Training",
+      "Using Git"
+    ]
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html",
+    "href": "guidance/nhscr-rap-assessment.html",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "",
+    "text": "An organisational KPI is to\nTo measure this, the RAP Development Team have come up with the RAP Assessment Tool, where all the statistical processes that NRS teams produce can be measured as to whether they meet RAP good practice or not.\nThis guidance aims to provide further guidance to the guidance provided in the RAP Assessment Tool, by using the NHSCR RAP pipeline as an example of all of the criteria.\nThe NHSCR code can be found here."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#does-a-process-map-exist",
+    "href": "guidance/nhscr-rap-assessment.html#does-a-process-map-exist",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Does a process map exist?",
+    "text": "Does a process map exist?\nProcess maps provide a clear, visual overview of how data flows from inputs through processing and analysis to final outputs.\nThe NRS RAP Book contains detailed instructions on how to make process maps.\nThe NHSCR process map is as follows:"
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#is-all-code-well-commented",
+    "href": "guidance/nhscr-rap-assessment.html#is-all-code-well-commented",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Is all code well-commented?",
+    "text": "Is all code well-commented?\nCode comments should be used to provide context to your code. Commenting your code will help others understand the code you’ve written and why it’s been written in a particular way.\nA commented line of R code starts with a single # followed by a space.\n# Test that only nametypes of zero are recorded\nassert_that(unique(surhisttab$nametype) == \"0\")\nThis example comment from the NHSCR RAP pipeline explains to the reader who may not be familiar with that code syntax, what the purpose of the code does in plain English."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#is-your-code-in-a-self-contained-and-well-structured-repository",
+    "href": "guidance/nhscr-rap-assessment.html#is-your-code-in-a-self-contained-and-well-structured-repository",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Is your code in a self-contained and well-structured repository?",
+    "text": "Is your code in a self-contained and well-structured repository?\nA repository is another word for the folder where all the files for your project are stored. A self-contained repository means all files required for the project are stored in the same place.\nYour repository should have a sensible, organised, clear structure. Sub-folders may be created for code, data, lookups, data, outputs, functions (pick and choose which are relevant to your project).\nCode scripts should be numbered if they should be run in a certain order. Data and output files should be date-stamped.\nIt should be clear to somebody new to the project where to look for certain files.\nThe NHSCR repository structure is as follows:\n|-- README.md\n|-- R_NHSCR.Rproj\n|-- NHSCR_run_pipeline.R\n|-- .gitignore\n|-- code/\n|   -- Historical_extract.R\n|   -- NHSCR_Annual.R\n|   -- NHSCR_Monthly.R\n|   -- NHSCR_Quarterly.R\n|-- functions/\n|   -- Compare_outputs_functions.R\n|   -- Dateformatting_functions.R\n|   -- Make_comparisons.R\n|   -- Read_in_data.R\n|   -- Test_functions.R\n|   -- Validation_test_helpers.R\n|-- lookup/\n|   -- Basic_spine_colnames.R\n|   -- input_colnames.R\n|   -- migration_colnames.R\n|   -- SLS_colnames.R\n|   -- Yearly_colnames.R\n|-- output_metadata/\n|   -- metadata.Rmd\n|-- validation/\n|   -- Compare_outputs.R\n|   -- Validation_tests.R"
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#does-your-code-repository-contain-a-readme-file",
+    "href": "guidance/nhscr-rap-assessment.html#does-your-code-repository-contain-a-readme-file",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Does your code repository contain a README file?",
+    "text": "Does your code repository contain a README file?\nA README file should be stored within your repository and contain a brief overview of the project including instructions for running the code and contact details for the team who owns the project.\nThe README can be in any text file format, however it is recommended to use a markdown file format (.md) as this will be automatically displayed in your repository.\nAn Example README FILE"
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#are-dependencies-documented",
+    "href": "guidance/nhscr-rap-assessment.html#are-dependencies-documented",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Are dependencies documented?",
+    "text": "Are dependencies documented?\nTo ensure reproducibility of your code it is important that package dependencies are documented in your RAP project code repository. Record names and the version of each external R or Python package used.\nIn the NHSCR code packages and their versions used are documented in the README file.\n## Other Attached Packages\n\n| Package    | Version |\n|------------|---------|\n| renv       | 1.2.3   |\n| rmarkdown  | 2.25    |\n| data.table | 1.18.4  |\n| here       | 1.0.2   |\n| glue       | 1.6.2   |\n| assertthat | 0.2.1   |\n| lubridate  | 1.9.3   |\n| forcats    | 1.0.0   |\n| stringr    | 1.6.0   |\n| dplyr      | 1.2.1   |\n| purrr      | 1.2.2   |\n| readr      | 2.1.4   |\n| tidyr      | 1.3.1   |\n| tibble     | 3.2.1   |\n| ggplot2    | 3.5.0   |\n| tidyverse  | 2.0.0   |\n| knitr      | 1.45    |\n| callr      | 3.7.6   |\n| janitor    | 2.2.1   |"
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#does-your-code-follow-a-style-guide",
+    "href": "guidance/nhscr-rap-assessment.html#does-your-code-follow-a-style-guide",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Does your code follow a style guide?",
+    "text": "Does your code follow a style guide?\nA style guide describes best practices for writing clean, consistent and maintainable code. For example:\n\nNaming conventions for variables, functions, files.\nFormatting rules to make your code easier to read.\nStandard ways document and comment code.\nBest practices for writing efficient code, reducing errors.\n\nFor R, we recommend following the tidyverse style guide."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#does-your-code-use-configurable-parameters",
+    "href": "guidance/nhscr-rap-assessment.html#does-your-code-use-configurable-parameters",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Does your code use configurable parameters?",
+    "text": "Does your code use configurable parameters?\nA data analysis process is more secure and reusable if certain values are stored separately from the analysis code. For example:\n\nDirectory paths for reading or writing files such as csv files or spreadsheets\nDatabase connection details\nA URL and API key required to access an external API to read data\nParameter values to be set before running the code, for example a reference year\n\nWriting such values directly into code is known as hard-coding and it is best avoided where possible. It is better practice to manage these type of variables as configurable parameters.\nFor sensitive variables such as API keys consider using the keyring package for R or Python to store these securely. An alternative is to create an environment variable.\nFor less sensitive parameters a config file or script can be used to set values such as file paths or analytical variables used throughout a process.\nMore information is available in the Configuration chapter of the Duck Book.\n# Input the full path to input files location. Must be in \"\"\nin_dirpath &lt;- \"/mnt/dl_acp79_read/Archive/Downloads/Downloads \\2026/Download - Mar 26\"\n\n# Input the desired path to the out folder location.\n# It is good practice that this is a separate folder to the input files to\n# avoid accidental overwriting. Must be in \"\"\nout_dir &lt;- \"/mnt/dl_acp79_modify/SAS to R - Testing/Testing_R_code/\"\n\n# Input the migration month. This is for naming output files. It should follow\n# the convention MonthYear i.e \"Jan26\"\nmig_month &lt;- \"Mar26\"\n\n# Input determines wither to run Monthly or Quarterly extracts\n# Set as \"Monthly\" or \"M\" to run just the monthly extract\n# Set as \"Quarterly\" or \"Q\" to create both monthly and quarterly extracts\n# Set as \"Annual\" or \"A\" to create the complete extract\nmode &lt;- \"M\"\nThis example from the NHSCR RAP pipeline sets the configurable parameters all in one place in the NHSCR_run_pipeline.R code, and explains clearly to the reader how to set the parameters."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#is-code-used-for-all-data-processing-steps",
+    "href": "guidance/nhscr-rap-assessment.html#is-code-used-for-all-data-processing-steps",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Is code used for all data processing steps?",
+    "text": "Is code used for all data processing steps?\nData processing includes steps to extract data from its storage location, cleaning, restructuring and linking with other data sources.\nUsing code for these steps can help to document all changes that are made to a dataset and minimise the risk of human error when carrying out these steps manually.\nThe R for Data Science book has guidance on using code for importing data, data transformation and tidying, including recommendations of which R packages to use.\nThe NHSCR RAP pipeline uses code for all data processing steps and the script NHSCR_run_pipeline.R to run whichever of the four extracts are required.\n#run the selected mode\nif (mode == \"monthly\" || mode == \"m\") {\n  print(\"Running Monthly pipeline\")\n  source(\"code/NHSCR_Monthly.R\")\n  print(\"Monthly extracts completed\")\n} else if (mode == \"quarterly\" || mode == \"q\") {\n  print(\"Running Monthly pipeline\")\n  source(\"code/NHSCR_Monthly.R\")\n  print(\"Monthly extracts completed\")\n  print(\"Running quarterly pipeline\")\n  source(\"code/NHSCR_Quarterly.R\")\n  source(\"code/Historical_extract.R\")\n  print(\"Quarterly extracts completed\")\n} else if (mode == \"annual\" || mode == \"a\"){\n  print(\"Running Monthly pipeline\")\n  source(\"code/NHSCR_Monthly.R\")\n  print(\"Monthly extracts completed\")\n  print(\"Running quarterly pipeline\")\n  source(\"code/NHSCR_Quarterly.R\")\n  source(\"code/Historical_extract.R\")\n  print(\"Quarterly extracts completed\")\n  source(\"code/SCR_Annual.R\")\n  print(\"Annual extracts completed\")\n} else {\n  print(\"No mode has been selected\")\n}"
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#are-all-data-inputs-clearly-documented-and-version-controlled-where-possible",
+    "href": "guidance/nhscr-rap-assessment.html#are-all-data-inputs-clearly-documented-and-version-controlled-where-possible",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Are all data inputs clearly documented and version controlled where possible?",
+    "text": "Are all data inputs clearly documented and version controlled where possible?\nAll datasets, lookups and reference files used within the process should be clearly documented, including their source and purpose. Where possible, changes to these inputs should be tracked through version control to improve transparency, reproducibility and auditability.\nIn the NHSCR RAP pipeline, this information is all contained in the README.md and version control is used to track changes."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#are-analytical-outputs-generated-automatically-from-the-source-data-and-code",
+    "href": "guidance/nhscr-rap-assessment.html#are-analytical-outputs-generated-automatically-from-the-source-data-and-code",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Are analytical outputs generated automatically from the source data and code?",
+    "text": "Are analytical outputs generated automatically from the source data and code?\nOpen source programming languages such as R allow all components of a published output to be created with code. This includes all charts, tables and commentary. R Markdown or Quarto might be used for html reports or Shiny for dashboards. Some benefits of this approach:\n\nIt reduces error in copying and pasting items into a document.\nIt saves time regenerating the report for updated source data as the process has been automated.\nIt can ensure accessible, well formatted and professional looking outputs.\n\nFor the NHSCR RAP pipeline, code has been used to produce all output tables and markdown has been used to produce the README."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#is-git-used-for-version-control",
+    "href": "guidance/nhscr-rap-assessment.html#is-git-used-for-version-control",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Is Git used for version control?",
+    "text": "Is Git used for version control?\nGit is a version control software for tracking changes to files. Using Git means you don’t need to save multiple copies of the same file to retain older versions. Git keeps a record of what change was made, when the change was made, why the change was made, and who made the change.\nThe NRS RAP Book contains further guidance on using Git in R."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#is-code-stored-in-a-shared-organisational-repository",
+    "href": "guidance/nhscr-rap-assessment.html#is-code-stored-in-a-shared-organisational-repository",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Is code stored in a shared organisational repository?",
+    "text": "Is code stored in a shared organisational repository?\nMaking your code open means it is available to anybody who would like to view it. Publishing your code can:\n\nIncrease trust in your analysis\nEncourage collaboration\nImprove quality\nHelp others benefit from your work.\n\nNHSCR CODE"
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#does-code-contain-functions-where-appropriate",
+    "href": "guidance/nhscr-rap-assessment.html#does-code-contain-functions-where-appropriate",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Does code contain functions where appropriate?",
+    "text": "Does code contain functions where appropriate?\nReplacing repetitive blocks of code with functions can make your code easier to read and make it easier for you or others to maintain and update the code in future. This process is often known as code refactoring.\nFor example, in the NHSCR code, we created a custom function for date columns which converts NA (i.e. missing) to blank:\n# general date formatting for columns which converts NA - blank\nfmt_date &lt;- function(x) {\n  ifelse(is.na(x), \"\",\n         format(x, \"%Y%m%d\"))\n}"
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#is-data-quality-assurance-built-into-the-code",
+    "href": "guidance/nhscr-rap-assessment.html#is-data-quality-assurance-built-into-the-code",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Is data quality assurance built into the code?",
+    "text": "Is data quality assurance built into the code?\nCode can be used to automate data quality assurance. Checking assumptions about data early in your analysis pipeline ensures that any issues can be spotted and dealt with quickly.\nThe NHSCR pipeline contains"
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#is-automated-testing-built-into-the-code",
+    "href": "guidance/nhscr-rap-assessment.html#is-automated-testing-built-into-the-code",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Is automated testing built into the code?",
+    "text": "Is automated testing built into the code?\nAutomated checks can be used throughout the analytical pipeline to verify data quality, calculations and outputs. Building validation and testing into the code helps identify issues earlier, reduces manual quality assurance effort, and improves reproducibility.\nThe NHSCR testing scripts are contained in the “validation” folder."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#can-the-process-be-executed-end-to-end-with-minimal-manual-intervention",
+    "href": "guidance/nhscr-rap-assessment.html#can-the-process-be-executed-end-to-end-with-minimal-manual-intervention",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Can the process be executed end-to-end with minimal manual intervention?",
+    "text": "Can the process be executed end-to-end with minimal manual intervention?\nThe ultimate aim is for all steps in an analytical pipeline to be executed from a single script. This negates the need to open individual code scripts and run them one-by-one in a certain order.\nThe NHSCR pipeline can be run dynamically from changing the configurable parameters in the script NHSCR_run_pipeline.R."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#has-code-been-reviewed-by-somebody-inside-the-immediate-team",
+    "href": "guidance/nhscr-rap-assessment.html#has-code-been-reviewed-by-somebody-inside-the-immediate-team",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Has code been reviewed by somebody inside the immediate team?",
+    "text": "Has code been reviewed by somebody inside the immediate team?\nHaving your code reviewed by somebody else in your team can assure you that:\n\nyour code works as expected\nyour analysis is reproducible\nyour documentation provides sufficient information for somebody else to know how to run your code\n\nCode review can be a one-off exercise but ideally somebody else should review your code any time a change is made. If you are already using GitHub or Azure DevOps, this can be facilitated by using Pull Requests."
+  },
+  {
+    "objectID": "guidance/nhscr-rap-assessment.html#has-your-code-been-reviewed-by-somebody-outside-the-immediate-team",
+    "href": "guidance/nhscr-rap-assessment.html#has-your-code-been-reviewed-by-somebody-outside-the-immediate-team",
+    "title": "Assessing the NHSCR pipeline against the RAP Assessment Tool",
+    "section": "Has your code been reviewed by somebody outside the immediate team?",
+    "text": "Has your code been reviewed by somebody outside the immediate team?\nIt is beneficial for someone external to the team to review the RAP code:\n\nIt ensures reproducibility of the RAP as a standalone process, not relying on undocumented internal knowledge.\nPeople more distant from the process can provide useful feedback and perspective.\n\nContact the RAP team for code reviews - rap.development@nrscotland.gov.uk"
   }
 ]
