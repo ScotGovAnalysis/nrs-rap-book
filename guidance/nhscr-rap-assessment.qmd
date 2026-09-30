@@ -18,7 +18,7 @@ This guidance aims to provide further guidance to the guidance provided in the
 RAP Assessment Tool, by using the NHSCR RAP pipeline as an example of all of the
 criteria.
 
-The NHSCR code can be found here - link to GitHub.
+The NHSCR code can be found [here](https://github.com/ScotGovAnalysis/NRS_NHSCR).
 
 ## Does a process map exist?
 
@@ -108,7 +108,7 @@ The README can be in any text file format, however it is recommended to use a
 markdown file format (.md) as this will be automatically displayed in your
 repository.
 
-LINK TO README FILE
+An Example [README FILE](https://github.com/ScotGovAnalysis/NRS_NHSCR/blob/main/README.md)
 
 ## Are dependencies documented?
 
